@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aetherx.film - Online Kino Sayti</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/player/player.css">
+</head>
+<body>
+   
+      <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo">
+            <span class="logo-text">Aetherx<span class="logo-dot">.film</span></span>
+            <div class="loading-spinner">
+                <div class="spinner-circle"></div>
+                <div class="spinner-line-mask">
+                    <div class="spinner-line"></div>
+                </div>
+            </div>
+        </div>
+        <div class="loading-progress">
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+            </div>
+            <div class="loading-text">Yuklanmoqda<span class="dot-animation"></span></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Header -->
+        <header class="site-header">
+            <div class="back-button">
+                <a href="#"><i class="fas fa-arrow-left"></i> Orqaga</a>
+            </div>
+            <div class="site-logo">
+                <span>Aetherx</span>.film
+            </div>
+        </header>
+
+        <!-- Movie Title -->
+        <h1 class="movie-title">SHADDOD KELIN (HIND KINO, PREMYERA)</h1>
+
+        <!-- Movie Info Section -->
+        <div class="movie-info-container">
+            <div class="movie-poster-wrapper">
+                <div class="movie-poster">
+                    <img src="https://via.placeholder.com/400x600" alt="Shaddod Kelin">
+                    <div class="movie-poster-overlay">
+                        <div class="movie-quality">
+                            <span>HD</span>
+                            <span>4K</span>
+                        </div>
+                        <div class="movie-actions">
+                            <button class="action-btn like-btn" id="likeBtn">
+                                <i class="fas fa-thumbs-up"></i>
+                                <span class="count" id="likeCount">42</span>
+                            </button>
+                            <button class="action-btn dislike-btn" id="dislikeBtn">
+                                <i class="fas fa-thumbs-down"></i>
+                                <span class="count" id="dislikeCount">5</span>
+                            </button>
+                            <button class="action-btn share-btn" id="shareBtn">
+                                <i class="fas fa-share-alt"></i>
+                                <span>Ulashish</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="movie-details">
+                <div class="detail-row">
+                    <div class="detail-label">NOMI</div>
+                    <div class="detail-value">Shaddod kelin (hind kino, premyera)</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">JANR</div>
+                    <div class="detail-value">Tarjima kinolar / Jangari / Komediya / Melodrama</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">DAVLATI</div>
+                    <div class="detail-value">Hindiston</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">YILI</div>
+                    <div class="detail-value">2025</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">TILI</div>
+                    <div class="detail-value">O'zbekcha</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">DAVOMIYLIGI</div>
+                    <div class="detail-value">1 soat 48 daqiqa</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">YOSH CHEGARASI</div>
+                    <div class="detail-value"><span class="age-limit">16+</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Watch Options -->
+        <div class="watch-options">
+            <button class="watch-option active" data-target="player">
+                <i class="fas fa-play-circle"></i>
+                <span>ONLAYN KO'RISH</span>
+            </button>
+            <button class="watch-option" data-target="trailer">
+                <i class="fas fa-film"></i>
+                <span>TREYLER</span>
+            </button>
+            <button class="watch-option telegram-option">
+                <i class="fab fa-telegram"></i>
+                <span>TELEGRAM ORQALI YUKLASH</span>
+            </button>
+        </div>
+
+        <!-- Video Player Section -->
+        <div class="video-section" id="playerSection">
+            <div class="video-container">
+                <video id="moviePlayer" poster="https://via.placeholder.com/1280x720">
+                    <source src="#" type="video/mp4">
+                    Sizning brauzeringiz video tegini qo'llab-quvvatlamaydi.
+                </video>
+                
+                <!-- Play Button Overlay -->
+                <div class="play-overlay" id="playOverlay">
+                    <button class="big-play-btn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                </div>
+                
+                <!-- Video Controls -->
+                <div class="video-controls" id="videoControls">
+                    <div class="progress-container">
+                        <div class="buffered-bar"></div>
+                        <div class="progress-bar">
+                            <div class="progress-filled"></div>
+                            <div class="progress-handle"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="controls-bottom">
+                        <div class="left-controls">
+                            <button class="control-btn play-pause-btn" id="playPauseBtn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button class="control-btn rewind-btn">
+                                <i class="fas fa-backward"></i>
+                            </button>
+                            <button class="control-btn forward-btn">
+                                <i class="fas fa-forward"></i>
+                            </button>
+                            <div class="volume-container">
+                                <button class="control-btn volume-btn" id="volumeBtn">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                                <div class="volume-slider">
+                                    <div class="volume-progress">
+                                        <div class="volume-filled"></div>
+                                        <div class="volume-handle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="time-display">
+                                <span class="current-time">00:00</span> / <span class="duration">00:00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="right-controls">
+                            <button class="control-btn quality-btn">
+                                <i class="fas fa-cog"></i>
+                                <span>HD</span>
+                            </button>
+                            <button class="control-btn fullscreen-btn" id="fullscreenBtn">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trailer Modal -->
+        <div class="trailer-modal" id="trailerModal">
+            <div class="trailer-container">
+                <button class="close-trailer" id="closeTrailer">
+                    <i class="fas fa-times"></i>
+                </button>
+                <video id="trailerPlayer" poster="https://via.placeholder.com/1280x720">
+                    <source src="#" type="video/mp4">
+                    Sizning brauzeringiz video tegini qo'llab-quvvatlamaydi.
+                </video>
+                <div class="trailer-controls">
+                    <div class="trailer-progress">
+                        <div class="trailer-progress-filled"></div>
+                    </div>
+                    <button class="trailer-play-btn" id="trailerPlayBtn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scenes Section -->
+        <div class="scenes-section">
+            <h2 class="section-title">LAVHALAR</h2>
+            <div class="scenes-container">
+                <div class="scene-item" data-src="https://via.placeholder.com/1280x720">
+                    <img src="https://via.placeholder.com/300x169" alt="Lavha 1">
+                    <div class="scene-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="scene-item" data-src="https://via.placeholder.com/1280x720">
+                    <img src="https://via.placeholder.com/300x169" alt="Lavha 2">
+                    <div class="scene-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="scene-item" data-src="https://via.placeholder.com/1280x720">
+                    <img src="https://via.placeholder.com/300x169" alt="Lavha 3">
+                    <div class="scene-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="scene-item" data-src="https://via.placeholder.com/1280x720">
+                    <img src="https://via.placeholder.com/300x169" alt="Lavha 4">
+                    <div class="scene-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="scene-item" data-src="https://via.placeholder.com/1280x720">
+                    <img src="https://via.placeholder.com/300x169" alt="Lavha 5">
+                    <div class="scene-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scenes-navigation">
+                <button class="nav-btn prev-scene">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="nav-btn next-scene">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <button class="rules-btn" id="rulesBtn">
+                <i class="fas fa-info-circle"></i>
+                Ko'rish qoidalari
+            </button>
+        </div>
+
+        <!-- Scene Lightbox -->
+        <div class="scene-lightbox" id="sceneLightbox">
+            <button class="close-lightbox" id="closeLightbox">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="lightbox-content">
+                <img id="lightboxImage" src="https://via.placeholder.com/1280x720" alt="Scene">
+            </div>
+            <div class="lightbox-navigation">
+                <button class="lightbox-nav prev-lightbox-img" id="prevLightboxImg">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="lightbox-nav next-lightbox-img" id="nextLightboxImg">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Rules Modal -->
+        <div class="rules-modal" id="rulesModal">
+            <div class="rules-content">
+                <button class="close-rules" id="closeRules">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h2>Ko'rish qoidalari</h2>
+                <div class="rules-list">
+                    <div class="rule-item">
+                        <div class="rule-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="rule-text">
+                            <h3>Bepul ko'rish</h3>
+                            <p>Saytimizda barcha filmlar bepul ko'rish uchun taqdim etilgan.</p>
+                        </div>
+                    </div>
+                    <div class="rule-item">
+                        <div class="rule-icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <div class="rule-text">
+                            <h3>Internet tezligi</h3>
+                            <p>HD sifatda ko'rish uchun kamida 5 Mb/s internet tezligi tavsiya etiladi.</p>
+                        </div>
+                    </div>
+                    <div class="rule-item">
+                        <div class="rule-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="rule-text">
+                            <h3>Yuklab olish</h3>
+                            <p>Filmlarni yuklab olish uchun Telegram kanalimizga a'zo bo'ling.</p>
+                        </div>
+                    </div>
+                    <div class="rule-item">
+                        <div class="rule-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="rule-text">
+                            <h3>Mualliflik huquqi</h3>
+                            <p>Filmlar faqat shaxsiy ko'rish uchun mo'ljallangan, tijorat maqsadida foydalanish taqiqlanadi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommended Movies Section -->
+        <div class="recommended-section">
+            <h2 class="section-title">REKOMENDUYEM POSMOTRET'</h2>
+            <div class="movie-cards">
+                <div class="movie-card">
+                    <div class="movie-card-poster">
+                        <img src="https://via.placeholder.com/300x450" alt="Movie 1">
+                        <div class="movie-card-overlay">
+                            <div class="movie-card-quality">
+                                <span>480p</span>
+                                <span>720p</span>
+                                <span>1080p</span>
+                            </div>
+                            <div class="movie-card-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie-card-info">
+                        <h3>Hitmen 2 / Hitman Agent 47</h3>
+                        <div class="movie-card-meta">
+                            <span>2020</span>
+                            <span>Tarjima Kinolar</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="movie-card">
+                    <div class="movie-card-poster">
+                        <img src="https://via.placeholder.com/300x450" alt="Movie 2">
+                        <div class="movie-card-overlay">
+                            <div class="movie-card-quality">
+                                <span>480p</span>
+                                <span>720p</span>
+                                <span>1080p</span>
+                            </div>
+                            <div class="movie-card-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie-card-info">
+                        <h3>Agent sheryurak Uzbek tilida</h3>
+                        <div class="movie-card-meta">
+                            <span>2020</span>
+                            <span>Tarjima Kinolar</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="movie-card">
+                    <div class="movie-card-poster">
+                        <img src="https://via.placeholder.com/300x450" alt="Movie 3">
+                        <div class="movie-card-overlay">
+                            <div class="movie-card-quality">
+                                <span>480p</span>
+                                <span>720p</span>
+                                <span>1080p</span>
+                            </div>
+                            <div class="movie-card-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie-card-info">
+                        <h3>Rassom / Bo'yoqchi Uzbek tilida</h3>
+                        <div class="movie-card-meta">
+                            <span>2024</span>
+                            <span>Tarjima Kinolar</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="movie-card">
+                    <div class="movie-card-poster">
+                        <img src="https://via.placeholder.com/300x450" alt="Movie 4">
+                        <div class="movie-card-overlay">
+                            <div class="movie-card-quality">
+                                <span>480p</span>
+                                <span>720p</span>
+                                <span>1080p</span>
+                            </div>
+                            <div class="movie-card-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie-card-info">
+                        <h3>Bionik Uzbek tilida 2024</h3>
+                        <div class="movie-card-meta">
+                            <span>2024</span>
+                            <span>Tarjima Kinolar</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="movie-card">
+                    <div class="movie-card-poster">
+                        <img src="https://via.placeholder.com/300x450" alt="Movie 5">
+                        <div class="movie-card-overlay">
+                            <div class="movie-card-quality">
+                                <span>480p</span>
+                                <span>720p</span>
+                                <span>1080p</span>
+                            </div>
+                            <div class="movie-card-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie-card-info">
+                        <h3>Maydon Hind kinosi Uzbek tilida</h3>
+                        <div class="movie-card-meta">
+                            <span>2024</span>
+                            <span>Tarjima Kinolar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comments Section -->
+        <div class="comments-section">
+            <h2 class="section-title">KOMMENTARIYII <span class="comment-count">(5)</span></h2>
+            
+            <div class="comments-container">
+                <div class="comment">
+                    <div class="comment-header">
+                        <div class="comment-user">
+                            <div class="user-avatar">
+                                <img src="https://via.placeholder.com/50" alt="User">
+                            </div>
+                            <div class="user-info">
+                                <h4>Alisher</h4>
+                                <span class="comment-date">12.05.2025</span>
+                            </div>
+                        </div>
+                        <div class="comment-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <div class="comment-body">
+                        <p>Juda ajoyib film ekan, rahmat! Aktyor o'yini ham a'lo darajada. Tarjima sifati ham yaxshi.</p>
+                    </div>
+                    <div class="comment-footer">
+                        <button class="comment-action">
+                            <i class="fas fa-thumbs-up"></i>
+                            <span>12</span>
+                        </button>
+                        <button class="comment-action">
+                            <i class="fas fa-thumbs-down"></i>
+                            <span>2</span>
+                        </button>
+                        <button class="comment-action">
+                            <i class="fas fa-reply"></i>
+                            <span>Javob berish</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="comment">
+                    <div class="comment-header">
+                        <div class="comment-user">
+                            <div class="user-avatar">
+                                <img src="https://via.placeholder.com/50" alt="User">
+                            </div>
+                            <div class="user-info">
+                                <h4>Dilshod</h4>
+                                <span class="comment-date">10.05.2025</span>
+                            </div>
+                        </div>
+                        <div class="comment-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="comment-body">
+                        <p>Ovozi yaxshi emas ekan, lekin film zo'r! Keyingi qismlarini ham kutib qolamiz.</p>
+                    </div>
+                    <div class="comment-footer">
+                        <button class="comment-action">
+                            <i class="fas fa-thumbs-up"></i>
+                            <span>8</span>
+                        </button>
+                        <button class="comment-action">
+                            <i class="fas fa-thumbs-down"></i>
+                            <span>1</span>
+                        </button>
+                        <button class="comment-action">
+                            <i class="fas fa-reply"></i>
+                            <span>Javob berish</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Comment Form -->
+            <div class="comment-form-container">
+                <h3>Izoh qoldirish</h3>
+                <form id="commentForm" class="comment-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="input-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <input type="text" id="name" placeholder="Ismingiz" required>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <input type="email" id="email" placeholder="Email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="input-icon textarea-icon">
+                            <i class="fas fa-comment-alt"></i>
+                        </div>
+                        <textarea id="comment" placeholder="Izohingiz" required></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group rating-group">
+                            <label>Baholash:</label>
+                            <div class="star-rating">
+                                <i class="far fa-star" data-rating="1"></i>
+                                <i class="far fa-star" data-rating="2"></i>
+                                <i class="far fa-star" data-rating="3"></i>
+                                <i class="far fa-star" data-rating="4"></i>
+                                <i class="far fa-star" data-rating="5"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group captcha-group">
+                            <div class="captcha">
+                                <span id="captchaText">XY4Z9P</span>
+                                <button type="button" id="refreshCaptcha">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                            </div>
+                            <input type="text" id="captchaInput" placeholder="Captchani kiriting" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Yuborish
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Buttons -->
+    <div class="telegram-button">
+        <a href="https://t.me/aetherxfilm" target="_blank">
+            <i class="fab fa-telegram-plane"></i>
+        </a>
+        <span class="tooltip">Telegram</span>
+    </div>
+    
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+        <span class="tooltip">Yuqoriga</span>
+    </div>
+    <script src="/player/player.js"></script>
+</body>
+</html>
