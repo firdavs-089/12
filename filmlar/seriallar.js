@@ -1,35 +1,12 @@
  // Seriallar ma'lumotlari
         const serials = [
             { 
-                title: "Viduthalay 1", 
+                title: "E bo'limining marvaridi", 
                 desc: "Tarjima film", 
-                img: "/kino-img/viduthaliy.webp",
-                link: "/movi-player/viduthaliy.html" 
+                img: "/kino-img/e guruhi.jpg",
+                link: "/serriallar/e bolimini marvaridi.html" 
             },
-            { 
-                title: "Maxluqlar / Daxshatli ", 
-                desc: "Tarjima film ", 
-                img: "/kino-img/maxluqlar.png",
-                link: "/movi-player/maxluqlar.html" 
-            },
-            { 
-                title: "Qizil ipak", 
-                desc: "Tarjima film", 
-                img: "/kino-img/qizil ipak.png",
-                link: "/movi-player/qizil ipak.html" 
-            },
-            { 
-                title: "Amaran ", 
-                desc: "Tarjima film", 
-                img: "/kino-img/amaran.png",
-                link: "/movi-player/amaran.html" 
-            },
-            { 
-                title: "Doni Dark", 
-                desc: "Tarjima film", 
-                img: "/kino-img/xoror.png",
-                link: "/movi-player/doni dark .html" 
-            },
+            
            
         ];
 
