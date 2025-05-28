@@ -179,16 +179,46 @@
         
         @media (max-width: 480px) {
             .cards-container {
-                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
                 gap: 10px;
             }
             
             .card-img {
-                height: 140px;
+                height: 300px;
             }
             
             .card-title {
+                font-size: 15px;
+            }
+            
+            .card-desc {
+                font-size: 10px;
+            }
+            
+            .page-numbers button {
+                width: 30px;
+                height: 30px;
                 font-size: 14px;
+            }
+            
+            .watch-btn {
+                font-size: 12px;
+                padding: 6px 0;
+            }
+        }
+        
+        @media (max-width: 380px) {
+            .cards-container {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 2fr));
+                gap: 10px;
+            }
+            
+            .card-img {
+                height: 250px;
+            }
+            
+            .card-title {
+                font-size: 12px;
             }
             
             .card-desc {
@@ -196,8 +226,8 @@
             }
             
             .page-numbers button {
-                width: 35px;
-                height: 35px;
+                width: 30px;
+                height: 30px;
                 font-size: 14px;
             }
             
