@@ -207,7 +207,7 @@
             }
         }
         
-        @media (max-width: 380px) {
+        @media (max-width: 390px) {
             .cards-container {
                 grid-template-columns: repeat(auto-fill, minmax(150px, 2fr));
                 gap: 10px;
