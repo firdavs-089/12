@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinemaHub - Movie Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/1d9cf5dfd5.js" crossorigin="anonymous"></script>
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    height: {
+                        'screen-80': '80vh',
+                        'screen-60': '60vh',
+                    },
+                    transitionProperty: {
+                        'width': 'width'
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+        
+        .movie-shadow {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        
+        .player-controls {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .video-player:hover .player-controls {
+            opacity: 1;
+        }
+        
+        .progress-container {
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: #ef4444;
+            width: 0;
+        }
+        
+        .comment-card:nth-child(odd) {
+            background: linear-gradient(to right, #0f172a, #1e293b);
+        }
+        
+        .image-zoom {
+            transition: transform 0.5s ease;
+        }
+        
+        .image-zoom:hover {
+            transform: scale(1.05);
+        }
+        
+        #imageModal {
+            transition: opacity 0.3s ease;
+        }
+        
+        /* Loading animation */
+        @keyframes loading-rotate {
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes loading-dash {
+            0% { stroke-dasharray: 1,200; stroke-dashoffset: 0; }
+            50% { stroke-dasharray: 89,200; stroke-dashoffset: -35; }
+            100% { stroke-dasharray: 89,200; stroke-dashoffset: -124; }
+        }
+        
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0f172a;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .loader svg {
+            width: 50px;
+            height: 50px;
+            animation: loading-rotate 2s linear infinite;
+        }
+        
+        .loader circle {
+            stroke: #ef4444;
+            stroke-dasharray: 1,200;
+            stroke-dashoffset: 0;
+            stroke-linecap: round;
+            animation: loading-dash 1.5s ease-in-out infinite;
+            stroke-width: 6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div id="loader" class="loader">
+        <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20" fill="none"></circle>
+        </svg>
+    </div>
+    
+    <div id="main-content" class="hidden">
+        <!-- Back button -->
+        <div class="fixed top-5 left-5 z-50">
+            <button onclick="history.back()" class="bg-rose-600 hover:bg-rose-700 text-white rounded-full p-3 shadow-lg transition duration-300">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+        </div>
+        
+        <!-- Scroll to top button -->
+        <div id="scrollTopBtn" class="fixed bottom-5 right-5 z-50 hidden">
+            <button class="bg-rose-600 hover:bg-rose-700 text-white rounded-full p-4 shadow-lg transition duration-300">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+        </div>
+        
+        <!-- Main container -->
+        <div class="max-w-[1200px] mx-auto px-4 py-8">
+            <!-- Movie title -->
+            <div class="text-center mb-10">
+                <h1 class="text-4xl md:text-5xl font-bold text-white">John Wick: Chapter 4</h1>
+                <div class="mt-4 flex justify-center">
+                    <div class="bg-amber-500 text-amber-900 font-bold rounded-full py-1 px-4 text-sm inline-flex items-center">
+                        <i class="fas fa-star mr-1"></i>
+                        <span>IMDb 8.0/10</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Movie content -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Left column -->
+                <div class="lg:col-span-1">
+                    <!-- Poster -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden movie-shadow">
+                        <img src="http://asilmedia.org/uploads/mini/fullstory/aa/265x372xc086f612dfba047131035d43a293cc.jpg.pagespeed.ic.rkXl2I5Zto.webp" 
+                             alt="John Wick 4 Poster" class="w-full h-auto">
+                    </div>
+                    
+                    <!-- Action buttons -->
+                    <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <button id="watchBtn" class="bg-rose-600 hover:bg-rose-700 text-white py-3 rounded-lg font-medium flex items-center justify-center transition">
+                            <i class="fas fa-play-circle mr-2"></i> Online ko'rish
+                        </button>
+                        <button id="trailerBtn" class="bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium flex items-center justify-center transition">
+                            <i class="fas fa-film mr-2"></i> Treyler
+                        </button>
+                        <button class="bg-gray-700 hover:bg-gray-600 text-white py-3 rounded-lg font-medium flex items-center justify-center transition">
+                            <i class="fas fa-download mr-2"></i> Yuklab olish
+                        </button>
+                    </div>
+                    
+                    <!-- Like/Dislike buttons -->
+                    <div class="mt-6 flex justify-center space-x-4">
+                        <button id="likeBtn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition">
+                            <i class="fas fa-thumbs-up text-white text-xl"></i>
+                        </button>
+                        <button id="dislikeBtn" class="p-3 rounded-full bg-gray-700 hover:bg-gray-600 transition">
+                            <i class="fas fa-thumbs-down text-white text-xl"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Captions below buttons -->
+                    <div class="mt-4 text-center">
+                        <p id="likeCount" class="text-green-500">2,450 ta foydalanuvchi filmni yoqtirdi</p>
+                    </div>
+                </div>
+                
+                <!-- Right column -->
+                <div class="lg:col-span-2">
+                    <!-- Movie details -->
+                    <div class="bg-gray-800 rounded-xl p-6 movie-shadow">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-4">Film ma'lumotlari</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex">
+                                        <span class="text-gray-400 w-32">Ishlab chiqarilgan:</span>
+                                        <span class="text-white">2023</span>
+                                    </li>
+                                    <li class="flex">
+                                        <span class="text-gray-400 w-32">Mamlakat:</span>
+                                        <span class="text-white">AQSh</span>
+                                    </li>
+                                    <li class="flex">
+                                        <span class="text-gray-400 w-32">Til:</span>
+                                        <span class="text-white">Inglizcha</span>
+                                    </li>
+                                    <li class="flex">
+                                        <span class="text-gray-400 w-32">Janr:</span>
+                                        <span class="text-white">Jangari, Triller</span>
+                                    </li>
+                                    <li class="flex">
+                                        <span class="text-gray-400 w-32">Davomiylik:</span>
+                                        <span class="text-white">169 daqiqa</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-4">Aktyorlar</h3>
+                                <div class="grid grid-cols-4 gap-4">
+                                    <div class="text-center">
+                                        <img class="w-full h-24 object-cover rounded-md mb-2" 
+                                             src="https://images.uzmovi.tv/2025-06-04/fec28919e7031b342ab377ede710c2fb.jpg" alt="Keanu Reeves">
+                                        <p class="text-white text-xs">Keanu Reeves</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img class="w-full h-24 object-cover rounded-md mb-2" 
+                                             src="https://images.uzmovi.tv/2025-06-04/fec28919e7031b342ab377ede710c2fb.jpg" alt="Donnie Yen">
+                                        <p class="text-white text-xs">Donnie Yen</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img class="w-full h-24 object-cover rounded-md mb-2" 
+                                             src="https://images.uzmovi.tv/2025-06-04/fec28919e7031b342ab377ede710c2fb.jpg" alt="Bill Skarsgård">
+                                        <p class="text-white text-xs">Bill Skarsgård</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img class="w-full h-24 object-cover rounded-md mb-2" 
+                                             src="https://images.uzmovi.tv/2025-06-04/fec28919e7031b342ab377ede710c2fb.jpg" alt="Laurence Fishburne">
+                                        <p class="text-white text-xs">Laurence Fishburne</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h3 class="text-xl font-bold text-white mb-4">Film haqida</h3>
+                            <p class="text-gray-300 leading-relaxed">
+                                Jon Vik xalqaro qotillik jinoyatlaridan so'ng, Yuqori maslahat tomonidan e'lon qilingan mukofot bilan ergashadi. To'liq kuchi bilan Vikni ta'qib qiladigan yangi kuchlar paydo bo'ladi. Vik ertami-kechmi qasos olmoqchi bo'lgan butun jahonning qotillari bilan to'qnash keladi. Yosh dong'ibozga duch kelgan Vik dushmanlarini yo'q qilish uchun xalqaro hamrohiga tayanadi.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Video player - hidden initially -->
+                    <div id="videoPlayer" class="mt-8 hidden">
+                        <div class="video-player bg-black rounded-xl overflow-hidden relative">
+                            <video id="mainVideo" class="w-full" poster="https://image.tmdb.org/t/p/w780/vZloFAK7NmvBHKEsnicf3Dthbt.jpg" src="https://fayllar1.ru/36/kinolar/Arvoh%20ayol%202024%201080p%20(asilmedia.net).mp4">
+                                <!-- Video sources would go here -->
+                                Your browser does not support the video tag.
+                            </video>
+                            
+                            <!-- Custom Player Controls -->
+                            <div class="player-controls absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex space-x-4">
+                                        <button id="playBtn" class="text-white">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                        <button id="muteBtn" class="text-white">
+                                            <i class="fas fa-volume-up"></i>
+                                        </button>
+                                        <span id="timeText" class="text-white">0:00 / 0:00</span>
+                                    </div>
+                                    
+                                    <div class="flex space-x-4">
+                                        <button id="speedBtn" class="text-white">1x</button>
+                                        <button id="qualityBtn" class="text-white">HD</button>
+                                        <button id="fullscreenBtn" class="text-white">
+                                            <i class="fas fa-expand"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="progress-container w-full rounded overflow-hidden cursor-pointer">
+                                    <div id="progressBar" class="progress-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <!-- Gallery -->
+                    <div class="mt-10">
+                        <h2 class="text-2xl font-bold text-white mb-5">Film lavhalari</h2>
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                            <!-- Gallery images -->
+                            <div class="image-zoom overflow-hidden rounded-lg cursor-pointer">
+                                <img src="https://images.uzmovi.tv/2025-06-04/fec28919e7031b342ab377ede710c2fb.jpg" 
+                                     alt="John Wick Scene" class="w-full h-40 object-cover transition duration-500 hover:scale-110">
+                            </div>
+                            <div class="image-zoom overflow-hidden rounded-lg cursor-pointer">
+                                <img src="https://images.uzmovi.tv/2025-06-04/fec28919e7031b342ab377ede710c2fb.jpg" 
+                                     alt="John Wick Scene" class="w-full h-40 object-cover transition duration-500 hover:scale-110">
+                            </div>
+                            <div class="image-zoom overflow-hidden rounded-lg cursor-pointer">
+                                <img src="https://images.uzmovi.tv/2025-06-04/fec28919e7031b342ab377ede710c2fb.jpg" 
+                                     alt="John Wick Scene" class="w-full h-40 object-cover transition duration-500 hover:scale-110">
+                            </div>
+                            <div class="image-zoom overflow-hidden rounded-lg cursor-pointer">
+                                <img src="https://images.uzmovi.tv/2025-06-04/fec28919e7031b342ab377ede710c2fb.jpg" 
+                                     alt="John Wick Scene" class="w-full h-40 object-cover transition duration-500 hover:scale-110">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Similar movies -->
+                    <div class="mt-10">
+                        <h2 class="text-2xl font-bold text-white mb-5">Shu kabi filmlar</h2>
+                        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+                            <!-- Movie Cards -->
+                            <div class="bg-gray-800 rounded-xl overflow-hidden transition transform hover:-translate-y-1 hover:shadow-xl">
+                                <img src="https://image.tmdb.org/t/p/w500/kDp1vUBZMbOvZyI0ohZDyK0GA2I.jpg" 
+                                     alt="Movie" class="w-full h-56 object-cover">
+                                <div class="p-4">
+                                    <h3 class="text-white font-bold">Extraction 2</h3>
+                                    <div class="flex items-center mt-2">
+                                        <span class="text-amber-500"><i class="fas fa-star"></i></span>
+                                        <span class="text-white ml-2">7.0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-800 rounded-xl overflow-hidden transition transform hover:-translate-y-1 hover:shadow-xl">
+                                <img src="https://image.tmdb.org/t/p/w500/5iRYN5CUEaqs0ey4WtOQ84F4c8i.jpg" 
+                                     alt="Movie" class="w-full h-56 object-cover">
+                                <div class="p-4">
+                                    <h3 class="text-white font-bold">Bullet Train</h3>
+                                    <div class="flex items-center mt-2">
+                                        <span class="text-amber-500"><i class="fas fa-star"></i></span>
+                                        <span class="text-white ml-2">7.5</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-800 rounded-xl overflow-hidden transition transform hover:-translate-y-1 hover:shadow-xl">
+                                <img src="https://image.tmdb.org/t/p/w500/nG7e7ED37PjkB5YgxYgltKc4y6R.jpg" 
+                                     alt="Movie" class="w-full h-56 object-cover">
+                                <div class="p-4">
+                                    <h3 class="text-white font-bold">Nobody</h3>
+                                    <div class="flex items-center mt-2">
+                                        <span class="text-amber-500"><i class="fas fa-star"></i></span>
+                                        <span class="text-white ml-2">8.0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-800 rounded-xl overflow-hidden transition transform hover:-translate-y-1 hover:shadow-xl">
+                                <img src="https://image.tmdb.org/t/p/w500/lNnKnFEdVdL1v4ahFrYTkpR1e2x.jpg" 
+                                     alt="Movie" class="w-full h-56 object-cover">
+                                <div class="p-4">
+                                    <h3 class="text-white font-bold">The Equalizer 3</h3>
+                                    <div class="flex items-center mt-2">
+                                        <span class="text-amber-500"><i class="fas fa-star"></i></span>
+                                        <span class="text-white ml-2">7.5</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Comment section -->
+                    <div class="mt-10">
+                        <h2 class="text-2xl font-bold text-white mb-5">Izoh qoldiring</h2>
+                        <div class="bg-gray-800 rounded-xl p-6">
+                            <form>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-white mb-2">Ismingiz</label>
+                                        <input type="text" class="w-full px-4 py-3 bg-gray-700 rounded-lg text-white border border-gray-600 focus:outline-none focus:border-rose-500">
+                                    </div>
+                                    <div>
+                                        <label class="block text-white mb-2">Email manzilingiz</label>
+                                        <input type="email" class="w-full px-4 py-3 bg-gray-700 rounded-lg text-white border border-gray-600 focus:outline-none focus:border-rose-500">
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <label class="block text-white mb-2">Izoh</label>
+                                    <textarea class="w-full px-4 py-3 bg-gray-700 rounded-lg text-white border border-gray-600 focus:outline-none focus:border-rose-500 h-32"></textarea>
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <label class="block text-white mb-2">Tekshirish kodi</label>
+                                    <div class="flex items-center">
+                                        <div class="bg-gray-200 px-4 py-2 rounded-lg text-gray-800 font-bold">R8K4</div>
+                                        <input type="text" placeholder="Kodni kiriting" class="ml-4 w-full px-4 py-3 bg-gray-700 rounded-lg text-white border border-gray-600 focus:outline-none focus:border-rose-500">
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" class="mt-6 bg-rose-600 hover:bg-rose-700 text-white px-6 py-3 rounded-lg font-bold transition">
+                                    Izohni yuborish
+                                </button>
+                            </form>
+                        </div>
+                        
+                        <!-- Previous comments -->
+                        <div class="mt-8 space-y-6">
+                            <div class="comment-card bg-gray-800 rounded-xl p-5">
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 rounded-full bg-rose-600 flex items-center justify-center text-white">
+                                        <span class="font-bold">AJ</span>
+                                    </div>
+                                    <div class="ml-4 flex-1">
+                                        <div class="flex justify-between">
+                                            <h4 class="text-white font-bold">Anvar Juraev</h4>
+                                            <span class="text-gray-400 text-sm">3 kun oldin</span>
+                                        </div>
+                                        <p class="text-gray-300 mt-2">
+                                            Zo'r film, 5 soat ko'zdan yosh oqizdim. Jon Vikning har qanday harakatlari juda organik va haqiqiy hisoblanadi.
+                                        </p>
+                                        <div class="mt-3 flex space-x-3">
+                                            <button class="text-gray-400 hover:text-white"><i class="fas fa-thumbs-up"></i></button>
+                                            <button class="text-gray-400 hover:text-white"><i class="fas fa-thumbs-down"></i></button>
+                                            <button class="text-gray-400 hover:text-white"><i class="fas fa-reply"></i> Javob berish</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="comment-card bg-gray-800 rounded-xl p-5">
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                                        <span class="font-bold">SS</span>
+                                    </div>
+                                    <div class="ml-4 flex-1">
+                                        <div class="flex justify-between">
+                                            <h4 class="text-white font-bold">Sarvar Sadullayev</h4>
+                                            <span class="text-gray-400 text-sm">1 hafta oldin</span>
+                                        </div>
+                                        <p class="text-gray-300 mt-2">
+                                            Film chiroyli chiqqan, jang sahnasi juda ajoyib. Aktyorlar juda yaxshi o'ynashgan. 
+                                        </p>
+                                        <div class="mt-3 flex space-x-3">
+                                            <button class="text-gray-400 hover:text-white"><i class="fas fa-thumbs-up"></i></button>
+                                            <button class="text-gray-400 hover:text-white"><i class="fas fa-thumbs-down"></i></button>
+                                            <button class="text-gray-400 hover:text-white"><i class="fas fa-reply"></i> Javob berish</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Image modal -->
+    <div id="imageModal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4">
+        <div class="relative max-w-4xl mx-auto">
+            <div class="relative">
+                <img id="modalImage" src="" alt="Gallery Image" class="max-h-[80vh] mx-auto">
+            </div>
+            
+            <!-- Navigation -->
+            <button id="prevBtn" class="absolute top-1/2 left-0 -translate-y-1/2 transform bg-black/50 text-white p-3 rounded-full ml-2 hover:bg-black/70">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="nextBtn" class="absolute top-1/2 right-0 -translate-y-1/2 transform bg-black/50 text-white p-3 rounded-full mr-2 hover:bg-black/70">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <!-- Close button -->
+            <button id="closeModal" class="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full hover:bg-black/70">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        // Page load functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const loader = document.getElementById('loader');
+            const mainContent = document.getElementById('main-content');
+            
+            // Simulate loading delay
+            setTimeout(() => {
+                loader.style.display = 'none';
+                mainContent.classList.remove('hidden');
+                // Initialize video and gallery functionality
+                initVideoPlayer();
+                initGallery();
+                initLikeDislike();
+            }, 2000);
+            
+            // Scroll to top button
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.remove('hidden');
+                } else {
+                    scrollTopBtn.classList.add('hidden');
+                }
+            });
+            
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+        
+        // Video Player Functionality
+        function initVideoPlayer() {
+            const watchBtn = document.getElementById('watchBtn');
+            const trailerBtn = document.getElementById('trailerBtn');
+            const videoPlayer = document.getElementById('videoPlayer');
+            const trailerPlayer = document.getElementById('trailerPlayer');
+            const mainVideo = document.getElementById('mainVideo');
+            const playBtn = document.getElementById('playBtn');
+            const muteBtn = document.getElementById('muteBtn');
+            const progressBar = document.getElementById('progressBar');
+            const timeText = document.getElementById('timeText');
+            const fullscreenBtn = document.getElementById('fullscreenBtn');
+            const speedBtn = document.getElementById('speedBtn');
+            const qualityBtn = document.getElementById('qualityBtn');
+            
+            // Show video player when clicking "Watch Online"
+            watchBtn.addEventListener('click', () => {
+                videoPlayer.classList.remove('hidden');
+                trailerPlayer.classList.add('hidden');
+                // If video was playing in trailer player, hide it
+                
+                // Auto-play the video
+                mainVideo.play().catch(e => console.error('Auto-play failed:', e));
+            });
+            
+          
+            
+            // Play/pause functionality
+            playBtn.addEventListener('click', () => {
+                if (mainVideo.paused) {
+                    mainVideo.play();
+                    playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                } else {
+                    mainVideo.pause();
+                    playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                }
+            });
+            
+            // Mute functionality
+            let isMuted = false;
+            muteBtn.addEventListener('click', () => {
+                if (isMuted) {
+                    mainVideo.muted = false;
+                    muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                    isMuted = false;
+                } else {
+                    mainVideo.muted = true;
+                    muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                    isMuted = true;
+                }
+            });
+            
+            // Update progress bar
+            mainVideo.addEventListener('timeupdate', () => {
+                const percent = (mainVideo.currentTime / mainVideo.duration) * 100;
+                progressBar.style.width = `${percent}%`;
+                
+                // Format time for display
+                const currentMinutes = Math.floor(mainVideo.currentTime / 60);
+                const currentSeconds = Math.floor(mainVideo.currentTime % 60);
+                const durationMinutes = Math.floor(mainVideo.duration / 60);
+                const durationSeconds = Math.floor(mainVideo.duration % 60);
+                
+                timeText.textContent = 
+                    `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds} / 
+                     ${durationMinutes}:${durationSeconds < 10 ? '0' : ''}${durationSeconds}`;
+            });
+            
+            // Click on progress bar to seek
+            document.querySelector('.progress-container').addEventListener('click', (e) => {
+                const progressContainer = document.querySelector('.progress-container');
+                const pos = (e.pageX - progressContainer.getBoundingClientRect().left) / progressContainer.offsetWidth;
+                mainVideo.currentTime = pos * mainVideo.duration;
+            });
+            
+            // Toggle fullscreen
+            fullscreenBtn.addEventListener('click', () => {
+                if (!document.fullscreenElement) {
+                    mainVideo.parentElement.requestFullscreen();
+                    fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i>';
+                } else {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                        fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i>';
+                    }
+                }
+            });
+            
+            // Playback speed toggle
+            let playbackSpeeds = [1.0, 1.25, 1.5, 2.0];
+            let currentSpeedIndex = 0;
+            
+            speedBtn.addEventListener('click', () => {
+                currentSpeedIndex = (currentSpeedIndex + 1) % playbackSpeeds.length;
+                const speed = playbackSpeeds[currentSpeedIndex];
+                mainVideo.playbackRate = speed;
+                speedBtn.textContent = `${speed}x`;
+            });
+            
+            // Video quality toggle
+            let isHD = true;
+            qualityBtn.addEventListener('click', () => {
+                isHD = !isHD;
+                qualityBtn.textContent = isHD ? 'HD' : 'SD';
+            });
+        }
+        
+        // Gallery Functionality
+        function initGallery() {
+            const images = document.querySelectorAll('.image-zoom img');
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const closeModal = document.getElementById('closeModal');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            let currentIndex = 0;
+            
+            images.forEach((img, index) => {
+                img.addEventListener('click', () => {
+                    modalImage.src = img.src;
+                    modal.classList.remove('hidden');
+                    currentIndex = index;
+                });
+            });
+            
+            closeModal.addEventListener('click', () => {
+                modal.classList.add('hidden');
+            });
+            
+            // Close modal when clicking outside image
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.add('hidden');
+                }
+            });
+            
+            // Gallery navigation
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                modalImage.src = images[currentIndex].src;
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                modalImage.src = images[currentIndex].src;
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (!modal.classList.contains('hidden')) {
+                    if (e.key === 'ArrowLeft') {
+                        prevBtn.click();
+                    } else if (e.key === 'ArrowRight') {
+                        nextBtn.click();
+                    } else if (e.key === 'Escape') {
+                        closeModal.click();
+                    }
+                }
+            });
+        }
+        
+        // Like/Dislike functionality
+        function initLikeDislike() {
+            const likeBtn = document.getElementById('likeBtn');
+            const dislikeBtn = document.getElementById('dislikeBtn');
+            const likeCount = document.getElementById('likeCount');
+            
+            let liked = false;
+            let disliked = false;
+            
+            likeBtn.addEventListener('click', () => {
+                if (!liked) {
+                    liked = true;
+                    disliked = false;
+                    likeBtn.classList.add('bg-green-600');
+                    dislikeBtn.classList.remove('bg-gray-700');
+                    likeBtn.classList.remove('bg-gray-700');
+                    likeCount.textContent = 'Siz filmni yoqtirganingiz!';
+                } else {
+                    liked = false;
+                    likeBtn.classList.remove('bg-green-600');
+                    likeBtn.classList.add('bg-gray-700');
+                    likeCount.textContent = '2,450 ta foydalanuvchi filmni yoqtirdi';
+                }
+            });
+            
+            dislikeBtn.addEventListener('click', () => {
+                if (!disliked) {
+                    disliked = true;
+                    liked = false;
+                    dislikeBtn.classList.add('bg-red-600');
+                    likeBtn.classList.remove('bg-green-600');
+                    dislikeBtn.classList.remove('bg-gray-700');
+                    likeCount.textContent = 'Siz filmni yoqtirmaganingiz!';
+                } else {
+                    disliked = false;
+                    dislikeBtn.classList.remove('bg-red-600');
+                    dislikeBtn.classList.add('bg-gray-700');
+                    likeCount.textContent = '2,450 ta foydalanuvchi filmni yoqtirdi';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
