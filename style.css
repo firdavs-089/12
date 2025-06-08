@@ -1074,6 +1074,14 @@ body.light-theme .social-link {
   .sidebar {
     display: none;
   }
+  .movie-cards{
+flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+
+
+  }
 }
 
 
