@@ -1,170 +1,180 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #0e0e0e;
-  color: #fff;
-}
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
 
-.back-button {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  padding: 10px 18px;
-  background-color: #1c1c1c;
-  color: #ff0000;
-  font-weight: bold;
-  text-decoration: none;
-  border: 2px solid #ff0000;
-  border-radius: 8px;
-  z-index: 1000;
-  transition: 0.4s ease;
-  box-shadow: 0 0 10px #ff000055;
-}
+    body {
+      background: url('/kinlar-img/Movie\ Night.jpg') no-repeat center center/cover;
+      min-height: 100vh;
+      color: white;
+      animation: slideIn 0.5s ease forwards;
+        background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed; /* Bu yerda fonni qotirib qo'yamiz */
+    }
 
-.back-button:hover {
-  background-color: #ff0000;
-  color: #000;
-  box-shadow: 0 0 15px #ff0000, 0 0 30px #ff000099;
-  transform: scale(1.05);
-}
+    @keyframes slideIn {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
 
-/* Input oynaning containeri uchun */
-.search-container {
-  max-width: 600px;
-  width: 90%;          /* Ekran kengligining 90% */
-  margin: 40px auto 20px auto; /* Yuqoridan va pastdan marjin, chap va o‘ng avtomatik markazlashtirish */
-  padding: 0 10px;     /* Ichki chap-o‘ng 10px padding (telefon uchun osonlik) */
-  box-sizing: border-box;
-}
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: white;
+      color: black;
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      z-index: 10;
+    }
 
-/* Input uchun asosiy uslub */
-#searchInput {
-  width: 100%;         /* Container kengligini to‘liq egallaydi */
-  height: 50px;        /* Balandlikni aniq belgilaymiz */
-  padding: 12px 20px;
-  font-size: 18px;
-  border-radius: 8px;
-  border: 2px solid #2d2d2d;
-  background-color: #1c1c1c;
-  color: #fff;
-  outline: none;
-  box-sizing: border-box;
-  transition: 0.3s;
-}
+    .back-btn:hover {
+      background: #ccc;
+      transform: translateX(-5px);
+    }
 
-/* Fokusda effekt */
-#searchInput:focus {
-  border-color: #ff0000;
-  opacity: 1;
-  pointer-events: auto;
-  box-shadow: 0 0 20px #ff0000aa;
-}
+    .search-bar {
+      width: 100%;
+      max-width: 600px;
+      margin: 80px auto 40px;
+      display: flex;
+      gap: 10px;
+      padding: 0 20px;
+    }
 
-/* Telefon va kichik ekran uchun */
-@media (max-width: 768px) {
-  .search-container {
-    width: 95%;          /* Kichikroq ekranlarda kengaytirish */
-    margin: 20px auto;   /* Yuqoridan va pastdan marjin biroz kichikroq */
-    padding: 0 15px;  
-    margin-top: 100px ;   /* Ichki paddingni oshiramiz */
-  }
-  #searchInput {
-    height: 45px;        /* Telefon uchun balandlik biroz kamayadi */
-    font-size: 16px;
-    padding: 10px 16px;
-  }
-}
+    .search-bar input {
+      flex: 1;
+      padding: 15px 20px;
+      border-radius: 12px;
+      border: none;
+      font-size: 16px;
+      background-color: #1c1c1c;
+      color: #fff;
+      box-shadow: inset 0 4px 8px rgba(255, 0, 0, 0.3);
+      transition: 0.3s;
+    }
 
-/* Juda kichik ekranlar (400px dan kichik) */
-@media (max-width: 400px) {
-  #searchInput {
-    height: 40px;
-    font-size: 14px;
-    padding: 8px 12px;
-  }
-}
-.result-container {
-  max-width: 1200px;
-  margin: 10px 100px 10px 100px ;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Kompyuter uchun 4 ta */
-  gap: 20px;
-  justify-content: center;
-}
+    .search-bar input:focus {
+      outline: none;
+      box-shadow: 0 0 10px red;
+    }
 
-.card {
-  background-color: #1a1a1a;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 0 12px #ff000055;
-  position: relative;
-  transition: transform 0.3s ease;
-}
+    .search-bar button {
+      padding: 15px 20px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(145deg, #ff0000, #cc0000);
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 6px 12px rgba(255, 0, 0, 0.6);
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 20px #ff000099;
-}
+    .search-bar button:hover {
+      transform: scale(1.05);
+    }
 
-/* Mobil telefonlar uchun: 2ta card */
-@media (max-width: 768px) {
-  .result-container {
-    grid-template-columns: repeat(2, 1fr);
-      margin:0 auto ;
-  }
-  
-  #searchInput {
-    font-size: 16px;
-  }
- 
-}
+    .results-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 25px;
+    }
 
+    @media (max-width: 768px) {
+      .results-container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px;
+      }
 
+      .card img {
+        height: 260px;
+      }
+    }
 
+    .card {
+      background: linear-gradient(145deg, #1a1a1a, #0e0e0e);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+      transition: transform 0.3s ease;
+      position: relative;
+    }
 
-.card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
+    .card:hover {
+      transform: translateY(-10px);
+    }
 
-.card-content {
-  padding: 16px;
-}
+    .card img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+    }
 
-.card-content h3 {
-  margin: 0 0 8px;
-  font-size: 20px;
-}
+    .hd-label {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: red;
+      color: white;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      z-index: 2;
+    }
 
-.card-content p {
-  margin: 0;
-  font-size: 14px;
-  color: #bbb;
-}
+    .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 36px;
+      color: white;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      border-radius: 50%;
+      z-index: 1;
+    }
 
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #ff0000;
-  color: #000;
-  padding: 12px 16px;
-  font-weight: bold;
-  border-radius: 50%;
-  text-decoration: none;
-  font-size: 18px;
-  transition: 0.3s;
-  opacity: 0;
-  pointer-events: none;
-}
+    .info {
+      padding: 15px;
+    }
 
-.card:hover .play-button {
-  opacity: 1;
-  pointer-events: auto;
-  box-shadow: 0 0 20px #ff0000aa;
-}
+    .info h3 {
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
 
+    .info p {
+      font-size: 14px;
+      color: #ccc;
+    }
 
+    .watch-btn {
+      display: block;
+      text-align: center;
+      margin: 10px 15px 15px;
+      padding: 10px;
+      background: linear-gradient(145deg, #ff0000, #cc0000);
+      color: white;
+      font-weight: bold;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 6px 15px rgba(255, 0, 0, 0.5);
+      transition: 0.3s;
+    }
+
+    .watch-btn:hover {
+      background: #cc0000;
+      transform: scale(1.05);
+    }

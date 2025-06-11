@@ -1,58 +1,58 @@
-const movies = [
-  {
-    id: "1",
-    title: "Avengers",
-    image: "https://i.imgur.com/UePbdph.jpg",
-    description: "Marvel qahramonlari birgalikda dunyoni qutqaradi.",
-    link: "films/avengers.html"
-  },
-  {
-    id: "2",
-    title: "Inception",
-    image: "https://i.imgur.com/Yo0pA6D.jpg",
-    description: "O'ylar ichidagi o'yin - real va tush oralig'ida.",
-    link: "films/inception.html"
-  },
-  {
-    id: "3",
-    title: "Avatar",
-    image: "https://i.imgur.com/DRqytcY.jpg",
-    description: "Pandora sayyorasidagi jang va muhabbat.",
-    link: "films/avatar.html"
-  },
-  {
-    id: "4",
-    title: "Titanic",
-    image: "https://i.imgur.com/2QhY9eS.jpg",
-    description: "Tarixdagi eng mashhur kemaning fojiaviy sarguzashti.",
-    link: "films/titanic.html"
-  }
-];
-searchInput.addEventListener("input", () => {
-  const query = searchInput.value.toLowerCase().trim();
-  resultContainer.innerHTML = "";
+  const movies = [
+      {
+        name: "Avatar",
+        year: "2009",
+        image: "https://image.tmdb.org/t/p/w500/2TeJfUZMGolfDdW6DKhfIWqvq8y.jpg",
+        link: "movie1.html"
+      },
+      {
+        name: "Oppenheimer",
+        year: "2023",
+        image: "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0xP3vQYC8eQEOX1dJ.jpg",
+        link: "movie2.html"
+      },
+      {
+        name: "The Flash",
+        year: "2023",
+        image: "https://image.tmdb.org/t/p/w500/rktDFPbfHfUbArZ6OOOKsXcv0Bm.jpg",
+        link: "movie3.html"
+      }
+    ];
 
-  if (query === "") return;
+    function searchMovies() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const results = document.getElementById('results');
+      results.innerHTML = '';
 
-  const foundMovies = movies.filter(movie =>
-    movie.title.toLowerCase().includes(query)
-  );
+      const filtered = movies.filter(m => m.name.toLowerCase().includes(query));
 
-  if (foundMovies.length > 0) {
-    foundMovies.forEach(movie => {
-      resultContainer.innerHTML += `
-        <div class="card">
-          <img src="${movie.image}" alt="${movie.title}">
-          <div class="card-content">
-            <h2>${movie.title}</h2>
-            <p><strong>ID:</strong> ${movie.id}</p>
-            <p>${movie.description}</p>
-            <a class="play-btn" href="${movie.link}"><i class="fas fa-play"></i></a>
+      filtered.forEach(m => {
+        results.innerHTML += `
+          <div class="card">
+            <div class="hd-label">HD</div>
+            <img src="${m.image}" alt="${m.name}">
+          
+            <div class="info">
+              <h3>${m.name}</h3>
+              <p>${m.year} • Action</p>
+              <a href="${m.link}" class="watch-btn">Online Ko‘rish</a>
+            </div>
           </div>
-        </div>
-      `;
-    });
-  } else {
-    resultContainer.innerHTML = "<p style='text-align:center; color:#999;'>Hech narsa topilmadi...</p>";
-  }
-});
+        `;
+        window.scrollTo({ top: 200, behavior: 'smooth' });
+      });
+    }
+
+    function goBack() {
+      document.body.style.animation = 'slideOut 0.5s ease forwards';
+      setTimeout(() => window.history.back(), 500);
+    }
+
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes slideOut {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(100%); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);

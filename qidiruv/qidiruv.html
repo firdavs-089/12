@@ -3,21 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kino Qidiruv</title>
-  <link rel="stylesheet" href="qidiruv.css">
+  <title>Kino Qidiruv Natijalari</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="/qidiruv/qidiruv.css">
+
 </head>
 <body>
+  <form action="/index.html">
+    <button>
+      <div class="back-btn" onclick="goBack()">⬅ Orqaga</div>
+    </button>
+  </form>
 
-  <a href="javascript:history.back()" class="back-button">← Orqaga</a>
-
-  <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Film nomini kiriting..." />
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Kino nomini yozing...">
+    <button onclick="searchMovies()">Qidirish</button>
   </div>
 
-  <div class="result-container" id="resultContainer">
-    <!-- Cardlar shu yerga chiqadi -->
+  <div class="results-container" id="results">
+    <!-- Natijalar shu yerga chiqadi -->
   </div>
 
-  <script src="qidiruv.js"></script>
+
+<script src="/qidiruv/qidiruv.js"></script>
 </body>
 </html>

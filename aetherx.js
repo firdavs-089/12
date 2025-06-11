@@ -320,3 +320,73 @@ themeToggle.addEventListener("click", () => {
     }
 
     
+
+
+
+    // reklamniy baner 
+      window.addEventListener('load', () => {
+    const wrapper = document.getElementById('adBannerWrapper');
+    const video = document.getElementById('adVideo');
+    const muteBtn = document.getElementById('muteToggle');
+    const closeBtn = document.getElementById('closeBtn');
+    const timerText = document.getElementById('timerText');
+
+    const showDelay = 2000; // 2 sekunddan keyin ko‘rsatish
+    const closeEnableDelay = 10000; // X tugmasi 10s dan keyin faollashadi
+
+    // 1. Bannerni ko‘rsatish
+    setTimeout(() => {
+      wrapper.classList.add('show');
+
+      // 2. X tugmasi uchun taymer
+      let countdown = closeEnableDelay / 1000;
+      timerText.textContent = `${countdown}s`;
+      const timerInterval = setInterval(() => {
+        countdown--;
+        if (countdown > 0) {
+          timerText.textContent = `${countdown}s`;
+        } else {
+          clearInterval(timerInterval);
+          timerText.textContent = '';
+          closeBtn.classList.add('enabled');
+          closeBtn.style.cursor = 'pointer';
+        }
+      }, 1000);
+    }, showDelay);
+
+    // 3. X tugmasi bosilsa, banner yashiriladi
+    closeBtn.addEventListener('click', () => {
+      if (closeBtn.classList.contains('enabled')) {
+        wrapper.classList.remove('show');
+      }
+    });
+
+    // 4. Video tugasa, banner yashiriladi
+    video.addEventListener('ended', () => {
+      wrapper.classList.remove('show');
+    });
+
+    // 5. Ovoz tugmasi ishlashi
+    muteBtn.addEventListener('click', () => {
+      video.muted = !video.muted;
+      const icon = muteBtn.querySelector('i');
+      icon.className = video.muted
+        ? 'fa-solid fa-volume-xmark'
+        : 'fa-solid fa-volume-high';
+    });
+  });
+
+
+
+
+
+
+
+
+
+
+
+  // reklamniy banner 2
+  document.getElementById('closeStaticBanner').addEventListener('click', function () {
+      document.getElementById('staticBanner').style.display = 'none';
+    });

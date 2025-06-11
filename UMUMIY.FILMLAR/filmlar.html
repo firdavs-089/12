@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AetherX.film - Filmlar dunyosiga hush kelibsiz !</title>
+    <link rel="stylesheet" href="/UMUMIY.FILMLAR/filmlar.css">
+  <link rel="icon" href="/kinlar-img/kino body.jpg">
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    
+ <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-container">
+            <div class="loading-logo">
+                <span class="aether">Aether</span><span class="x">X</span><span class="film">.film</span>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-text">Yuklanmoqda...</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" style="display: none;">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-left">
+                    <div class="logo">
+                        <span class="aether">Aether</span><span class="x">X</span><span class="film">.film</span>
+                    </div>
+                </div>
+
+
+                <div class="nav-right">
+                  
+                    <form action="/filmlar/film.html">
+                        <button class="theme-toggle" id="theme-toggle">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                    <form action="/kirish.html/qiqdiruv oynasi.html">
+                        <button class="theme-toggle" id="theme-toggle">
+                          <i class="fa-regular fa-user"></i>
+                        </button>
+                    </form>
+            
+                    <button class="menu-toggle" id="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Side Menu -->
+        <div class="side-menu" id="side-menu">
+            <div class="menu-header">
+                <div class="menu-logo">
+                    <span class="aether">Aether</span><span class="x">X</span><span class="film">.film</span>
+                </div>
+                <button class="menu-close" id="menu-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+
+            <div class="menu-links">
+                <a href="/index.html" class="menu-link"><i class="fas fa-home"></i> Bosh sahifa</a>
+                <a href="/filmlar/filmlar.html" class="menu-link"><i class="fas fa-film"></i> Tarjima filmlar</a>
+                <a href="/filmlar/seriallar.html" class="menu-link"><i class="fas fa-tv"></i> Seriallar</a>
+                <a href="/filmlar/multifilmlar.html" class="menu-link"><i class="fa-solid fa-face-smile"></i>
+                    Multfilmlar</a>
+                <a href="/filmlar/horror.html" class="menu-link"><i class="fa-solid fa-ghost"></i> Horor</a>
+                <a href="/filmlar/top100.html" class="menu-link"><i class="fas fa-star"></i> Top 100</a>
+                <a href="/filmlar/tezkunda.html" class="menu-link"><i class="fas fa-clock"></i> Tez kunda</a>
+                <a href="#" class="menu-link"><i class="fa-solid fa-gamepad"></i> Games</a>
+                <a href="/abot/index.html" class="menu-link"><i class="fa-regular fa-circle-user"></i> Admin bilan bog'lanish</a>
+                <a href="/kirish.html/qoidalar.html" class="menu-link"><i class="fa-solid fa-pen-nib"></i> Sayt
+                    qoidalari </a>
+            </div>
+
+            <div class="menu-social">
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+
+
+    
+
+         <div class="container">
+        <h1>Kinolar Katalogi</h1>
+        
+        <div class="movies-grid" id="moviesContainer">
+            <!-- Cardlar shu yerga yuklanadi -->
+        </div>
+        
+        <div class="pagination" id="pagination">
+            <!-- Pagination shu yerga yuklanadi -->
+        </div>
+    </div>
+
+<div id="adBannerWrapper">
+  <div id="adBanner">
+    <video id="adVideo" autoplay muted playsinline>
+      <source src="/video.mkv" type="video/mp4">
+      Brauzeringiz videoni ko‘rsata olmaydi.
+    </video>
+    
+    <!-- Tepadagi tugmalar: timer va close -->
+    <div class="videoOverlayTop">
+      <div id="timerText">10s</div>
+      <button id="closeBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <!-- Pastdagi ovoz tugmasi -->
+    <button id="muteToggle"><i class="fa-solid fa-volume-xmark"></i></button>
+  </div>
+</div>
+        
+        
+        
+        
+     
+
+
+<div class="movie-button-container">
+  <button class="movie-button">
+   <i class="fa-brands fa-telegram"></i>
+  </button>
+  <div class="light-circle"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="film-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+
+      <div class="brand-intro fade-in">
+        <h2 class="logo-text">AetherX.film</h2>
+        <p>Watch the latest movies, series, and animations in HD quality. AetherX.film – your cinematic universe!</p>
+      </div>
+
+      <div class="quick-links fade-in">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Movies</a></li>
+          <li><a href="#">Series</a></li>
+          <li><a href="#">Cartoons</a></li>
+          <li><a href="#">SSU</a></li>
+        </ul>
+      </div>
+
+      <div class="social-auth fade-in">
+        <h3>Follow & Join</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-telegram-plane"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="auth-buttons">
+          <a href="#" class="glow-btn">Login</a>
+          <a href="#" class="glow-btn">Register</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom slide-up">
+      <p>&copy; 2025 AetherX.film — All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script src="/UMUMIY.FILMLAR/filmlar.js"></script>
+</body>
+</html>
