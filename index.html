@@ -1,1053 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AetherX.film - Filmlar dunyosiga hush kelibsiz !</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="/kinlar-img/kino body.jpg">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AetherX.film - O'zbekistondagi birinchi zamonaviy portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
 </head>
-
 <body>
-
-  <!-- Loading Screen -->
-  <div id="loading-screen">
-    <div class="loading-container">
-      <div class="loading-logo">
-        <span class="aether">Aether</span><span class="x">X</span><span class="film">.film</span>
-      </div>
-      <div class="loading-bar">
-        <div class="loading-progress"></div>
-      </div>
-      <div class="loading-text">Yuklanmoqda...</div>
-    </div>
-  </div>
-
-  <!-- Main Content -->
-  <div id="main-content" style="display: none;">
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="nav-container">
-        <div class="nav-left">
-          <div class="logo">
-            <span class="aether">Aether</span><span class="x">X</span><span class="film">.film</span>
-          </div>
-        </div>
-
-
-        <div class="nav-right">
-
-
-
-          <form action="#">
-            <button class="theme-toggle">
-              <i class="fa-regular fa-user"></i>
-            </button>
-          </form>
-          <form action="#">
-            <button class="theme-toggle">
-              <i class="fa-regular fa-user"></i>
-            </button>
-          </form>
-
-          <button class="menu-toggle" id="menu-toggle">
+    <!-- Loading Animation -->
+    <div class="loading">
+        <div class="loading-dots">
             <span></span>
             <span></span>
             <span></span>
-          </button>
         </div>
-      </div>
-    </nav>
-
-    <!-- Side Menu -->
-    <div class="side-menu" id="side-menu">
-      <div class="menu-header">
-        <div class="menu-logo">
-          <span class="aether">Aether</span><span class="x">X</span><span class="film">.film</span>
-        </div>
-        <button class="menu-close" id="menu-close">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-
-
-      <div class="menu-links">
-        <a href="/index.html" class="menu-link"><i class="fas fa-home"></i> Bosh sahifa</a>
-        <a href="/filmlar/filmlar.html" class="menu-link"><i class="fas fa-film"></i> Tarjima filmlar</a>
-        <a href="/filmlar/seriallar.html" class="menu-link"><i class="fas fa-tv"></i> Seriallar</a>
-        <a href="/filmlar/multifilmlar.html" class="menu-link"><i class="fa-solid fa-face-smile"></i>
-          Multfilmlar</a>
-        <a href="/filmlar/horror.html" class="menu-link"><i class="fa-solid fa-ghost"></i> Horor</a>
-        <a href="/filmlar/top100.html" class="menu-link"><i class="fas fa-star"></i> Top 100</a>
-        <a href="/filmlar/tezkunda.html" class="menu-link"><i class="fas fa-clock"></i> Tez kunda</a>
-        <a href="#" class="menu-link"><i class="fa-solid fa-gamepad"></i> Games</a>
-        <a href="/abot/index.html" class="menu-link"><i class="fa-regular fa-circle-user"></i> Admin bilan
-          bog'lanish</a>
-        <a href="/kirish.html/qoidalar.html" class="menu-link"><i class="fa-solid fa-pen-nib"></i> Sayt
-          qoidalari </a>
-        <a href="/BOSH SAHIFA/BOSH SAHIFAA.html" class="menu-link"><i class="fa-solid fa-door-open"></i> Chiqish </a>
-        <button class="theme-toggle" id="theme-toggle">
-          <i class="fas fa-sun">
-          </i></button>
-
-      </div>
-
-      <div class="menu-social">
-        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
-        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-        <a href="#" class="social-link" id="theme-toggle"> <i class="fas fa-sun"></i></a>
-      </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- story -->
-
-
-
-
-    <div class="stories-container">
-
-
-
-
-      <!-- Story 1 - Avengers -->
-      <div class="story" data-video="https://videos.pexels.com/video-files/32193130/13729471_1080_1920_30fps.mp4"
-        data-poster="https://via.placeholder.com/150/0000FF/FFFFFF?text=Avengers">
-        <div class="story-inner">
-          <img src="https://via.placeholder.com/150/0000FF/FFFFFF?text=Avengers" alt="Avengers">
-        </div>
-      </div>
-      <div class="story" data-video="https://videos.pexels.com/video-files/32193130/13729471_1080_1920_30fps.mp4"
-        data-poster="https://via.placeholder.com/150/0000FF/FFFFFF?text=Avengers">
-        <div class="story-inner">
-          <img src="https://via.placeholder.com/150/0000FF/FFFFFF?text=Avengers" alt="Avengers">
-        </div>
-      </div>
-
-      <!-- Story 2 - Spider-Man -->
-      <div class="story" data-video="https://videos.pexels.com/video-files/32249946/13754372_1080_1920_60fps.mp4"
-        data-poster="https://via.placeholder.com/150/FF0000/FFFFFF?text=SpiderMan">
-        <div class="story-inner">
-          <img src="https://via.placeholder.com/150/FF0000/FFFFFF?text=SpiderMan" alt="Spider-Man">
-        </div>
-      </div>
-
-      <!-- Story 3 - Batman -->
-      <div class="story" data-video="https://videos.pexels.com/video-files/32321104/13786374_1080_1920_50fps.mp4"
-        data-poster="https://via.placeholder.com/150/000000/FFFFFF?text=Batman">
-        <div class="story-inner">
-          <img src="https://via.placeholder.com/150/000000/FFFFFF?text=Batman" alt="Batman">
-        </div>
-      </div>
-      <!-- Story 3 - Batman -->
-      <div class="story" data-video="https://videos.pexels.com/video-files/32321104/13786374_1080_1920_50fps.mp4"
-        data-poster="https://via.placeholder.com/150/000000/FFFFFF?text=Batman">
-        <div class="story-inner">
-          <img src="https://via.placeholder.com/150/000000/FFFFFF?text=Batman" alt="Batman">
-        </div>
-      </div>
-      <!-- Story 3 - Batman -->
-      <div class="story" data-video="https://videos.pexels.com/video-files/32321104/13786374_1080_1920_50fps.mp4"
-        data-poster="https://via.placeholder.com/150/000000/FFFFFF?text=Batman">
-        <div class="story-inner">
-          <img src="https://via.placeholder.com/150/000000/FFFFFF?text=Batman" alt="Batman">
-        </div>
-      </div>
-      <!-- Story 3 - Batman -->
-      <div class="story" data-video="https://videos.pexels.com/video-files/32321104/13786374_1080_1920_50fps.mp4"
-        data-poster="https://via.placeholder.com/150/000000/FFFFFF?text=Batman">
-        <div class="story-inner">
-          <img src="https://via.placeholder.com/150/000000/FFFFFF?text=Batman" alt="Batman">
-        </div>
-      </div>
-      <!-- Story 3 - Batman -->
-      <div class="story" data-video="https://videos.pexels.com/video-files/32321104/13786374_1080_1920_50fps.mp4"
-        data-poster="https://via.placeholder.com/150/000000/FFFFFF?text=Batman">
-        <div class="story-inner">
-          <img src="https://via.placeholder.com/150/000000/FFFFFF?text=Batman" alt="Batman">
-        </div>
-      </div>
-      <!-- Story 3 - Batman -->
-      <div class="story" data-video="https://videos.pexels.com/video-files/32321104/13786374_1080_1920_50fps.mp4"
-        data-poster="https://via.placeholder.com/150/000000/FFFFFF?text=Batman">
-        <div class="story-inner">
-          <img src="https://via.placeholder.com/150/000000/FFFFFF?text=Batman" alt="Batman">
-        </div>
-      </div>
-      <!-- Story 3 - Batman -->
-      <div class="story" data-video="https://videos.pexels.com/video-files/32321104/13786374_1080_1920_50fps.mp4"
-        data-poster="https://via.placeholder.com/150/000000/FFFFFF?text=Batman">
-        <div class="story-inner">
-          <img src="https://via.placeholder.com/150/000000/FFFFFF?text=Batman" alt="Batman">
-        </div>
-      </div>
-      <!-- Story 3 - Batman -->
-      <div class="story" data-video="https://videos.pexels.com/video-files/32321104/13786374_1080_1920_50fps.mp4"
-        data-poster="https://via.placeholder.com/150/000000/FFFFFF?text=Batman">
-        <div class="story-inner">
-          <img src="https://via.placeholder.com/150/000000/FFFFFF?text=Batman" alt="Batman">
-        </div>
-      </div>
-      <!-- Story 3 - Batman -->
-      <div class="story" data-video="https://videos.pexels.com/video-files/32321104/13786374_1080_1920_50fps.mp4"
-        data-poster="https://via.placeholder.com/150/000000/FFFFFF?text=Batman">
-        <div class="story-inner">
-          <img src="https://via.placeholder.com/150/000000/FFFFFF?text=Batman" alt="Batman">
-        </div>
-      </div>
-      <!-- Story 3 - Batman -->
-      <div class="story" data-video="https://videos.pexels.com/video-files/32321104/13786374_1080_1920_50fps.mp4"
-        data-poster="https://via.placeholder.com/150/000000/FFFFFF?text=Batman">
-        <div class="story-inner">
-          <img src="https://via.placeholder.com/150/000000/FFFFFF?text=Batman" alt="Batman">
-        </div>
-      </div>
-
-      <!-- Add more stories as needed -->
-    </div>
-
-
-
-
-    <!-- Story Modal -->
-    <div class="modal" id="storyModal">
-      <div class="modal-content">
-        <div class="progress-bar" id="progressBar"></div>
-        <span class="close-btn">&times;</span>
-        <div class="video-container">
-          <video class="modal-video" id="storyVideo" playsinline></video>
-        </div>
-        <div class="nav-arrow arrow-left">&larr;</div>
-        <div class="nav-arrow arrow-right">&rarr;</div>
-        <button class="watch-btn">Watch Online</button>
-      </div>
-    </div>
-
-
-
-
-
-
-
-
-
-    <!-- carousel -->
-
-    <div class="div-cointeiner">
-
-      <section class="carousel-section">
-
-        <div class="carousel-wrapper">
-          <div class="carousel" id="carousel">
-
-            <div class="slide">
-              <img src="/kinlar-img/pari.jpg" alt="Patriots Day">
-              <a href="/filmlar/pari.html">
-                <div class="play-button">►</div>
-              </a>
-              <div class="overlay">PARI / JODULANGAN QIZ (PREMYERA)</div>
-            </div>
-            <div class="slide">
-              <img src="https://images.uzmovi.tv/2025-05-31/1f815184847606a35e57a321527bd7d2.jpg" alt="Patriots Day">
-              <a href="/filmlar/pari.html">
-                <div class="play-button">►</div>
-              </a>
-              <div class="overlay">Vatanparvarlik kuni (premyera)</div>
-            </div>
-            <div class="slide">
-              <img src="https://images.uzmovi.tv/2025-05-31/1f815184847606a35e57a321527bd7d2.jpg" alt="Patriots Day">
-              <a href="/filmlar/pari.html">
-                <div class="play-button">►</div>
-              </a>
-              <div class="overlay">Vatanparvarlik kuni (premyera)</div>
-            </div>
-            <div class="slide">
-              <img src="https://images.uzmovi.tv/2025-05-31/1f815184847606a35e57a321527bd7d2.jpg" alt="Patriots Day">
-              <a href="/filmlar/pari.html">
-                <div class="play-button">►</div>
-              </a>
-              <div class="overlay">Vatanparvarlik kuni (premyera)</div>
-            </div>
-            <div class="slide">
-              <img src="https://images.uzmovi.tv/2025-05-31/1f815184847606a35e57a321527bd7d2.jpg" alt="Patriots Day">
-              <a href="/filmlar/pari.html">
-                <div class="play-button">►</div>
-              </a>
-              <div class="overlay">Vatanparvarlik kuni (premyera)</div>
-            </div>
-            <div class="slide">
-              <img src="https://images.uzmovi.tv/2025-05-31/1f815184847606a35e57a321527bd7d2.jpg" alt="Patriots Day">
-              <a href="/filmlar/pari.html">
-                <div class="play-button">►</div>
-              </a>
-              <div class="overlay">Vatanparvarlik kuni (premyera)</div>
-            </div>
-          </div>
-          <button class="nav-btn left" onclick="moveSlide(-1)">&#10094;</button>
-          <button class="nav-btn right" onclick="moveSlide(1)">&#10095;</button>
-        </div>
-      </section>
-    </div>
-
-
-
-    <!-- scrol -->
-    <div class="category-scroll-wrapper">
-      <div class="category-container">
-        <div class="category-item">
-          <i class="fas fa-play-circle"></i>
-          <span>Filmlar</span>
-        </div>
-        <div class="category-item">
-          <i class="fas fa-tv"></i>
-          <span>Seriallar</span>
-        </div>
-        <div class="category-item">
-          <i class="fas fa-heart"></i>
-          <span>Doramalar</span>
-        </div>
-        <div class="category-item">
-          <i class="fas fa-dog"></i>
-          <span>Multfilmlar</span>
-        </div>
-        <div class="category-item">
-          <i class="fas fa-video"></i>
-          <span>Animelar</span>
-        </div>
-        <div class="category-item">
-          <i class="fas fa-clock"></i>
-          <span>Treylerlar</span>
-        </div>
-        <div class="category-item">
-          <i class="fas fa-clock"></i>
-          <span>Treylerlar</span>
-        </div>
-        <div class="category-item">
-          <i class="fas fa-clock"></i>
-          <span>Treylerlar</span>
-        </div>
-      </div>
-    </div>
-
-
-<div id="adBannerWrapper">
-  <div id="adBanner">
-    <video id="adVideo" autoplay muted playsinline>
-      <source src="/video.mkv" type="video/mp4">
-      Brauzeringiz videoni ko‘rsata olmaydi.
-    </video>
     
-    <!-- Tepadagi tugmalar: timer va close -->
-    <div class="videoOverlayTop">
-      <div id="timerText">10s</div>
-      <button id="closeBtn"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-
-    <!-- Pastdagi ovoz tugmasi -->
-    <button id="muteToggle"><i class="fa-solid fa-volume-xmark"></i></button>
-  </div>
-</div>
-
-
-
-  <!-- Reklama banner -->
-  <div id="staticBanner">
-    <img src="/kinlar-img/aetherx.film baner.jpg" alt="Reklama Banner">
-    <button class="close-btn" id="closeStaticBanner">
-      <i class="fa-solid fa-xmark"></i>
-    </button>
-  </div>
-
-
-
-    <!-- tarjima filmlar  -->
-    <div class="main-container">
-
-
-      <div class="content-container">
-        <div class="title-section">
-          <h2 class="title">O'zbek tilidagi tarjima kinolar</h2>
+    <!-- Navbar -->
+    
+ <nav class="navbar">
+        <div class="navbar-left">
+            <span class="logo">
+                <span class="aether">Aether</span><span class="xfilm">X.film</span>
+            </span>
         </div>
+        
+        <div class="navbar-right">
+            <div class="language-selector">
+                <button class="language-btn">
+                    <i class="fas fa-globe"></i>
+                    <span class="current-lang">O'Z</span>
+                </button>
+                <div class="language-dropdown">
+                    <button class="lang-option" data-lang="uz">O'zbekcha</button>
+                    <button class="lang-option" data-lang="ru">Русский</button>
+                </div>
+            </div>
+            <form action="/royhatdan otish.html/kirish.html">
+            <button class="auth-btn login-btn">Kirish</button>
+            </form>
+            <form action="/royhatdan otish.html/royhatdan otish.html">
+            <button class="auth-btn register-btn">Ro'yxatdan o'tish</button>
+            </form>
 
-        <div class="btn-section">
-<form action="/UMUMIY.FILMLAR/filmlar.html">
-          <button class="btn" id="barchasiBtn">
-            Barchasi
-            <span class="btn-border"></span>
-          </button>
-          </form>
+            <button class="menu-toggle">
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+            </button>
         </div>
-      </div>
-    </div>
-
-
-    <!-- Umumiy container -->
-    <div class="main-container">
-      <div class="container">
-
-
-
-        <div class="sidebar">
-          <h3><i class="fas fa-film"></i> Kategoriyalar</h3>
-          <ul>
-            <li><i class="fas fa-clapperboard"></i> Hindiston kinolari <span>304</span></li>
-            <li><i class="fas fa-flag-usa"></i> AQSH kinolari <span>1807</span></li>
-            <li><i class="fas fa-star-half-alt"></i> Turkiya kinolari <span>286</span></li>
-            <li><i class="fas fa-dragon"></i> Janubiy Koreya kinolari <span>186</span></li>
-            <li><i class="fas fa-tv"></i> AQSH seriallari <span>99</span></li>
-            <li><i class="fas fa-film"></i> Turkiya seriallari <span>62</span></li>
-            <li><i class="fas fa-fire"></i> Janubiy Koreya seriallari <span>122</span></li>
-            <li><i class="fas fa-globe"></i> O'zbek tilida yangi kinolar 2025</li>
-          </ul>
+    </nav>
+    
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <span class="logo">
+                <span class="aether">Aether</span><span class="xfilm">X.film</span>
+            </span>
         </div>
-
-        <!-- Movie Cards -->
-        <div class="movie-cards">
-          <!-- Card 1 -->
-          <div class="card" onclick="window.location.href='/filmlar/vaqtlar aro sayohatchi.html'">
-            <div class="card-border">
-              <div class="card-img">
-                <img src="/kinlar-img/vaqtlar aro sayohatchi.jpg" alt="Movie 1">
-                <div class="labels">
-                  <span class="site">FULLHD</span>
-                </div>
-                <div class="play-btn"><i class="fas fa-play"></i></div>
-              </div>
-              <div class="card-info">
-                <h4>VAQTLAR ARO SAYOHATCHI</h4>
-                <p>2025, tarjima kino <i class="fa-solid fa-award"></i></p>
-              </div>
+        <div class="mobile-menu-content">
+            
+            <button class="mobile-auth-btn login-btn"><a href="/royhatdan otish.html/kirish.html">Tizimga kirish</a></button>
+            <button class="mobile-auth-btn register-btn"><a href="/royhatdan otish.html/royhatdan otish.html">Ro'yxatdan o'tish</a></button>
+            
+            <div class="mobile-language-selector">
+                <button class="mobile-language-btn">
+                    <i class="fas fa-globe"></i>
+                    <span>Tilni o'zgartirish</span>
+                </button>
             </div>
-          </div>
-          <!-- Card 1 -->
-          <div class="card" onclick="window.location.href='/filmlar/pari.html'">
-            <div class="card-border">
-              <div class="card-img">
-                <img src="/kinlar-img/pari - card.jpg" alt="Movie 1">
-                <div class="labels">
-                  <span class="site">Pari </span>
-                </div>
-                <div class="play-btn"><i class="fas fa-play"></i></div>
-              </div>
-              <div class="card-info">
-                <h4>PARI / JODULANGAN QIZ</h4>
-                <p>2025, tarjima kino <i class="fa-solid fa-award"></i></p>
-              </div>
-            </div>
-          </div>
-          <!-- Card 1 -->
-          <div class="card" onclick="window.location.href='movie1.html'">
-            <div class="card-border">
-              <div class="card-img">
-                <img
-                  src="https://freekino.net/img/poster/thumb/xshukronalik-kuni-minnatdorchilik-kuni_1748575649.webp.pagespeed.ic.rWv3wQE2qD.webp"
-                  alt="Movie 1">
-                <div class="labels">
-                  <span class="site">FULLHD</span>
-                </div>
-                <div class="play-btn"><i class="fas fa-play"></i></div>
-              </div>
-              <div class="card-info">
-                <h4>Kino Nomi</h4>
-                <p>2025 <i class="fa-solid fa-award"></i></p>
-              </div>
-            </div>
-          </div>
-          <!-- Card 1 -->
-          <div class="card" onclick="window.location.href='movie1.html'">
-            <div class="card-border">
-              <div class="card-img">
-                <img
-                  src="https://freekino.net/img/poster/thumb/xshukronalik-kuni-minnatdorchilik-kuni_1748575649.webp.pagespeed.ic.rWv3wQE2qD.webp"
-                  alt="Movie 1">
-                <div class="labels">
-                  <span class="site">FULLHD</span>
-                </div>
-                <div class="play-btn"><i class="fas fa-play"></i></div>
-              </div>
-              <div class="card-info">
-                <h4>Kino Nomi</h4>
-                <p>2025 <i class="fa-solid fa-award"></i></p>
-              </div>
-            </div>
-          </div>
-          <!-- Card 1 -->
-          <div class="card" onclick="window.location.href='movie1.html'">
-            <div class="card-border">
-              <div class="card-img">
-                <img
-                  src="https://freekino.net/img/poster/thumb/xshukronalik-kuni-minnatdorchilik-kuni_1748575649.webp.pagespeed.ic.rWv3wQE2qD.webp"
-                  alt="Movie 1">
-                <div class="labels">
-                  <span class="site">FULLHD</span>
-                </div>
-                <div class="play-btn"><i class="fas fa-play"></i></div>
-              </div>
-              <div class="card-info">
-                <h4>Kino Nomi</h4>
-                <p>2025 <i class="fa-solid fa-award"></i></p>
-              </div>
-            </div>
-          </div>
-          <!-- Card 1 -->
-          <div class="card" onclick="window.location.href='movie1.html'">
-            <div class="card-border">
-              <div class="card-img">
-                <img
-                  src="https://freekino.net/img/poster/thumb/xshukronalik-kuni-minnatdorchilik-kuni_1748575649.webp.pagespeed.ic.rWv3wQE2qD.webp"
-                  alt="Movie 1">
-                <div class="labels">
-                  <span class="site">FULLHD</span>
-                </div>
-                <div class="play-btn"><i class="fas fa-play"></i></div>
-              </div>
-              <div class="card-info">
-                <h4>Kino Nomi</h4>
-                <p>2025 <i class="fa-solid fa-award"></i></p>
-              </div>
-            </div>
-          </div>
-          <!-- Card 1 -->
-          <div class="card" onclick="window.location.href='movie1.html'">
-            <div class="card-border">
-              <div class="card-img">
-                <img
-                  src="https://freekino.net/img/poster/thumb/xshukronalik-kuni-minnatdorchilik-kuni_1748575649.webp.pagespeed.ic.rWv3wQE2qD.webp"
-                  alt="Movie 1">
-                <div class="labels">
-                  <span class="site">FULLHD</span>
-                </div>
-                <div class="play-btn"><i class="fas fa-play"></i></div>
-              </div>
-              <div class="card-info">
-                <h4>Kino Nomi</h4>
-                <p>2025 <i class="fa-solid fa-award"></i></p>
-              </div>
-            </div>
-          </div>
-          <!-- Card 1 -->
-          <div class="card" onclick="window.location.href='movie1.html'">
-            <div class="card-border">
-              <div class="card-img">
-                <img
-                  src="https://freekino.net/img/poster/thumb/xshukronalik-kuni-minnatdorchilik-kuni_1748575649.webp.pagespeed.ic.rWv3wQE2qD.webp"
-                  alt="Movie 1">
-                <div class="labels">
-                  <span class="site">FULLHD</span>
-                </div>
-                <div class="play-btn"><i class="fas fa-play"></i></div>
-              </div>
-              <div class="card-info">
-                <h4>Kino Nomi</h4>
-                <p>2025 <i class="fa-solid fa-award"></i></p>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- 3 more cards (same as before) -->
-          <!-- ... Card 2, 3, 4 code same ... -->
-        </div>
-      </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- seriallar -->
-    <div class="main-container">
-
-      <div class="content-container">
-        <div class="title-section">
-          <h2 class="title">O'zbek tilidagi kinolar</h2>
-        </div>
-
-        <div class="btn-section">
-          <button class="btn" id="barchasiBtn">
-            Barchasi
-            <span class="btn-border"></span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- Umumiy container -->
-    <div class="main-container">
-      <div class="container">
-
-
-        <div class="accordion">
-          <div class="accordion-header" onclick="toggleAccordion(this)">YUQORI REYTINGDA <span><i
-                class="fas fa-plus"></i></span></div>
-          <div class="accordion-content">
-            <div class="movie">
-              <img src="https://i.imgur.com/zf2MFuO.jpeg" alt="Spider-Man">
-              <div class="movie-info">
-                <strong>O'RGIMCHAK-ODAM</strong>
-                <div class="tag">Tarjima kinolar</div>
-                <div class="likes">
-                  <button class="like-btn" onclick="like(this)"><i class="fas fa-thumbs-up"></i></button>
-                  <span class="count">32143</span>
-                  <button class="dislike-btn"><i class="fas fa-thumbs-down"></i></button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="accordion-header" onclick="toggleAccordion(this)">KO'P MUHOKAMA QILINGAN <span><i
-                class="fas fa-plus"></i></span></div>
-          <div class="accordion-content">
-            <div class="movie">
-              <img src="https://i.imgur.com/Zg6cl8r.jpeg" alt="Per Movie">
-              <div class="movie-info">
-                <strong>ASALARCHI PREMYERA</strong>
-                <div class="tag">Tarjima kinolar</div>
-                <div class="likes">
-                  <button class="like-btn" onclick="like(this)"><i class="fas fa-thumbs-up"></i></button>
-                  <span class="count">2761</span>
-                  <button class="dislike-btn"><i class="fas fa-thumbs-down"></i></button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-header" onclick="toggleAccordion(this)">KO'P KO'RILGAN <span><i
-                class="fas fa-plus"></i></span></div>
-          <div class="accordion-content">
-            <div class="movie">
-              <img src="https://i.imgur.com/Zg6cl8r.jpeg" alt="Aquamann">
-              <div class="movie-info">
-                <strong>AKVAMEN 2</strong>
-                <div class="tag">Tarjima kinolar</div>
-                <div class="likes">
-                  <button class="like-btn" onclick="like(this)"><i class="fas fa-thumbs-up"></i></button>
-                  <span class="count">3064</span>
-                  <button class="dislike-btn"><i class="fas fa-thumbs-down"></i></button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-
-
-
-        <!-- Movie Cards -->
-        <div class="movie-cards">
-          <!-- Card 1 -->
-          <div class="card" onclick="window.location.href='movie1.html'">
-            <div class="card-border">
-              <div class="card-img">
-                <img
-                  src="https://freekino.net/img/poster/thumb/xshukronalik-kuni-minnatdorchilik-kuni_1748575649.webp.pagespeed.ic.rWv3wQE2qD.webp"
-                  alt="Movie 1">
-                <div class="labels">
-                  <span class="site">FULLHD</span>
-                </div>
-                <div class="play-btn"><i class="fas fa-play"></i></div>
-              </div>
-              <div class="card-info">
-                <h4>Kino Nomi</h4>
-                <p>2025 <i class="fa-solid fa-award"></i></p>
-              </div>
-            </div>
-          </div>
-          <!-- Card 1 -->
-          <div class="card" onclick="window.location.href='movie1.html'">
-            <div class="card-border">
-              <div class="card-img">
-                <img
-                  src="https://freekino.net/img/poster/thumb/xshukronalik-kuni-minnatdorchilik-kuni_1748575649.webp.pagespeed.ic.rWv3wQE2qD.webp"
-                  alt="Movie 1">
-                <div class="labels">
-                  <span class="site">FULLHD</span>
-                </div>
-                <div class="play-btn"><i class="fas fa-play"></i></div>
-              </div>
-              <div class="card-info">
-                <h4>Kino Nomi</h4>
-                <p>2025 <i class="fa-solid fa-award"></i></p>
-              </div>
-            </div>
-          </div>
-          <!-- Card 1 -->
-          <div class="card" onclick="window.location.href='movie1.html'">
-            <div class="card-border">
-              <div class="card-img">
-                <img
-                  src="https://freekino.net/img/poster/thumb/xshukronalik-kuni-minnatdorchilik-kuni_1748575649.webp.pagespeed.ic.rWv3wQE2qD.webp"
-                  alt="Movie 1">
-                <div class="labels">
-                  <span class="site">FULLHD</span>
-                </div>
-                <div class="play-btn"><i class="fas fa-play"></i></div>
-              </div>
-              <div class="card-info">
-                <h4>Kino Nomi</h4>
-                <p>2025 <i class="fa-solid fa-award"></i></p>
-              </div>
-            </div>
-          </div>
-          <!-- Card 1 -->
-          <div class="card" onclick="window.location.href='movie1.html'">
-            <div class="card-border">
-              <div class="card-img">
-                <img
-                  src="https://freekino.net/img/poster/thumb/xshukronalik-kuni-minnatdorchilik-kuni_1748575649.webp.pagespeed.ic.rWv3wQE2qD.webp"
-                  alt="Movie 1">
-                <div class="labels">
-                  <span class="site">FULLHD</span>
-                </div>
-                <div class="play-btn"><i class="fas fa-play"></i></div>
-              </div>
-              <div class="card-info">
-                <h4>Kino Nomi</h4>
-                <p>2025 <i class="fa-solid fa-award"></i></p>
-              </div>
-            </div>
-          </div>
-          <!-- Card 1 -->
-          <div class="card" onclick="window.location.href='movie1.html'">
-            <div class="card-border">
-              <div class="card-img">
-                <img
-                  src="https://freekino.net/img/poster/thumb/xshukronalik-kuni-minnatdorchilik-kuni_1748575649.webp.pagespeed.ic.rWv3wQE2qD.webp"
-                  alt="Movie 1">
-                <div class="labels">
-                  <span class="site">FULLHD</span>
-                </div>
-                <div class="play-btn"><i class="fas fa-play"></i></div>
-              </div>
-              <div class="card-info">
-                <h4>Kino Nomi</h4>
-                <p>2025 <i class="fa-solid fa-award"></i></p>
-              </div>
-            </div>
-          </div>
-          <!-- Card 1 -->
-          <div class="card" onclick="window.location.href='movie1.html'">
-            <div class="card-border">
-              <div class="card-img">
-                <img
-                  src="https://freekino.net/img/poster/thumb/xshukronalik-kuni-minnatdorchilik-kuni_1748575649.webp.pagespeed.ic.rWv3wQE2qD.webp"
-                  alt="Movie 1">
-                <div class="labels">
-                  <span class="site">FULLHD</span>
-                </div>
-                <div class="play-btn"><i class="fas fa-play"></i></div>
-              </div>
-              <div class="card-info">
-                <h4>Kino Nomi</h4>
-                <p>2025 <i class="fa-solid fa-award"></i></p>
-              </div>
-            </div>
-          </div>
-          <!-- Card 1 -->
-          <div class="card" onclick="window.location.href='movie1.html'">
-            <div class="card-border">
-              <div class="card-img">
-                <img
-                  src="https://freekino.net/img/poster/thumb/xshukronalik-kuni-minnatdorchilik-kuni_1748575649.webp.pagespeed.ic.rWv3wQE2qD.webp"
-                  alt="Movie 1">
-                <div class="labels">
-                  <span class="site">FULLHD</span>
-                </div>
-                <div class="play-btn"><i class="fas fa-play"></i></div>
-              </div>
-              <div class="card-info">
-                <h4>Kino Nomi</h4>
-                <p>2025 <i class="fa-solid fa-award"></i></p>
-              </div>
-            </div>
-          </div>
-          <!-- Card 1 -->
-          <div class="card" onclick="window.location.href='movie1.html'">
-            <div class="card-border">
-              <div class="card-img">
-                <img
-                  src="https://freekino.net/img/poster/thumb/xshukronalik-kuni-minnatdorchilik-kuni_1748575649.webp.pagespeed.ic.rWv3wQE2qD.webp"
-                  alt="Movie 1">
-                <div class="labels">
-                  <span class="site">FULLHD</span>
-                </div>
-                <div class="play-btn"><i class="fas fa-play"></i></div>
-              </div>
-              <div class="card-info">
-                <h4>Kino Nomi</h4>
-                <p>2025 <i class="fa-solid fa-award"></i></p>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- 3 more cards (same as before) -->
-          <!-- ... Card 2, 3, 4 code same ... -->
-        </div>
-      </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- multifilmlar -->
-    <div class="konteyner">
-      <div class="blok">
-        <h2>MULTFILMLAR</h2>
-        <div class="karusel" id="karusel">
-          <form action="#">
-            <button class="karusel-tugma chap" onclick="oldinga()"><i class="fas fa-chevron-left"></i></button>
-          </form>
-          <img src="https://images.uzmovi.tv/2025-03-15/6374661d4ffc73734e91ce6d73ad481b.jpg" id="rasm" alt="Multfilm">
-          <i class="fas fa-circle-play play-ikon"></i>
-          <button class="karusel-tugma ong" onclick="orqaga()"><i class="fas fa-chevron-right"></i></button>
-        </div>
-        <div class="malumot">Uch bahodir va Yer markazi (multfilm, premyera, o'zbek tilida)</div>
-      </div>
-
-      <div class="blok yangiliklar">
-        <h2>KINO YANGILIKLARI</h2>
-        <div class="yangilik-element">
-          <img src="https://images.uzmovi.tv/2025-03-15/6374661d4ffc73734e91ce6d73ad481b.jpg" alt="">
-          <div class="matn">Fantastik to'rtlik: Birinchi qadamlar filmi oxirgi rasmiy treyleri</div>
-          <div class="icon"><i class="fas fa-chevron-right"></i></div>
-        </div>
-        <div class="yangilik-element">
-          <img src="https://images.uzmovi.tv/2025-03-15/6374661d4ffc73734e91ce6d73ad481b.jpg" alt="">
-          <div class="matn">Iyun oyi 2025 premyeralari O'zbek tilida</div>
-          <div class="icon"><i class="fas fa-chevron-right"></i></div>
-        </div>
-        <div class="yangilik-element">
-          <img src="https://images.uzmovi.tv/2025-03-15/6374661d4ffc73734e91ce6d73ad481b.jpg" alt="">
-          <div class="matn">M3gan 2 Megan 2 filmi yangi rasmiy treylerini tomosha qiling</div>
-          <div class="icon"><i class="fas fa-chevron-right"></i></div>
-        </div>
-        <div class="yangilik-element">
-          <img src="https://images.uzmovi.tv/2025-03-15/6374661d4ffc73734e91ce6d73ad481b.jpg" alt="">
-          <div class="matn">Qora Telefon 2 filmi qo'rqinchli film rasmiy treyleri</div>
-          <div class="icon"><i class="fas fa-chevron-right"></i></div>
-        </div>
-      </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- telekanalr -->
-
-
-    <div class="slider">
-      <div class="slider-track">
-        <!-- Kanallar ro'yxati: kerak bo'lsa ko'paytirish mumkin -->
-        <div class="channel"><img
-            src="https://avatars.mds.yandex.net/i?id=b0eb70a7a9acf7462091204afb739574_l-4428810-images-thumbs&n=13"
-            alt="TV1"></div>
-        <div class="channel"><img
-            src="https://avatars.mds.yandex.net/i?id=b0eb70a7a9acf7462091204afb739574_l-4428810-images-thumbs&n=13"
-            alt="TV2"></div>
-        <div class="channel"><img
-            src="https://avatars.mds.yandex.net/i?id=b0eb70a7a9acf7462091204afb739574_l-4428810-images-thumbs&n=13"
-            alt="TV3"></div>
-        <div class="channel"><img
-            src="https://avatars.mds.yandex.net/i?id=b0eb70a7a9acf7462091204afb739574_l-4428810-images-thumbs&n=13"
-            alt="TV4"></div>
-        <div class="channel"><img
-            src="https://avatars.mds.yandex.net/i?id=b0eb70a7a9acf7462091204afb739574_l-4428810-images-thumbs&n=13"
-            alt="TV5"></div>
-        <div class="channel"><img
-            src="https://avatars.mds.yandex.net/i?id=b0eb70a7a9acf7462091204afb739574_l-4428810-images-thumbs&n=13"
-            alt="TV6"></div>
-
-        <!-- Dublikat qilish scrollni cheksiz ko'rsatish uchun -->
-        <div class="channel"><img
-            src="https://avatars.mds.yandex.net/i?id=b0eb70a7a9acf7462091204afb739574_l-4428810-images-thumbs&n=13"
-            alt="TV1"></div>
-        <div class="channel"><img
-            src="https://avatars.mds.yandex.net/i?id=b0eb70a7a9acf7462091204afb739574_l-4428810-images-thumbs&n=13"
-            alt="TV2"></div>
-        <div class="channel"><img
-            src="https://avatars.mds.yandex.net/i?id=b0eb70a7a9acf7462091204afb739574_l-4428810-images-thumbs&n=13"
-            alt="TV3"></div>
-        <div class="channel"><img
-            src="https://avatars.mds.yandex.net/i?id=b0eb70a7a9acf7462091204afb739574_l-4428810-images-thumbs&n=13"
-            alt="TV4"></div>
-        <div class="channel"><img
-            src="https://avatars.mds.yandex.net/i?id=b0eb70a7a9acf7462091204afb739574_l-4428810-images-thumbs&n=13"
-            alt="TV5"></div>
-        <div class="channel"><img
-            src="https://avatars.mds.yandex.net/i?id=b0eb70a7a9acf7462091204afb739574_l-4428810-images-thumbs&n=13"
-            alt="TV6"></div>
-      </div>
-    </div>
-
-
-
-
-
-
-
-
-
-    <div class="movie-button-container">
-      <button class="movie-button">
-        <i class="fa-brands fa-telegram"></i>
-      </button>
-      <div class="light-circle"></div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <footer class="film-footer">
-      <div class="wrap">
-        <div class="footer-grid">
-
-          <div class="brand-intro fade-in">
-            <h2 class="logo-text">AetherX.film</h2>
-            <p>Watch the latest movies, series, and animations in HD quality. AetherX.film – your cinematic universe!
-            </p>
-          </div>
-
-          <div class="quick-links fade-in">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Movies</a></li>
-              <li><a href="#">Series</a></li>
-              <li><a href="#">Cartoons</a></li>
-              <li><a href="#">SSU</a></li>
-            </ul>
-          </div>
-
-          <div class="social-auth fade-in">
-            <h3>Follow & Join</h3>
+            
             <div class="social-icons">
-              <a href="#"><i class="fab fa-telegram-plane"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
-            <div class="auth-buttons">
-              <a href="#" class="glow-btn">Login</a>
-              <a href="#" class="glow-btn">Register</a>
+        </div>
+    </div>
+    
+    <div class="page-loader">
+        <div class="loader-line"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1> AETHERX.FILM - O'ZBEKISTONDAGI ENG  BIRINCHI ZAMONAVIY  KINOPORTAL</h1>
+            <p>RO'YHATDAN O'TISH UCHUN EMAIL KIRGIZING </p>
+            <form class="email-form">
+                <input type="email" class="email-input" placeholder="Email manzilingiz" required>
+                <button type="submit" class="get-started">BOSHLASH</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Movies Section -->
+    <section class="movies-container">
+        <h2 class="section-title"> TRENDDAGI TARJIMA FILMLAR</h2>
+        <div class="movies-slider">
+            <div class="movies-row" id="trendingMovies">
+                <!-- Movie cards will be added here by JavaScript -->
             </div>
-          </div>
-
+            <div class="slider-nav slider-prev">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="slider-nav slider-next">
+                <i class="fas fa-chevron-right"></i>
+            </div>
         </div>
+    </section>
+    
 
-        <div class="footer-bottom slide-up">
-          <p>&copy; 2025 AetherX.film — All rights reserved.</p>
+
+
+
+
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>AETHERX.FILM HAQIDA QISQACHA</h2>
+        <p>AetherX.film - O'zbekistondagi birinchi zamonaviy onlayn kinoteatr. Biz sizga eng so'nggi va eng yaxshi filmlar, seriallar va hujjatli filmlarni taqdim etamiz. Bizning platformamizda siz istalgan vaqtda, istalgan joyda sevimli kontentlaringizdan bahramand bo'lishingiz mumkin.</p>
+        <p>Bizning jamoamiz doimo yangi kontentlar qo'shib boradi va platformani takomillashtirish ustida ishlaydi. Sizning fikr-mulohazalaringiz biz uchun muhim!</p>
+    </section>
+    
+
+    
+    
+    
+
+    
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number" id="movieCount">10,000+</div>
+                <div class="stat-label">FILMLAR</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="userCount">1,000,000+</div>
+                <div class="stat-label">FOYDALANUVCHILAR</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="daysRunning">24/7</div>
+                <div class="stat-label">SAYT ISHLASH VAQTI</div>
+            </div>
         </div>
-      </div>
+    </section>
+    
+
+ 
+
+
+
+
+
+
+
+    <!-- Footer -->
+  <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <div class="logo">
+                    <span class="logo-main">Aether</span><span class="logo-film">X.film</span>
+                </div>
+                <div class="footer-slogan">O'zbekistondagi birinchi zamonaviy portal</div>
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-link-column">
+                    <h3>Kompaniya</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Biz haqimizda</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Karyera</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Yangiliklar</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Biz bilan bog'lanish</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-link-column">
+                    <h3>Foydalanish</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Shartlar va sharoitlar</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Maxfiylik siyosati</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Cookie siyosati</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Ichki tartib</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-link-column">
+                    <h3>Yordam</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Yordam markazi</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> To'lov usullari</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Qo'llab-quvvat</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-link-column">
+                    <h3>Hamkorlik</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Reklama</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Hamkorlik</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Affiliate</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Kontent yaratuvchilar</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <div class="footer-signup">
+                <form action="/royhatdan otish.html/royhatdan otish.html">
+                <button class="footer-signup-btn">
+                    Ro'yxatdan o'tish <i class="fas fa-arrow-right"></i>
+                </button>
+                </form>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2023 AetherX.film. Barcha huquqlar himoyalangan.
+            </div>
+        </div>
     </footer>
-
-
-
-
-
-
-    <script src="aetherx.js"></script>
+    
+    <script src="/aetherx.js"></script>
 </body>
-
 </html>

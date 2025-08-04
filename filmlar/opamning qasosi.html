@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opamning qasosi - AetherX.film</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/filmlar/opamning qasosi.css">
+    <link rel="icon" href="/kinlar-img/kino body.jpg">
+</head>
+
+<body>
+    <!-- Loading animatsiya -->
+    <div class="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Orqaga qaytish tugmasi -->
+    <div class="back-button" onclick="window.history.back()">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+
+    <!-- Asosiy kontent -->
+    <div class="container">
+        <!-- Kino sarlavhasi -->
+        <div class="movie-header">
+            <h1 class="movie-title">Opamning qasosi / Gang daryosining suvlariga shon-sharaflar Hind kino 2016 Uzbek
+                tilida O'zbekcha tarjima kino Full HD
+            </h1>
+        </div>
+
+        <!-- Kino kontenti -->
+        <div class="movie-content">
+            <!-- Chap qism - poster va tugmalar -->
+            <div class="movie-poster">
+                <img src="/kinlar-img/opamning qasosi.webp" alt="Kino posteri">
+                <div class="movie-buttons">
+                    <button class="action-btn watch-btn" onclick="showVideoPlayer('movie')">
+                        <i class="fas fa-play"></i> Onlayn ko'rish
+                    </button>
+                    <button class="action-btn download-btn" onclick="showDownloadOptions()">
+                        <i class="fas fa-download"></i> Yuklab olish
+                    </button>
+                    <button class="action-btn trailer-btn" onclick="showTrailer()">
+                        <i class="fas fa-film"></i> Treyler
+                    </button>
+                </div>
+            </div>
+
+            <!-- Ong qism - ma'lumotlar -->
+            <div class="movie-info">
+                <div class="info-item">
+                    <div class="info-label">Nomi:</div>
+                    <div class="info-value">Opamning qasosi </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Janr:</div>
+                    <div class="info-value">боевик, драма, криминал</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Davlat:</div>
+                    <div class="info-value">ИНДИЯ</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Yili:</div>
+                    <div class="info-value">2025</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Tili:</div>
+                    <div class="info-value">O'zbek tilida (Tarjima)</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Yosh chegarasi:</div>
+                    <div class="info-value"><span class="age-limit">16+</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kino tavsifi -->
+        <div class="movie-description">
+            <h3>Film haqida:</h3>
+            <p>Film politsiya komissari Abha Matur haqida hikoya qiladi. Uni rahbariyat xavfli Bankepur shahriga
+                xizmatga o‘tkazadi.
+
+                Yangi joyda u mahalliy avtoritet Bablu Pandey va uning sherigi Dablu Pandey tomonidan kuchli qarshilikka
+                duch keladi. Har bir politsiyachi bu ikki mafioziga bo‘ysunadi, ammo Abha tartib o‘rnatishga qat’iy bel
+                bog‘lagan.
+
+                U darhol shaharni to‘liq nazoratga olgan jinoyatchilarga qarshi kurashni boshlaydi.
+
+                Bu jasur ayol vaziyatni o‘zgartirib, korrupsiyani yengib, mahalliy aholiga adolat ustun kelishiga umid
+                bera oladimi? </p>
+        </div>
+
+        <!-- Video player -->
+        <div class="video-player-container" id="movie-player">
+            <div class="video-player">
+                <video id="main-video" poster="/kinlar-img/kino body.jpg">
+                    <source src="https://fayllar1.ru/30/kinolar/Opamning%20qasosi%202016%201080p%20(asilmedia.net).mp4"
+                        type="video/mp4">
+                    Sizning brauzeringiz video elementini qo'llab-quvvatlamaydi.
+                </video>
+
+                <div class="big-play-btn" onclick="togglePlayPause()">
+                    <i class="fas fa-play"></i>
+                </div>
+                <div class="player-controls">
+                    <div class="main-controls">
+                        <button class="control-btn" onclick="togglePlayPause()">
+                            <i class="fas fa-pause" id="play-pause-icon"></i>
+                        </button>
+                        <div class="volume-control">
+                            <button class="control-btn" onclick="toggleMute()">
+                                <i class="fas fa-volume-up" id="volume-icon"></i>
+                            </button>
+                            <div class="volume-slider">
+                                <input type="range" min="0" max="1" step="0.1" value="1" id="volume-slider"
+                                    oninput="setVolume(this.value)">
+                            </div>
+                        </div>
+                        <div class="time-controls">
+                            <span class="time-display" id="current-time">0:00</span>
+                            <div class="progress-bar" onclick="seekVideo(event)">
+                                <div class="progress" id="progress-bar"></div>
+                            </div>
+                            <span class="time-display" id="duration">0:00</span>
+                        </div>
+                    </div>
+                    <div class="right-controls">
+                        <div class="speed-control">
+
+                        </div>
+                        <button class="control-btn fullscreen-btn" onclick="toggleFullScreen()">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                        <button class="control-btn like-btn" onclick="toggleLike()">
+                            <i class="far fa-heart" id="like-icon"></i>
+                            <span class="like-count" id="like-count">0</span>
+                        </button>
+                        <div class="social-share">
+                            <button class="control-btn">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                            <div class="social-options">
+                                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Yuklab olish variantlari -->
+        <div class="download-options" id="download-options">
+            <h3>Yuklab olish sifatini tanlang:</h3>
+            <div class="quality-buttons">
+                <form action="https://30.fayllar1.ru/30/kinolar/Opamning%20qasosi%202016%201080p%20(asilmedia.net).mp4">
+                    <button class="quality-btn" onclick="downloadMovie('1080p')">
+                        <i class="fas fa-download"></i> HD 1080p
+                    </button>
+                </form>
+                <form action="https://33.fayllar1.ru/33/kinolar/Opamning%20qasosi%202016%20720p%20(asilmedia.net).mp4">
+                    <button class="quality-btn" onclick="downloadMovie('720p')">
+                        <i class="fas fa-download"></i> HD 720p
+                    </button>
+                </form>
+                <form action="https://37.fayllar1.ru/37/kinolar/Opamning%20qasosi%202016%20480p%20(asilmedia.net).mp4">
+                    <button class="quality-btn" onclick="downloadMovie('480p')">
+                        <i class="fas fa-download"></i> 480p
+                    </button>
+                </form>
+                <form action="t.me/doppi_uzzb">
+                    <button class="quality-btn telegram-btn" onclick="downloadViaTelegram()">
+                        <i class="fab fa-telegram"></i> Telegram orqali yuklash
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Galereya -->
+        <div class="gallery">
+            <h3>Galereya</h3>
+            <div class="gallery-images">
+                <div class="gallery-img-container" onclick="openGalleryImage(0)">
+                    <img src="/kinlar-lavhalar/opamning qasosi 1.jpg" alt="Kino kadri" class="gallery-img">
+                </div>
+                <div class="gallery-img-container" onclick="openGalleryImage(1)">
+                    <img src="/kinlar-lavhalar/opamning qasosi 2.jpg" alt="Kino kadri" class="gallery-img">
+                </div>
+                <div class="gallery-img-container" onclick="openGalleryImage(2)">
+                    <img src="/kinlar-lavhalar/opamning qasosi 3.jpg" alt="Kino kadri" class="gallery-img">
+                </div>
+                <div class="gallery-img-container" onclick="openGalleryImage(3)">
+                    <img src="/kinlar-lavhalar/opamning qasosi 4.jpg" alt="Kino kadri" class="gallery-img">
+                </div>
+            </div>
+        </div>
+
+        <!-- Tavsiya qilingan kinolar -->
+        <div class="recommended">
+            <h3>Tavsiya etilgan filmlar</h3>
+            <div class="movie-cards">
+                <div class="movie-card">
+                    <img src="/kinlar-img/viduthalay - 1.webp" alt="Kino" class="movie-card-img">
+                    <div class="new-badge">Yangi</div>
+                    <div class="card-info">
+                        <div class="card-title">Shogol premyera</div>
+                        <div class="card-icons">
+                            <i class="fas fa-play card-icon"></i>
+                            <i class="fas fa-download card-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <img src="/kinlar-img/viduthalay - 1.webp" alt="Kino" class="movie-card-img">
+                    <div class="new-badge">Yangi</div>
+                    <div class="card-info">
+                        <div class="card-title">Yaxshi yomon yovuz premyera</div>
+                        <div class="card-icons">
+                            <i class="fas fa-play card-icon"></i>
+                            <i class="fas fa-download card-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/300x170" alt="Kino" class="movie-card-img">
+                    <div class="card-info">
+                        <div class="card-title">Egizaklar koreys seriali</div>
+                        <div class="card-icons">
+                            <i class="fas fa-play card-icon"></i>
+                            <i class="fas fa-download card-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <img src="/kinlar-img/viduthalay - 1.webp" alt="Kino" class="movie-card-img">
+                    <div class="card-info">
+                        <div class="card-title">Rappan Preopera</div>
+                        <div class="card-icons">
+                            <i class="fas fa-play card-icon"></i>
+                            <i class="fas fa-download card-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Izohlar qismi -->
+        <div class="comments-section">
+            <h3>Izoh qoldirish</h3>
+            <div class="comment-form">
+                <div class="form-group">
+                    <label for="name">Ismingiz</label>
+                    <input type="text" id="name" placeholder="Ismingizni kiriting">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail (Majburiy emas)</label>
+                    <input type="email" id="email" placeholder="E-mail manzilingiz">
+                </div>
+                <div class="form-group">
+                    <label for="comment">Izoh</label>
+                    <textarea id="comment" rows="4" placeholder="Izohingizni yozing"></textarea>
+                </div>
+                <div class="form-group captcha-group">
+                    <input type="text" placeholder="Kodni kiriting" style="flex: 1;">
+                    <div class="captcha-code">A7B9</div>
+                </div>
+                <button class="submit-btn">Yuborish</button>
+            </div>
+
+            <div class="comments-list">
+                <div class="no-comments">
+                    Ushbu film uchun hali sharhlar yo'q. Birinchi bo'lib izoh qoldiring!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Treyler uchun modal -->
+    <div class="modal" id="trailer-modal">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <video controls style="width: 100%;">
+                <source src="https://fayllar1.ru/33/kinolar/Balerina%202025%201080p%20(asilmedia.net).mp4"
+                    type="video/mp4">
+                Sizning brauzeringiz video elementini qo'llab-quvvatlamaydi.
+            </video>
+        </div>
+    </div>
+
+    <!-- Rasm uchun modal -->
+    <div class="modal" id="image-modal">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <div class="modal-nav">
+            <div class="nav-btn" onclick="prevImage()"><i class="fas fa-chevron-left"></i></div>
+            <div class="nav-btn" onclick="nextImage()"><i class="fas fa-chevron-right"></i></div>
+        </div>
+        <div class="modal-content">
+            <img id="modal-image" src="" alt="Kino kadri" style="max-width: 100%; max-height: 90vh;">
+        </div>
+    </div>
+
+    <script src="/filmlar/opamning qasosi.js"></script>
+</body>
+
+</html>

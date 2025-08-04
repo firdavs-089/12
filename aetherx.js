@@ -1,380 +1,93 @@
-// Loading Screen
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    document.getElementById("loading-screen").style.display = "none"
-    document.getElementById("main-content").style.display = "block"
-    document.body.style.overflow = "auto"
-  }, 3000)
-})
-
-// Menu Toggle
-const menuToggle = document.getElementById("menu-toggle")
-const menuClose = document.getElementById("menu-close")
-const sideMenu = document.getElementById("side-menu")
-
-menuToggle.addEventListener("click", () => {
-  sideMenu.classList.add("active")
-})
-
-menuClose.addEventListener("click", () => {
-  sideMenu.classList.remove("active")
-})
-
-// Close menu when clicking outside
-document.addEventListener("click", (e) => {
-  if (!sideMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-    sideMenu.classList.remove("active")
-  }
-})
-
-// Theme Toggle
-const themeToggle = document.getElementById("theme-toggle")
-let isDark = true
-
-themeToggle.addEventListener("click", () => {
-  isDark = !isDark
-  if (isDark) {
-    document.body.classList.remove("light-theme")
-    themeToggle.innerHTML = '<i class="fas fa-moon"></i>'
-  } else {
-    document.body.classList.add("light-theme")
-    themeToggle.innerHTML = '<i class="fas fa-sun"></i>'
-  }
-})
-
-// story
- 
-   document.addEventListener('DOMContentLoaded', function() {
-            const stories = document.querySelectorAll('.story');
-            const modal = document.getElementById('storyModal');
-            const closeBtn = document.querySelector('.close-btn');
-            const video = document.getElementById('storyVideo');
-            const leftArrow = document.querySelector('.arrow-left');
-            const rightArrow = document.querySelector('.arrow-right');
-            const watchBtn = document.querySelector('.watch-btn');
-            const progressBar = document.getElementById('progressBar');
-            
-            let currentStoryIndex = 0;
-            let touchStartX = 0;
-            let touchEndX = 0;
-            let progressInterval;
-            let storiesData = [];
-            
-            // Load stories data
-            stories.forEach((story, index) => {
-                storiesData.push({
-                    video: story.getAttribute('data-video'),
-                    poster: story.getAttribute('data-poster')
-                });
-                
-                // Create progress segments
-                const segment = document.createElement('div');
-                segment.className = 'progress-segment';
-                segment.innerHTML = '<div class="progress-fill"></div>';
-                progressBar.appendChild(segment);
-            });
-            
-            const progressSegments = document.querySelectorAll('.progress-segment');
-            const progressFills = document.querySelectorAll('.progress-fill');
-            
-            // Open modal when story is clicked
-            stories.forEach((story, index) => {
-                story.addEventListener('click', () => {
-                    currentStoryIndex = index;
-                    openStory(index);
-                });
-            });
-            
-            // Close modal
-            closeBtn.addEventListener('click', closeModal);
-            
-            // Navigation arrows
-            leftArrow.addEventListener('click', () => {
-                navigateStory(-1);
-            });
-            
-            rightArrow.addEventListener('click', () => {
-                navigateStory(1);
-            });
-            
-            // Watch online button
-            watchBtn.addEventListener('click', () => {
-                alert('Opening full movie...');
-                // window.location.href = 'watch.html?movie=' + currentStoryIndex;
-            });
-            
-            // Touch events for mobile swipe
-            modal.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
-                clearInterval(progressInterval);
-            }, false);
-            
-            modal.addEventListener('touchmove', (e) => {
-                e.preventDefault();
-            }, { passive: false });
-            
-            modal.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-                startProgressBar();
-            }, false);
-            
-            function openStory(index) {
-                if (index < 0 || index >= storiesData.length) return;
-                
-                currentStoryIndex = index;
-                const story = storiesData[index];
-                
-                // Reset all progress bars
-                progressFills.forEach(fill => {
-                    fill.style.width = '0%';
-                    fill.style.transition = 'none';
-                });
-                
-                // Set video source
-                video.src = story.video;
-                video.poster = story.poster;
-                
-                // Show modal
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                
-                // Play video
-                video.load();
-                video.play().catch(e => console.log('Autoplay prevented:', e));
-                
-                // Start progress bar
-                startProgressBar();
-            }
-            
-            function closeModal() {
-                modal.classList.remove('active');
-                video.pause();
-                document.body.style.overflow = 'auto';
-                clearInterval(progressInterval);
-                
-                // Reset progress bars
-                progressFills.forEach(fill => {
-                    fill.style.width = '0%';
-                });
-            }
-            
-            function navigateStory(direction) {
-                clearInterval(progressInterval);
-                currentStoryIndex += direction;
-                
-                if (currentStoryIndex < 0) {
-                    currentStoryIndex = storiesData.length - 1;
-                } else if (currentStoryIndex >= storiesData.length) {
-                    currentStoryIndex = 0;
-                }
-                
-                openStory(currentStoryIndex);
-            }
-            
-            function handleSwipe() {
-                if (touchEndX < touchStartX - 50) {
-                    // Swipe left - next story
-                    navigateStory(1);
-                }
-                
-                if (touchEndX > touchStartX + 50) {
-                    // Swipe right - previous story
-                    navigateStory(-1);
-                }
-            }
-            
-            function startProgressBar() {
-                clearInterval(progressInterval);
-                
-                // Reset all progress bars
-                progressFills.forEach(fill => {
-                    fill.style.width = '0%';
-                    fill.style.transition = 'none';
-                });
-                
-                // Set transition for current segment
-                progressFills[currentStoryIndex].style.transition = 'width 5s linear';
-                progressFills[currentStoryIndex].style.width = '100%';
-                
-                // After 5 seconds, go to next story
-                progressInterval = setTimeout(() => {
-                    navigateStory(1);
-                }, 5000);
-            }
-            
-            // Close modal when clicking outside content
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    closeModal();
-                }
-            });
-            
-            // Handle video end
-            video.addEventListener('ended', () => {
-                navigateStory(1);
-            });
+ // Loading animation
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.querySelector('.loading').style.display = 'none';
+            }, 1500);
         });
+        
 
-
-
-
-
-        // carousel
-        let currentIndex = 0;
-    const carousel = document.getElementById('carousel');
-    const slides = document.querySelectorAll('.slide');
-
-    function moveSlide(step) {
-      currentIndex = (currentIndex + step + slides.length) % slides.length;
-      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-
-    setInterval(() => moveSlide(1), 7000);
-
-
-
-     document.addEventListener('DOMContentLoaded', function() {
-            const btn = document.getElementById('barchasiBtn');
-            
-            // Create border elements
-            for (let i = 0; i < 4; i++) {
-                const border = document.createElement('span');
-                border.className = 'btn-border';
-                border.style.animationDelay = `${i * 1}s`;
-                btn.appendChild(border);
-            }
-        });
-
-
-
-
-
-
-
-
-
-
-
-
-        // multfilmlar
-
-
-         const rasm = document.getElementById('rasm');
-    const rasmlar = [
-      'https://images.uzmovi.tv/2025-05-30/9493bfb62031040befcf4e8a0c45f97d.jpg',
-      'https://images.uzmovi.tv/2025-04-06/b2c4b80ed03ef95b48949bf1fea039e6.jpg',
-      'https://images.uzmovi.tv/2025-03-15/6374661d4ffc73734e91ce6d73ad481b.jpg'
-    ];
-    let index = 0;
-
-    function yangilashRasm() {
-      rasm.style.transform = 'scale(0.95)';
-      setTimeout(() => {
-        rasm.src = rasmlar[index];
-        rasm.style.transform = 'scale(1)';
-      }, 150);
-    }
-
-    function oldinga() {
-      index = (index - 1 + rasmlar.length) % rasmlar.length;
-      yangilashRasm();
-    }
-
-    function orqaga() {
-      index = (index + 1) % rasmlar.length;
-      yangilashRasm();
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-    // top kinolar
-        function toggleAccordion(header) {
-      const isActive = header.classList.contains('active');
-      document.querySelectorAll('.accordion-header').forEach(h => {
-        h.classList.remove('active');
-        h.querySelector('span i').classList.replace('fa-minus', 'fa-plus');
-      });
-      document.querySelectorAll('.accordion-content').forEach(c => c.style.display = 'none');
-
-      if (!isActive) {
-        header.classList.add('active');
-        header.querySelector('span i').classList.replace('fa-plus', 'fa-minus');
-        header.nextElementSibling.style.display = 'block';
-      }
-    }
-
-    function like(button) {
-      const countSpan = button.nextElementSibling;
-      let count = parseInt(countSpan.innerText);
-      countSpan.innerText = count + 1;
-    }
-
+document.addEventListener('DOMContentLoaded', function() {
+    // Menu toggle functionality
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const overlay = document.createElement('div');
+    overlay.className = 'overlay';
+    document.body.appendChild(overlay);
     
-
-
-
-    // reklamniy baner 
-      window.addEventListener('load', () => {
-    const wrapper = document.getElementById('adBannerWrapper');
-    const video = document.getElementById('adVideo');
-    const muteBtn = document.getElementById('muteToggle');
-    const closeBtn = document.getElementById('closeBtn');
-    const timerText = document.getElementById('timerText');
-
-    const showDelay = 2000; // 2 sekunddan keyin ko‘rsatish
-    const closeEnableDelay = 10000; // X tugmasi 10s dan keyin faollashadi
-
-    // 1. Bannerni ko‘rsatish
-    setTimeout(() => {
-      wrapper.classList.add('show');
-
-      // 2. X tugmasi uchun taymer
-      let countdown = closeEnableDelay / 1000;
-      timerText.textContent = `${countdown}s`;
-      const timerInterval = setInterval(() => {
-        countdown--;
-        if (countdown > 0) {
-          timerText.textContent = `${countdown}s`;
+    menuToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        overlay.style.display = mobileMenu.classList.contains('active') ? 'block' : 'none';
+    });
+    
+    overlay.addEventListener('click', function() {
+        menuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        overlay.style.display = 'none';
+    });
+    
+    // Language change functionality
+    const langOptions = document.querySelectorAll('.lang-option');
+    const currentLang = document.querySelector('.current-lang');
+    
+    langOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            currentLang.textContent = lang === 'uz' ? 'O\'Z' : 'RU';
+            
+            // Show page loader
+            const pageLoader = document.querySelector('.page-loader');
+            const loaderLine = document.querySelector('.loader-line');
+            
+            pageLoader.style.display = 'block';
+            loaderLine.style.width = '0';
+            
+            // Animate loader
+            setTimeout(() => {
+                loaderLine.style.width = '100%';
+            }, 10);
+            
+            // Simulate page reload
+            setTimeout(() => {
+                // In a real app, you would change the language here
+                // window.location.reload();
+                
+                // For demo purposes, we'll just hide the loader
+                setTimeout(() => {
+                    pageLoader.style.display = 'none';
+                }, 300);
+            }, 1000);
+        });
+    });
+    
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
         } else {
-          clearInterval(timerInterval);
-          timerText.textContent = '';
-          closeBtn.classList.add('enabled');
-          closeBtn.style.cursor = 'pointer';
+            navbar.classList.remove('scrolled');
         }
-      }, 1000);
-    }, showDelay);
-
-    // 3. X tugmasi bosilsa, banner yashiriladi
-    closeBtn.addEventListener('click', () => {
-      if (closeBtn.classList.contains('enabled')) {
-        wrapper.classList.remove('show');
-      }
     });
-
-    // 4. Video tugasa, banner yashiriladi
-    video.addEventListener('ended', () => {
-      wrapper.classList.remove('show');
+    
+    // Hover effects for buttons
+    const authButtons = document.querySelectorAll('.auth-btn, .mobile-auth-btn');
+    
+    authButtons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+            if (this.classList.contains('register-btn')) {
+                this.style.transform = 'scale(1.05)';
+            } else {
+                this.style.transform = 'scale(1.03)';
+            }
+        });
+        
+        button.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
     });
-
-    // 5. Ovoz tugmasi ishlashi
-    muteBtn.addEventListener('click', () => {
-      video.muted = !video.muted;
-      const icon = muteBtn.querySelector('i');
-      icon.className = video.muted
-        ? 'fa-solid fa-volume-xmark'
-        : 'fa-solid fa-volume-high';
-    });
-  });
+});
 
 
 
@@ -386,7 +99,72 @@ themeToggle.addEventListener("click", () => {
 
 
 
-  // reklamniy banner 2
-  document.getElementById('closeStaticBanner').addEventListener('click', function () {
-      document.getElementById('staticBanner').style.display = 'none';
-    });
+
+
+
+
+
+
+
+        // Movie data
+        const movies = [
+            { title: "Dune", rating: 8.0, quality: "1", image: "http://asilmedia.org/uploads/mini/shortcarrouselall/41/x57be7946f775279306f898248c50e5.webp.pagespeed.ic.1JP5mgqyuI.webp" },
+            { title: "Inception", rating: 8.8, quality: "2", image: "http://asilmedia.org/uploads/mini/shortcarrouselall/41/x57be7946f775279306f898248c50e5.webp.pagespeed.ic.1JP5mgqyuI.webp" },
+            { title: "Interstellar", rating: 8.6, quality: "3", image: "http://asilmedia.org/uploads/mini/shortcarrouselall/41/x57be7946f775279306f898248c50e5.webp.pagespeed.ic.1JP5mgqyuI.webp" },
+            { title: "The Dark Knight", rating: 9.0, quality: "4", image: "http://asilmedia.org/uploads/mini/shortcarrouselall/41/x57be7946f775279306f898248c50e5.webp.pagespeed.ic.1JP5mgqyuI.webp" },
+            { title: "Pulp Fiction", rating: 8.9, quality: "5", image: "http://asilmedia.org/uploads/mini/shortcarrouselall/41/x57be7946f775279306f898248c50e5.webp.pagespeed.ic.1JP5mgqyuI.webp" },
+            { title: "Fight Club", rating: 8.8, quality: "6", image: "http://asilmedia.org/uploads/mini/shortcarrouselall/41/x57be7946f775279306f898248c50e5.webp.pagespeed.ic.1JP5mgqyuI.webp" },
+            { title: "The Godfather", rating: 9.2, quality: "7", image: "http://asilmedia.org/uploads/mini/shortcarrouselall/41/x57be7946f775279306f898248c50e5.webp.pagespeed.ic.1JP5mgqyuI.webp" },
+            { title: "The Matrix", rating: 8.7, quality: "8", image: "http://asilmedia.org/uploads/mini/shortcarrouselall/41/x57be7946f775279306f898248c50e5.webp.pagespeed.ic.1JP5mgqyuI.webp" },
+            { title: "Parasite", rating: 8.6, quality: "9", image: "http://asilmedia.org/uploads/mini/shortcarrouselall/41/x57be7946f775279306f898248c50e5.webp.pagespeed.ic.1JP5mgqyuI.webp" },
+            { title: "Joker", rating: 8.4, quality: "10", image: "" }
+        ];
+        
+        // Render movies
+        const trendingMovies = document.getElementById('trendingMovies');
+        movies.forEach(movie => {
+            trendingMovies.innerHTML += `
+                <div class="movie-card">
+                    <img src="${movie.image}" alt="${movie.title}">
+                    <div class="movie-badge">${movie.quality}</div>
+                    <div class="movie-info">
+                        <h3 class="movie-title">${movie.title}</h3>
+                        <div class="movie-rating">
+                            <i class="fas fa-star"></i>
+                            <span>${movie.rating}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        
+
+        // FAQ accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+
+        // Slider functionality
+        let currentPosition = 0;
+        const sliderRow = document.querySelector('.movies-row');
+        const movieCards = document.querySelectorAll('.movie-card');
+        const cardWidth = movieCards[0].offsetWidth + 10; // including gap
+        
+        document.querySelector('.slider-next').addEventListener('click', function() {
+            if (currentPosition > -(movieCards.length * cardWidth - 5 * cardWidth)) {
+                currentPosition -= cardWidth * 2;
+                sliderRow.style.transform = `translateX(${currentPosition}px)`;
+            }
+        });
+        
+        document.querySelector('.slider-prev').addEventListener('click', function() {
+            if (currentPosition < 0) {
+                currentPosition += cardWidth * 2;
+                sliderRow.style.transform = `translateX(${currentPosition}px)`;
+            }
+        });
+

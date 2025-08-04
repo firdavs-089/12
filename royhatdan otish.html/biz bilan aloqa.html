@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biz bilan aloqa - AetherX.film</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+           font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                  url('/kinlar-img/logo.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+        }
+        
+        .contact-container {
+            background-color: rgba(40, 40, 40, 0.644);
+            margin-top: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgb(255, 0, 0);
+            padding: 30px;
+            width: 100%;
+            max-width: 500px;
+        }
+        
+        .contact-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .contact-header h1 {
+            color: #ff0000;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .contact-header p {
+            color: #ffffff;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .form-group label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #ffffff;
+            cursor: pointer;
+        }
+        
+        .form-group label:before {
+            content: "☐";
+            font-size: 18px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px 15px;
+            border: 1px solid #ffffff;
+            background-color: #212121b3;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #ffffff;
+            box-shadow: 0px 0px 10px 0px #fff;
+            outline: none;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .submit-btn {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+        
+        .submit-btn:hover {
+            background-color: #ff0000;
+            transform: translateY(-10px);
+            transition: 1s;
+            box-shadow: 0px 0px 10px 0px red;
+        }
+        
+        .contact-methods {
+            margin-top: 25px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        
+/* Scrollbar umumiy */
+::-webkit-scrollbar {
+  width: 12px;       /* Scrollbar kengligi */
+  height: 12px;      /* Gorizontal scroll uchun balandlik */
+}
+
+/* Scrollbar tray (background) */
+::-webkit-scrollbar-track {
+  background: #222;  /* Scrollbar orqa fon rangi */
+  border-radius: 6px;
+}
+
+/* Scrollbar track ichidagi to‘g‘rilanadigan qism (scroll thumb) */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;  /* Scrollbar o‘zi — rangini bu yerda o‘zgartirasiz */
+  border-radius: 6px;
+  border: 3px solid #222;  /* Scroll bar atrofida bo‘sh joy */
+}
+
+/* Scrollbar hover holati */
+::-webkit-scrollbar-thumb:hover {
+  background: #ff0000;
+}
+
+        .contact-methods h3 {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+        
+        .contact-methods ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .contact-methods li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #ffffff;
+        }
+        
+        .contact-methods li i {
+            color: #ffffff;
+            font-size: 18px;
+        }
+        
+        @media (max-width: 480px) {
+            .contact-container {
+                padding: 20px;
+            }
+            
+            .contact-header h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <div class="contact-header">
+            <h1>BIZ BILAN ALOQA</h1>
+            <p>Assalomu alaykum, saytimizning hurmatli mehmoni! Quyidagi anketa formasidan foydalanib, bizga istalgan mavzuda xabar yuborishingiz mumkin. 24 soat ichida murojaatingizni ko'rib chiqib, sizga javob yozamiz. Saytimizni tanlaganingiz uchun tashakkur!</p>
+        </div>
+        
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Ismingiz</label>
+                <input type="text" id="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="contact">Elektron pochta, telefon raqami yoki Telegram havola</label>
+                <input type="text" id="contact" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="department">Bo'lim</label>
+                <select id="department">
+                    <option value="">Tanlang...</option>
+                    <option value="support">Texnik yordam</option>
+                    <option value="sales">Sotuv bo'limi</option>
+                    <option value="cooperation">Hamkorlik</option>
+                    <option value="other">Boshqa</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="subject">Xabar mavzusi</label>
+                <input type="text" id="subject" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Xabaringiz...</label>
+                <textarea id="message" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">YUBORISH</button>
+        </form>
+        
+        <div class="contact-methods">
+            <h3>Aloqa uchun qo'shimcha usullar:</h3>
+            <ul>
+                <li><i>📱</i> +998 (XX) XXX-XX-XX (ish vaqti: 09:00-18:00)</li>
+                <li><i>✈️</i> @SizningTelegramNikingiz</li>
+                <li><i>📧</i> info@sizningwebsaytingiz.uz</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Form ma'lumotlarini yig'ish
+            const formData = {
+                name: document.getElementById('name').value,
+                contact: document.getElementById('contact').value,
+                department: document.getElementById('department').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Bu yerda formani serverga yuborish logikasi bo'lishi kerak
+            console.log('Form yuborildi:', formData);
+            
+            // Foydalanuvchiga xabar berish
+            alert('Xabaringiz qabul qilindi! Tez orada siz bilan bog\'lanamiz.');
+            
+            // Formani tozalash
+            this.reset();
+        });
+    </script>
+</body>
+</html>

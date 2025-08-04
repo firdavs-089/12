@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ro'yhatdan o'tish - AetherX.film</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                  url('/kinlar-img/bodyy.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 900px;
+      max-width: 95%;
+      background-color: #2c2c2ca5;
+      display: flex;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0px 0px 10px 0px red;
+    }
+
+    .form-section {
+      flex: 1;
+      padding: 40px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .form-section h1 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .form-section p {
+      font-size: 14px;
+      color: #bbb;
+      margin-bottom: 25px;
+    }
+
+    .form-section .input-group {
+      position: relative;
+      margin-bottom: 15px;
+    }
+
+    .form-section input {
+      width: 100%;
+      padding: 12px 15px 12px 40px;
+      background: #242424b1;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .form-section input::placeholder {
+      color: #aaa;
+     
+    }
+    .form-section input:hover {
+      color: #aaa;
+      box-shadow: 0px 0px 10px 0px #fff;
+      transition: 0.4s;
+    }
+
+    .form-section .input-group i {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      color: #aaa;
+    }
+
+    .form-section button.submit-btn {
+      background: #fc1010;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 15px;
+      transition: 0.3s ease;
+      width: 100%;
+    }
+
+    .form-section button.submit-btn:hover {
+      background: #ff0000;
+      box-shadow: 0px 0px 10px 0px red;
+    }
+
+    .form-section .bottom-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+
+    }
+.form-section .bottom-buttons a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 1000;
+}
+    .form-section .bottom-buttons button {
+      flex: 1;
+      background: #2626269f;
+      color: #fafafa;
+      font-size: 13px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+    .form-section .bottom-buttons button:hover{
+        background-color: #444;
+        box-shadow: 0px 0px 10px 0px #fff;
+        transition: 0.5s;
+    }
+
+    .form-section .social-login {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .form-section .social-login i {
+      background: #2626269f;
+      padding: 10px;
+      border-radius: 50%;
+      color: white;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      line-height: 20px;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .form-section .social-login i:hover {
+      background: #444;
+       box-shadow: 0px 0px 10px 0px #fff;
+    }
+
+    .image-section {
+      flex: 1;
+      background: url('/kinlar-img/orgimchak\ odam.png') no-repeat center;
+      background-size: cover;
+    }
+
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .spinner {
+      border: 6px solid #ff0000;
+      border-top: 6px solid #f60000;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .image-section {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="loading-overlay" id="loading">
+    <div class="spinner"></div>
+  </div>
+
+  <div class="container">
+    <div class="form-section">
+      <h1>Saytga ro'yhatdan o'tish</h1>
+      <p>Siz royhatdan o'tganingizdan keyin email va parolingiz orqali saytga kirishingiz mumkin </p>
+      <form id="loginForm">
+        <div class="input-group">
+          <i class="fas fa-user"></i>
+          <input type="text" id="username" placeholder="Foydalanuvchi nomi" required />
+        </div>
+        <div class="input-group">
+         <i class="fa-solid fa-envelope"></i>
+          <input type="email" id="username" placeholder="Email" required />
+        </div>
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="username" placeholder="Parol" required />
+        </div>
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="password" placeholder="Takrorlash" required />
+        </div>
+        <button type="submit" class="submit-btn">Kirish</button>
+      </form>
+      <div class="bottom-buttons">
+     
+        <button><a href="/royhatdan otish.html/kirish.html">Tizimga kirish</a> </button>
+       
+        <button><a href="/index.html">Bosh sahifa</a></button>
+         
+      </div>
+     
+    </div>
+    <div class="image-section"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById("loginForm");
+    const loader = document.getElementById("loading");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (!username || !password) {
+        alert("Iltimos, barcha maydonlarni to‘ldiring!");
+        return;
+      }
+
+      loader.style.display = "flex";
+
+      setTimeout(() => {
+        loader.style.display = "none";
+        window.location.href = "/BOSH SAHIFA/BOSH SAHIFAA.html";
+      }, 2500);
+    });
+  </script>
+</body>
+</html>
