@@ -49,7 +49,7 @@ body {
 
 /* Asosiy konteyner */
 .film-container {
-    max-width: 1300px;
+    max-width: 1200px;
     background-color:#222222c0;
     margin: 0 auto;
     border-radius: 10px;
@@ -577,10 +577,10 @@ body.loading-active::after {
 
 
   .video-container {
-      max-width: 1300px;
+      max-width: 1200px;
       background-color: #22222285;
       width: 100%;
-      margin: 40px auto;
+      margin: 8px auto;
       padding: 15px;
       box-sizing: border-box;
        border-radius: 10px;
@@ -623,9 +623,9 @@ body.loading-active::after {
 
     /* gallery */
       .gallery-container {
-      max-width: 1250px;
+      max-width: 1200px;
        background-color:#222222c0;
-      margin: 30px auto;
+      margin: 10px auto;
       padding:  15px;
       border-radius: 10px;
       
@@ -735,10 +735,10 @@ body.loading-active::after {
 
     /* cardlar */
      .container {
-      max-width: 1250px;
+      max-width: 1200px;
        background-color:#222222c0;
        border-radius: 10px;
-      margin: 30px auto;
+      margin: 10px auto;
       padding:  20px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -876,9 +876,9 @@ body.loading-active::after {
 
     /* commint */
         .comment-section {
-      max-width: 1250px;
+      max-width: 1200px;
 
-      margin: 50px auto;
+      margin: 10px auto;
       padding: 30px;
      background-color:#222222c0;
       border-radius: 10px;

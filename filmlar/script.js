@@ -17,7 +17,7 @@ function openModal(modal) {
         // Video yuklash simulatsiyasi
         setTimeout(() => {
             document.querySelector('.video-container').innerHTML = `
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/example" 
+                <iframe width="100%" height="315" src="/video.mkv" 
                 frameborder="0" allowfullscreen></iframe>
             `;
         }, 2000);
