@@ -6,6 +6,10 @@
     <title>Sarzamin / Родина (2025) - AsilMedia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/filmlar/style.css">
+    
+  <!-- Video.js CSS -->
+  <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet" />
+
 </head>
 <body>
 
@@ -165,26 +169,27 @@
 
 
 <!-- video player -->
-<div class="main-wrapper" id="video_player">
-  <div class="player-wrapper" id="playerWrapper">
-    <video id="video" preload="metadata" poster="/kinlar-img/logo.jpg">
-      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+
+
+  <div class="video-container">
+    <video
+      id="my-video"
+      class="video-js vjs-default-skin vjs-big-play-centered"
+      controls
+      preload="auto"
+      poster="https://vjs.zencdn.net/v/oceans.png"
+      data-setup='{}'>
+      <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4" />
+      Sizning brauzeringiz video tag'ni qo‘llab-quvvatlamaydi.
     </video>
-
-    <div class="play-button-overlay" id="playOverlay">
-      <i class="fa-solid fa-play"></i>
-    </div>
-
-    <div class="control-bar" id="controls">
-      <button id="playPauseBtn" title="Play/Pause"><i class="fa-solid fa-play"></i></button>
-      <button id="muteBtn" title="Mute"><i class="fa-solid fa-volume-high"></i></button>
-      <input type="range" id="progress" min="0" max="100" value="0" step="0.1" />
-      <span class="time" id="timeCurrent">0:00</span>/<span class="time" id="timeDuration">0:00</span>
-      <button id="pipBtn"><i class="fa-solid fa-copy"></i></button>
-      <button id="fullscreenBtn"><i class="fa-solid fa-expand"></i></button>
-    </div>
   </div>
-</div>
+
+
+
+
+
+
+
 
 
 
@@ -337,6 +342,16 @@
 
 
 
+  <!-- Video.js JS -->
+  <script src="https://vjs.zencdn.net/7.19.2/video.min.js"></script>
+
+  <script>
+    var player = videojs('my-video', {
+      fluid: true,
+      responsive: true,
+      aspectRatio: '16:9'
+    });
+  </script>
 
 
 

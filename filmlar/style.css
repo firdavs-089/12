@@ -159,14 +159,14 @@ body {
 }
 
 .watch-btn {
-    border: 1px solid rgb(255, 0, 0);
+    border: 1px solid rgb(255, 0, 0);background-color: #22222285;
      font-family: "Antonio", sans-serif;
     color: rgb(255, 255, 255);
    
 }
 
 .download-btn {
-    border: 1px solid rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255) ;background-color: #22222285; 
      font-family: "Antonio", sans-serif;
     color: rgb(255, 255, 255);
   
@@ -572,135 +572,52 @@ body.loading-active::after {
 
 
 /* video player */
-    .main-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      padding: 10px;
-    }
+   
 
-    .player-wrapper {
-      position: relative;
+
+
+  .video-container {
+      max-width: 1300px;
+      background-color: #22222285;
       width: 100%;
-      max-width: 1250px;
-      aspect-ratio: 16 / 9;
-      background: #111111;
-      border-radius: 10px;
-      overflow: hidden;
-     
+      margin: 40px auto;
+      padding: 15px;
+      box-sizing: border-box;
+       border-radius: 10px;
     }
 
-    video {
+    .video-js {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .play-button-overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: rgba(255, 0, 0, 0.707);
-      border-radius: 50%;
-      width: 200px;
-      height: 200px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      z-index: 5;
-      transition: background 0.3s ease;
-    }
-
-    .play-button-overlay i {
-      color: #fff;
-      font-size: 5rem;
-    }
-
-    .play-button-overlay.hidden {
-      display: none;
-    }
-
-    .control-bar {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 10px;
-      background: rgba(0, 0, 0, 0.708);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      opacity: 0;
-      transform: translateY(100%);
-      transition: 0.3s ease;
-      flex-wrap: wrap;
-    }
-
-    .player-wrapper:hover .control-bar,
-    .player-wrapper.controls-visible .control-bar {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    button {
-      background: transparent;
-      border: none;
-      color: #ffffff;
-      font-size: 1.3rem;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      color: #ff0000;
-    }
-
-    input[type="range"] {
-      flex: 1;
-      height: 6px;
-      background: #f0f0f0;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 14px;
-      height: 14px;
-      background: #f8f4f4;
-      border-radius: 50%;
-    }
-
-    .time {
-      font-size: 0.9rem;
-      color: #ffffff;
-    }
-
-    @media (max-width: 600px) {
-      .control-bar {
-        gap: 8px;
-        padding: 8px;
-      }
-
-      .play-button-overlay {
-        width: 50px;
-        height: 50px;
-      }
-
-      .play-button-overlay i {
-        font-size: 1.5rem;
-      }
-
-      .time {
-        font-size: 0.75rem;
-      }
+      height: auto;
+   border:1px solid rgb(252, 251, 251);
+   box-shadow: 0px 0px 10px 0px #fff;
+   border-radius: 10px;
     }
 
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 
 
@@ -944,9 +861,15 @@ body.loading-active::after {
       .card-img {
         height: 280px;
       }
+         .container {
+
+         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+     
+         }
        .container {
         background-color:#222222c0;
        }
+       
     }
 
 
