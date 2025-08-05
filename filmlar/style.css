@@ -1,0 +1,1031 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Antonio:wght@100..700&family=Bebas+Neue&family=Iceberg&family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Antonio:wght@100..700&family=Bebas+Neue&family=Iceberg&family=Russo+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Antonio:wght@100..700&family=Bebas+Neue&family=Bitcount+Grid+Single:wght@100..900&family=Iceberg&family=Russo+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+/* Umumiy stil */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                  url('/kinlar-img/logo.jpg') no-repeat center center fixed;
+      background-size: cover;
+    line-height: 1.6;
+}
+
+
+/* Bosh sahifaga qaytish tugmasi */
+    .home-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 999;
+      background: linear-gradient(135deg, #ff0000, #000000);
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+    
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .home-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 0px 10px 0px  rgb(255, 0, 0);
+    }
+
+    @media (max-width: 600px) {
+      .home-button {
+        font-size: 13px;
+        padding: 10px 16px;
+      }
+    }
+
+/* Asosiy konteyner */
+.film-container {
+    max-width: 1300px;
+    background-color:#222222c0;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-top: 70px;
+    padding: 20px;
+}
+
+/* Tepa qismi */
+.film-header {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #d00;
+    padding-bottom: 15px;
+    
+}
+
+.film-header h1 {
+    font-size: 22px;
+
+    color: #fff;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.film-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.film-date {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.film-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.like-btn, .dislike-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.like-btn:hover {
+    color: #ff0000;
+}
+
+.dislike-btn:hover {
+    color: #001eff;
+}
+
+/* Asosiy kontent */
+.film-content {
+    display: flex;
+    
+    gap: 30px;
+}
+
+/* Chap qism (rasm) */
+.film-poster-section {
+    flex: 0 0 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.film-poster {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(1, 1, 1, 0.5);
+}
+
+/* Tugmalar */
+.film-buttons {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.watch-btn, .download-btn {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: transform 0.2s, opacity 0.2s;
+    text-transform: uppercase;
+}
+
+.watch-btn:hover, .download-btn:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+    box-shadow: 0px 0px 10px 0px #ff0000;
+    border-color: red;
+     background-color: red;
+     color: #fff;
+}
+
+.watch-btn {
+    border: 1px solid rgb(255, 0, 0);
+     font-family: "Antonio", sans-serif;
+    color: rgb(255, 255, 255);
+   
+}
+
+.download-btn {
+    border: 1px solid rgb(255, 255, 255);
+     font-family: "Antonio", sans-serif;
+    color: rgb(255, 255, 255);
+  
+    color: white;
+}
+
+.download-btn:hover{
+  box-shadow: 0px 0px 10px 0px #fff;
+ background-color: rgb(255, 255, 255);
+ color: red;
+  border-color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Telegram havolasi */
+.telegram-box {
+    background-color: #000000a2;
+    color: #fff;
+    padding: 12px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+     font-family: "Antonio", sans-serif;
+}
+
+/* Ong qism (ma'lumotlar) */
+.film-info-section {
+    flex: 1;
+}
+
+/* Film haqida qisqacha */
+.film-description {
+    margin-bottom: 20px;
+}
+
+.film-description h2 {
+    color: #d00;
+    
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.film-description p {
+    font-size: 15px;
+    color: #fff;
+     font-family: "Antonio", sans-serif;
+    line-height: 1.5;
+}
+
+/* Film nomi */
+.film-title-alt {
+    font-size: 18px;
+    
+    font-weight: bold;
+    margin: 15px 0;
+    color: #d00;
+}
+
+/* Film tafsilotlari */
+.film-details {
+    border: 1px solid #fff;
+    padding: 15px;
+     color: #fff;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+.film-details:hover{
+   background-color: rgb(255, 255, 255);
+   color: black;
+  box-shadow: 0px 0px 10px 0px rgb(255, 255, 255);
+}
+.detail-row {
+    margin-bottom: 12px;
+    display: flex;
+}
+
+.detail-row:last-child {
+    margin-bottom: 0;
+}
+
+.detail-label {
+    font-weight: bold;
+    min-width: 100px;
+    color: #d00;
+}
+
+.detail-value {
+    flex: 1;
+    font-family: "Antonio", sans-serif;
+}
+
+/* Film xususiyatlari */
+.film-specs {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.spec-box {
+    color: #fff;
+ border: 1px solid red;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+.spec-box:hover{
+  background-color: red;
+  box-shadow: 0px 0px 10px 0px red;
+}
+
+
+
+
+
+
+/* Reytinglar */
+.film-ratings {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.rating-box {
+    background-color: #111;
+    padding: 15px;
+    border-radius: 8px;
+    flex: 1;
+    text-align: center;
+}
+
+.rating-source {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #d00;
+}
+
+.rating-value {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.rating-count {
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* Modal oynalar */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.821);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-container {
+    background-color: #000;
+    border: 2px solid #d00;
+    box-shadow: 0px 0px 10px 0px red;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    padding: 20px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.video-container {
+    padding: 20px 0;
+    text-align: center;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quality-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.quality-option {
+    padding: 12px;
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.quality-option:hover {
+    background-color: #333;
+}
+
+.telegram-option {
+    background-color: #00aaff;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Yuklash animatsiyasi */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    border-top-color: #d00;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loading-text {
+    color: white;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Mobil versiya */
+@media (max-width: 768px) {
+    .film-content {
+        flex-direction: column;
+    }
+    
+    .film-poster-section {
+        flex: 1;
+        align-items: center;
+    }
+    
+    .film-poster {
+        max-width: 300px;
+    }
+    
+    .film-buttons {
+        width: 100%;
+        max-width: 300px;
+        margin: 20px auto;
+    }
+    
+    .film-ratings {
+        flex-direction: column;
+    }
+    
+    .film-specs {
+        flex-direction: column;
+    }
+    
+    .spec-box {
+        width: 100%;
+    }
+    
+    .detail-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .detail-label {
+        min-width: auto;
+    }
+     
+}
+
+
+
+
+
+/* loading animatsyasi */
+
+.simple-loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(246, 246, 246, 0.614);
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 0px #fff;
+    border-top-color: #ff0000;
+    animation: spin 1s linear infinite;
+    z-index: 9999;
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); ; }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Saytga xalaqit bermaslik uchun */
+body.loading-active {
+    position: relative;
+}
+
+body.loading-active::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.91);
+    z-index: 9998;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* reklamniy baner */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* video player */
+    .main-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 10px;
+    }
+
+    .player-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 1250px;
+      aspect-ratio: 16 / 9;
+      background: #111111;
+      border-radius: 10px;
+      overflow: hidden;
+     
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .play-button-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 0, 0, 0.707);
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 5;
+      transition: background 0.3s ease;
+    }
+
+    .play-button-overlay i {
+      color: #fff;
+      font-size: 5rem;
+    }
+
+    .play-button-overlay.hidden {
+      display: none;
+    }
+
+    .control-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.708);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: 0.3s ease;
+      flex-wrap: wrap;
+    }
+
+    .player-wrapper:hover .control-bar,
+    .player-wrapper.controls-visible .control-bar {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    button {
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      color: #ff0000;
+    }
+
+    input[type="range"] {
+      flex: 1;
+      height: 6px;
+      background: #f0f0f0;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 14px;
+      height: 14px;
+      background: #f8f4f4;
+      border-radius: 50%;
+    }
+
+    .time {
+      font-size: 0.9rem;
+      color: #ffffff;
+    }
+
+    @media (max-width: 600px) {
+      .control-bar {
+        gap: 8px;
+        padding: 8px;
+      }
+
+      .play-button-overlay {
+        width: 50px;
+        height: 50px;
+      }
+
+      .play-button-overlay i {
+        font-size: 1.5rem;
+      }
+
+      .time {
+        font-size: 0.75rem;
+      }
+    }
+
+
+    
+    
+
+
+    /* gallery */
+      .gallery-container {
+      max-width: 1250px;
+       background-color:#222222c0;
+      margin: 30px auto;
+      padding:  15px;
+      border-radius: 10px;
+      
+    }
+
+    .gallery-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      cursor: pointer;
+      object-fit: cover;
+      transition: transform 0.2s;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+      transition: 1s;
+      border: 1px solid red;
+      box-shadow: 0px 0px 10px 0px red;
+    }
+
+    /* Modal */
+    .gallery-modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .gallery-modal img {
+      max-width: 100%;
+      max-height: 85vh;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    }
+
+    .gallery-modal .close,
+    .gallery-modal .prev,
+    .gallery-modal .next {
+      position: absolute;
+      font-size: 30px;
+      background: rgb(153, 19, 19);
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background 0.2s;
+      z-index: 10;
+    }
+
+    .gallery-modal .close:hover,
+    .gallery-modal .prev:hover,
+    .gallery-modal .next:hover {
+      background: rgba(255, 0, 0, 0.993);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+
+    .gallery-modal .close {
+      top: 30px;
+      right: 30px;
+    }
+
+    .gallery-modal .prev {
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .gallery-modal .next {
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .gallery-modal .counter {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      font-size: 18px;
+      color: white;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+
+
+    /* cardlar */
+     .container {
+      max-width: 1250px;
+       background-color:#222222c0;
+       border-radius: 10px;
+      margin: 30px auto;
+      padding:  20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #222;
+      /* border-radius: 5px; */
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      transition: 1s;
+      box-shadow: 0px 0px 10px 0px #fff;
+    }
+
+    .card-border {
+  position: relative;
+  padding: 3px;
+  overflow: hidden;
+  background: #1c1c1c; /* or transparent if needed */
+}
+
+/* Harakatlanuvchi oq chiziq */
+.card-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  pointer-events: none;
+  animation: moveBorder 4s linear infinite;
+}
+
+/* Oq nur (border) harakati */
+@keyframes moveBorder {
+  0% {
+    border-top-color: white;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  25% {
+    border-top-color: transparent;
+    border-right-color: white;
+  }
+  50% {
+    border-right-color: transparent;
+    border-bottom-color: white;
+  }
+  75% {
+    border-bottom-color: transparent;
+    border-left-color: white;
+  }
+  100% {
+    border-left-color: transparent;
+    border-top-color: white;
+  }
+}
+
+    .card-img {
+      position: relative;
+      width: 100%;
+      height: 350px;
+      overflow: hidden;
+    }
+
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .labels {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+
+    .labels .site {
+      background-color: black;
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 4px 8px;
+      border-radius: 3px;
+      opacity: 0.8;
+    }
+
+    .card-body {
+      padding: 10px;
+    }
+
+    .card-body h4 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .card-body span {
+      font-size: 13px;
+      color: #ffffff;
+    }
+
+    .card-body span i {
+      margin-left: 5px;
+      font-style: normal;
+    }
+
+    @media (max-width: 600px) {
+      .card-img {
+        height: 280px;
+      }
+       .container {
+        background-color:#222222c0;
+       }
+    }
+
+
+
+    /* commint */
+        .comment-section {
+      max-width: 1250px;
+
+      margin: 50px auto;
+      padding: 30px;
+     background-color:#222222c0;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      transition: all 0.4s ease;
+    }
+
+    .comment-section:hover {
+      box-shadow: 0 0 25px 0px rgba(128, 128, 128, 0.532);
+      
+    }
+
+    .comment-section h2 {
+      margin-bottom: 20px;
+      color: #ff0000;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .comment-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .comment-form input,
+    .comment-form textarea {
+      padding: 12px 15px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background-color: #141414a4;
+      color: #fff;
+      font-size: 15px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .comment-form input:focus,
+    .comment-form textarea:focus {
+      border-color: #ff0000;
+      box-shadow: 0px 0px 10px 0px red;
+    transition: 1s;
+      outline: none;
+    }
+
+    .comment-form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .comment-form button {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background-color: #bd1313;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .comment-form button:hover {
+      background-color: #ff0000;
+      box-shadow: 0px 0px 10px 0px red;
+    transition: 1s;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .comment-section {
+        padding: 20px;
+      }
+    }
