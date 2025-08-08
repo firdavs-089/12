@@ -101,24 +101,46 @@ themeToggle.addEventListener("click", () => {
   // Sizning kinolar ma'lumotlaringiz (o'zingiz qo'shasiz)
         const moviesData = [
             {
-                title: "PARI / JODULANGAN QIZ",
-                img: "/kinlar-img/pari - card.jpg",
+                title: "Kosmik koloniya / Boshqaruv xonasi Premyera (2025) ",
+                img: "/kinlar-img/kosmik kalonya img.webp",
                 desc: "2025, tarjima kino.",
-                link: "/filmlar/pari.html"
+                link: "/filmlar/Kosmink kaloniya.html"
             },
             {
-                title: "Balerina - Jon Uik olamidan",
-                img: "/kinlar-img/balirena.webp",
+                title: "Matakumba xazinasi ",
+                img: "/kinlar-img/Matakumba xazinas img.jpg",
                 desc: "2025, tarjima kino.",
-                link: "/filmlar/balerina.html"
+                link: "/filmlar/Matakumba xazinas.html"
             },
             {
-                title: "Vaqtlar aro sayohatchi",
-                img: "/kinlar-img/vaqtlar aro sayohatchi.jpg",
+                title: "O'tgan yozda nima qilganingni",
+                img: "/kinlar-img/o'tgan yozda nima qilganimni bilmayman img.webp",
                 desc: "2025, tarjima kino.",
-                link: "/filmlar/vaqtlar aro sayohatchi.html"
+                link: "/filmlar/O'tgan yozda nima qilganingni bilaman Premyera 2025 .html"
             },
             
+            {
+                title: "Olov pazanda / Anapurani ",
+                img: "/kinlar-img/olov pazanda.jpg",
+                desc: "2025, tarjima kino.",
+                link: "filmlar/olov pazanda.html"
+            },
+            
+            {
+                title: "Yagona tana / Birgalikda Premyera 2025",
+                img: "/kinlar-img/yagona tana img.webp",
+                desc: "2025, tarjima kino.",
+                link: "/filmlar/yagona tana.html"
+            },
+            
+            {
+                title: "Supermen / Superman Premyera 2025",
+                img: "/kinlar-img/superman.webp",
+                desc: "2025, tarjima kino.",
+                link: "/filmlar/superman.html"
+            },
+            
+          
             // ... bu yerga yana kinolar qo'shishingiz mumkin
             // Har bir kino uchun title, img, desc, link maydonlari bo'lishi kerak
         ];

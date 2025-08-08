@@ -574,82 +574,48 @@ body.loading-active::after {
 /* video player */
    
 
-   .video-container {
-      max-width: 1200px;
-      margin: 10px auto;
-      padding: 15px;
-      background-color: #22222285;
-      border-radius: 10px;
-      box-sizing: border-box;
+ .container {
+      width: 90%;
+      max-width: 800px;
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      transition: all 0.3s ease-in-out;
     }
 
-    .video-js {
-      position: relative;
+    video {
       width: 100%;
-      height: 600px;
-      border: 1px solid #fff;
-      box-shadow: 0 0 10px #fff;
-      border-radius: 10px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      transition: all 0.4s ease;
     }
 
-    .button-list {
+    .buttons {
       display: flex;
-      justify-content: center;
+      gap: 10px;
       flex-wrap: wrap;
-      gap: 5px;
-      margin-top: 20px;
+      justify-content: center;
     }
 
-    .btn {
-      padding: 10px 20px;
-     background-color: #11111113;
+    .episode-btn {
+      padding: 10px 16px;
+      background: #2a2a2a;
+      color: #fff;
       border: none;
-      border-radius: 5px;
-      color: rgb(59, 59, 59);
-      font-size: 16px rgb(59, 59, 59);
-      border: 1px solid;
+      border-radius: 8px;
       cursor: pointer;
-      transition: 0.3s ease;
+      transition: background 0.3s, transform 0.2s;
     }
 
-    .btn:hover {
-      background: #006fd000;
-       color: rgb(255, 255, 255);
-       box-shadow: 0px 0px 10px 0px #fff;
-       border: 1px solid #fff;
+    .episode-btn:hover {
+      background: #3a3a3a;
       transform: scale(1.05);
     }
 
-    @media (max-width: 768px) {
-      .video-container {
-        padding: 10px;
-      }
- .video-js{
-  height: 350px;
- }
-      .btn {
-        padding: 8px 16px;
-        font-size: 10px;
-      }
+    .episode-btn.active {
+      background: #6200ee;
     }
-    @media (max-width: 480px) {
-     .video-js{
-      height: 200px;
-     }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -693,10 +659,10 @@ body.loading-active::after {
     }
 
     .gallery-grid img:hover {
-      transform: scale(1.03);
+      
       transition: 1s;
-      border: 1px solid red;
-      box-shadow: 0px 0px 10px 0px red;
+      border: 1px solid rgb(255, 255, 255);
+      box-shadow: 0px 0px 10px 0px rgb(255, 255, 255);
     }
 
     /* Modal */

@@ -17,7 +17,7 @@ function openModal(modal) {
         // Video yuklash simulatsiyasi
         setTimeout(() => {
             document.querySelector('.video-container').innerHTML = `
-                <iframe width="100%" height="315" src="/video.mkv" 
+                <iframe width="100%" height="315" src="/video.mp4" 
                 frameborder="0" allowfullscreen></iframe>
             `;
         }, 2000);

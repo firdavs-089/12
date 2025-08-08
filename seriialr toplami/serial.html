@@ -170,31 +170,35 @@
 
 <!-- video player -->
 
- <div class="video-container">
-    <video
-      id="my-video"
-      class="video-js"
-      controls
-      preload="auto"
-      poster="https://vjs.zencdn.net/v/oceans.png"
-      data-setup="{}"
-    >
-      <source src="https://fayllar1.ru/37/Seriallar/S%20chizig%27i/S%20chizig%27i%201-qism%201080p%20(asilmedia.net).mp4" type="video/mp4" />
-      Sizning brauzeringiz video oynatishni qo'llab-quvvatlamaydi.
+<div class="main-wrapper">
+  <div class="player-wrapper" id="playerWrapper">
+    <video id="video" preload="metadata">
+      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
     </video>
 
-    <div class="button-list">
-      <button class="btn" onclick="changeVideo('https://fayllar1.ru/37/Seriallar/S%20chizig%27i/S%20chizig%27i%201-qism%201080p%20(asilmedia.net).mp4')">1-qism</button>
-      <button class="btn" onclick="changeVideo('https://fayllar1.ru/37/Seriallar/S%20chizig%27i/S%20chizig%27i%202-qism%201080p%20(asilmedia.net).mp4')">2-qism</button>
-      <button class="btn" onclick="changeVideo('https://fayllar1.ru/37/Seriallar/S%20chizig%27i/S%20chizig%27i%203-qism%201080p%20(asilmedia.net).mp4')">3-qism</button>
-      <button class="btn" onclick="changeVideo('https://fayllar1.ru/37/Seriallar/S%20chizig%27i/S%20chizig%27i%203-qism%201080p%20(asilmedia.net).mp4')">5-qism</button>
-      <button class="btn" onclick="changeVideo('https://fayllar1.ru/36/kinolar/Qizil%20toshbaqa%20480p%20(asilmedia.net).mp4')">6-qism</button>
+    <div class="play-button-overlay hidden" id="playOverlay">
+      <i class="fa-solid fa-play"></i>
+    </div>
+
+    <div class="control-bar" id="controls">
+      <button id="playPauseBtn" title="Play/Pause"><i class="fa-solid fa-play"></i></button>
+      <button id="muteBtn" title="Mute"><i class="fa-solid fa-volume-high"></i></button>
+      <input type="range" id="progress" min="0" max="100" value="0" step="0.1" />
+      <span class="time" id="timeCurrent">0:00</span>/<span class="time" id="timeDuration">0:00</span>
+      <button id="pipBtn"><i class="fa-solid fa-layer-group"></i></button>
+      <button id="fullscreenBtn"><i class="fa-solid fa-expand"></i></button>
     </div>
   </div>
 
-
-
-
+  <div class="episode-buttons">
+    <button onclick="loadEpisode(1)">1-qism</button>
+    <button onclick="loadEpisode(2)">2-qism</button>
+    <button onclick="loadEpisode(3)">3-qism</button>
+    <button onclick="loadEpisode(4)">4-qism</button>
+    <button onclick="loadEpisode(5)">5-qism</button>
+    <button onclick="loadEpisode(6)">6-qism</button>
+  </div>
+</div>
 
 
 
@@ -349,18 +353,18 @@
 
 
   <!-- Video.js JS -->
- <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
-  <script>
-    const player = videojs('my-video');
+  <script src="https://vjs.zencdn.net/7.19.2/video.min.js"></script>
 
-    function changeVideo(src) {
-      player.src({ type: "video/mp4", src: src });
-      player.play();
-    }
+  <script>
+    var player = videojs('my-video', {
+      fluid: true,
+      responsive: true,
+      aspectRatio: '16:9'
+    });
   </script>
 
 
 
-    <script src="seriialr toplami/serialr.js"></script>
+    <script src="/seriialr toplami/serialr.js"></script>
 </body>
 </html>

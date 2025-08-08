@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AetherX.film - Filmlar dunyosiga hush kelibsiz !</title>
+    <link rel="stylesheet" href="/UMUMIY.FILMLAR/seriialar.css">
+  <link rel="icon" href="/kinlar-img/kino body.jpg">
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    
+ <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-container">
+            <div class="loading-logo">
+                <span class="aether">Aether</span><span class="x">X</span><span class="film">.film</span>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-text">Yuklanmoqda...</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" style="display: none;">
+       <!-- Navbar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-left">
+          <div class="logo">
+            <span class="aether">Aether</span><span class="x">X</span><span class="film">.film</span>
+          </div>
+        </div>
+
+
+        <div class="nav-right">
+
+
+
+          <form action="/royhatdan otish.html/profil.html">
+            <button class="theme-toggle">
+              <i class="fa-regular fa-user"></i>
+            </button>
+          </form>
+
+          <button class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Side Menu -->
+    <div class="side-menu" id="side-menu">
+      <div class="menu-header">
+        <div class="menu-logo">
+          <span class="aether">Aether</span><span class="x">X</span><span class="film">.film</span>
+        </div>
+        <button class="menu-close" id="menu-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+
+      <div class="menu-links">
+        <a href="/BOSH SAHIFA/BOSH SAHIFAA.html" class="menu-link"><i class="fas fa-home"></i> Bosh sahifa</a>
+        <a href="/UMUMIY.FILMLAR/filmlar.html" class="menu-link"><i class="fas fa-film"></i> Tarjima filmlar</a>
+        <a href="/UMUMIY.FILMLAR/seriialar.html" class="menu-link"><i class="fas fa-tv"></i> Seriallar</a>
+        <a href="/UMUMIY.FILMLAR/multfilm.html" class="menu-link"><i class="fa-solid fa-face-smile"></i>
+          Multfilmlar</a>
+          <a href="/UMUMIY.FILMLAR/romantik.html" class="menu-link"><i class="fas fa-clock"></i> Romantik filmlar</a>
+        <a href="/UMUMIY.FILMLAR/Horor.html" class="menu-link"><i class="fa-solid fa-ghost"></i> Horor</a>
+        <a href="/UMUMIY.FILMLAR/top 100.html" class="menu-link"><i class="fas fa-star"></i> Top 100</a>
+        <a href="#" class="menu-link"><i class="fa-solid fa-gamepad"></i> Games</a>
+        <a href="/abot/index.html" class="menu-link"><i class="fa-regular fa-circle-user"></i> Admin bilan
+          bog'lanish</a>
+        <a href="/kirish.html/qoidalar.html" class="menu-link"><i class="fa-solid fa-pen-nib"></i> Sayt
+          qoidalari </a>
+        <a href="/BOSH SAHIFA/BOSH SAHIFAA.html" class="menu-link"><i class="fa-solid fa-door-open"></i> Chiqish </a>
+       
+
+      </div>
+
+      <div class="menu-social">
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="social-link" id="theme-toggle"> <i class="fas fa-sun"></i></a>
+      </div>
+    </div>
+
+
+
+
+    
+
+         <div class="container">
+        <h1>Kinolar Katalogi</h1>
+        
+        <div class="movies-grid" id="moviesContainer">
+            <!-- Cardlar shu yerga yuklanadi -->
+        </div>
+        
+        <div class="pagination" id="pagination">
+            <!-- Pagination shu yerga yuklanadi -->
+        </div>
+    </div>
+
+<div id="adBannerWrapper">
+  <div id="adBanner">
+    <video id="adVideo" autoplay muted playsinline>
+      <source src="/video.mkv" type="video/mp4">
+      Brauzeringiz videoni ko‘rsata olmaydi.
+    </video>
+    
+    <!-- Tepadagi tugmalar: timer va close -->
+    <div class="videoOverlayTop">
+      <div id="timerText">10s</div>
+      <button id="closeBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <!-- Pastdagi ovoz tugmasi -->
+    <button id="muteToggle"><i class="fa-solid fa-volume-xmark"></i></button>
+  </div>
+</div>
+        
+        
+        
+        
+     
+
+
+<div class="movie-button-container">
+  <button class="movie-button">
+   <i class="fa-brands fa-telegram"></i>
+  </button>
+  <div class="light-circle"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+  <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <div class="logo">
+                    <span class="logo-main">Aether</span><span class="logo-film">X.film</span>
+                </div>
+                <div class="footer-slogan">O'zbekistondagi birinchi zamonaviy portal</div>
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-link-column">
+                    <h3>AetherX.film</h3>
+                    <ul>
+                        <li><a href="/index.html"><i class="fas fa-chevron-right"></i> Bosh sahifa</a></li>
+                        <li><a href="//UMUMIY.FILMLAR/filmlar.html"><i class="fas fa-chevron-right"></i> Tarjima filmlar</a></li>
+                        <li><a href="//UMUMIY.FILMLAR/seriialar.html"><i class="fas fa-chevron-right"></i> Seriallar</a></li>
+                        <li><a href="/UMUMIY.FILMLAR/multfilm.html"><i class="fas fa-chevron-right"></i> Multfilmlar</a></li>
+                    </ul>
+                </div>
+              
+                <div class="footer-link-column">
+                    <h3>Hamkorlik</h3>
+                    <ul>
+                        <li><a href="/royhatdan otish.html/biz bilan aloqa.html"><i class="fas fa-chevron-right"></i> Reklama</a></li>
+                        <li><a href="/royhatdan otish.html/biz bilan aloqa.html"><i class="fas fa-chevron-right"></i> Hamkorlik</a></li>
+                        <li><a href="/royhatdan otish.html/biz bilan aloqa.html"><i class="fas fa-chevron-right"></i> Affiliate</a></li>
+                        <li><a href="/royhatdan otish.html/biz bilan aloqa.html"><i class="fas fa-chevron-right"></i> Kontent yaratuvchilar</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-link-column">
+                    <h3>Yordam</h3>
+                    <ul>
+                        <li><a href="/royhatdan otish.html/biz bilan aloqa.html"><i class="fas fa-chevron-right"></i> Admin </a></li>
+                        <li><a href="/royhatdan otish.html/biz bilan aloqa.html"><i class="fas fa-chevron-right"></i> aetherx@gmail.com/a></li>
+                        <li><a href="/royhatdan otish.html/biz bilan aloqa.html"><i class="fas fa-chevron-right"></i> O'zbekiston, Toshkent</a></li>
+                        <li><a href="/royhatdan otish.html/biz bilan aloqa.html"><i class="fas fa-chevron-right"></i> +998 91 088 77 86</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2023 AetherX.film. Barcha huquqlar himoyalangan.
+            </div>
+        </div>
+    </footer>
+
+
+
+
+<script src="/UMUMIY.FILMLAR/seriialr.js"></script>
+</body>
+</html>
