@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarzamin / Родина (2025) - AsilMedia</title>
+    <title>S chizig'i / Sevgi g'altak / S line / Qizil chiziq Koreys seriali 2025  - AetherX.film </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/seriialr toplami/serial.css">
     
@@ -14,6 +14,25 @@
 <body>
 
 
+  <div class="marquee-container">
+    <div class="marquee-text">AetherX.film — yangi avlod onlayn kino platformasi. Sayt test rejimida ishlamoqda. Fikr-mulohazalaringiz biz uchun muhim!</div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 <!-- loading animatsyasi -->
 <div class="simple-loading" id="simpleLoading"></div>
 
@@ -173,24 +192,28 @@
 
 
 <!-- video player -->
-
-  <div class="container">
-    <video id="videoPlayer" controls>
-      <source src="video1.mp4" type="video/mp4">
-      Sizning brauzeringiz video oynatishni qo‘llab-quvvatlamaydi.
+  <div class="uzmov-style-player">
+    <video
+      id="uzmov-player"
+      class="video-js vjs-big-play-centered"
+      controls
+      preload="auto"
+      poster="/kinlar-img/aetherx.film logo.jpg"
+      data-setup='{"fluid": true}'
+    >
+      <source src="https://fayllar1.ru/37/Seriallar/S%20chizig%27i/S%20chizig%27i%201-qism%201080p%20(asilmedia.net).mp4" type="video/mp4" />
+      Brauzeringiz video tegini qo‘llab-quvvatlamaydi.
     </video>
 
-    <div class="buttons">
-      <button class="episode-btn active" data-src="video1.mp4">1-qism</button>
-      <button class="episode-btn" data-src="video2.mp4">2-qism</button>
-      <button class="episode-btn" data-src="video3.mp4">3-qism</button>
-      <button class="episode-btn" data-src="video4.mp4">4-qism</button>
+    <div class="uzmov-episodes">
+      <button data-src="https://fayllar1.ru/37/Seriallar/S%20chizig%27i/S%20chizig%27i%201-qism%201080p%20(asilmedia.net).mp4">1-qism</button>
+      <button data-src="https://fayllar1.ru/37/Seriallar/S%20chizig%27i/S%20chizig%27i%202-qism%201080p%20(asilmedia.net).mp4">2-qism</button>
+      <button data-src="https://fayllar1.ru/37/Seriallar/S%20chizig%27i/S%20chizig%27i%203-qism%201080p%20(asilmedia.net).mp4">3-qism</button>
+      <button data-src="https://fayllar1.ru/37/Seriallar/S%20chizig%27i/S%20chizig%27i%204-qism%201080p%20(asilmedia.net).mp4">4-qism</button>
+      <button data-src="https://fayllar1.ru/37/Seriallar/S%20chizig%27i/S%20chizig%27i%205-qism%201080p%20(asilmedia.net).mp4">5-qism</button>
+      <button data-src="https://fayllar1.ru/37/Seriallar/S%20chizig%27i/S%20chizig%27i%206-qism%201080p%20(asilmedia.net).mp4">6-qism</button>
     </div>
   </div>
-
-
-
-
 
 
 
@@ -346,9 +369,49 @@
 
 
 
-  <!-- Video.js JS -->
-  <script src="https://vjs.zencdn.net/7.19.2/video.min.js"></script>
 
+
+
+
+      <div class="movie-button-container">
+      <form action="http://t.me/aetherxfilmm">
+      <button class="movie-button">
+        <i class="fa-brands fa-telegram"></i>
+      </button>
+      </form>
+      <div class="light-circle"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Video.js JS -->
+  
+
+  <!-- Video.js JS -->
+  <script src="https://vjs.zencdn.net/7.21.1/video.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var player = videojs('uzmov-player');
+      document.querySelectorAll('.uzmov-episodes button').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var newSrc = this.getAttribute('data-src');
+          player.src({ type: 'video/mp4', src: newSrc });
+          player.play();
+        });
+      });
+    });
+  </script>
 
 
 

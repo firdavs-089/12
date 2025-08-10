@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venzdey / Uensday 1-fasl 2-fasl Barcha qismlar Wednesday / Uensdey / Uenzdey / Venzday / Adamslar oilasi 2022
+        2025 Uzbek tilida - AetherX.film </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/seriialr toplami/serial.css">
+
+    <!-- Video.js CSS -->
+    <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+
+    <div class="marquee-container">
+        <div class="marquee-text">AetherX.film — yangi avlod onlayn kino platformasi. Sayt test rejimida ishlamoqda.
+            Fikr-mulohazalaringiz biz uchun muhim!</div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- loading animatsyasi -->
+    <div class="simple-loading" id="simpleLoading"></div>
+
+
+
+
+    <div class="film-container">
+        <!-- Tepa qismi -->
+        <div class="film-header">
+            <h1>Venzdey / Uensday 1-fasl 2-fasl Barcha qismlar Wednesday / Uensdey / Uenzdey / Venzday / Adamslar oilasi
+                2022 2025 Uzbek tilida</h1>
+            <div class="film-meta">
+                <span class="film-date">9 август 2025</span>
+                <div class="film-actions">
+                    <button class="like-btn"><i class="far fa-thumbs-up"></i></button>
+                    <button class="dislike-btn"><i class="far fa-thumbs-down"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Asosiy kontent -->
+        <div class="film-content">
+            <!-- Chap qism (rasm) -->
+            <div class="film-poster-section">
+                <img src="/kinlar-img/Wednesday  img.webp" alt="Sarzamin film posteri" class="film-poster">
+
+
+
+
+
+
+
+
+                <!-- Tugmalar -->
+                <div class="film-buttons">
+                    <button class="watch-btn" id=" video_player  ">
+                        <i class="fas fa-play"></i> ONLAYN KO'RISH
+                    </button>
+                    <button class="watch-btn" id="watchBtn">
+                        <i class="fas fa-play"></i> TRELLER
+                    </button>
+                    <button class="download-btn" id="downloadBtn">
+                        <i class="fas fa-download"></i> YUKLAB OLISH
+                    </button>
+                </div>
+
+                <!-- Telegram havolasi -->
+                <div class="telegram-box">
+                    <i class="fab fa-telegram"></i>
+                    <span>Bizni telegram orqali kuzating. Manzil: @aetherx_film</span>
+                </div>
+            </div>
+
+            <!-- Ong qism (ma'lumotlar) -->
+            <div class="film-info-section">
+                <!-- Film haqida qisqacha -->
+                <div class="film-description">
+                    <h2><i class="fas fa-info-circle"></i> FILM HAQIDA QISQACHA</h2>
+                    <p>Gomes va Morticia Addamsning qizi Chorshanba, Nevermore akademiyasida tahsil oladi. U mahalliy
+                        seriyali qotilni to'xtatish va ota-onasining sirini ochish uchun ruhiy qobiliyatlarni egallashi
+                        kerak.</p>
+                </div>
+
+                <!-- Film nomi -->
+                <div class="film-title-alt">Venzdey / Uensday 1-fasl 2-fasl</div>
+
+                <!-- Film tafsilotlari -->
+                <div class="film-details">
+                    <div class="detail-row">
+                        <span class="detail-label">ЖАНРЫ:</span>
+                        <span class="detail-value"> фэнтези, комедия, криминал, детектив</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">АКТЕРЫ:</span>
+                        <span class="detail-value"> Дженна Ортега, Хантер Духэн, Эмма Майерс, Джой Сандэй, Джорджи
+                            Фармер, Виктор Доробанту, Мооса Мостафа, Луянда Унати Льюис-Ньяво, Исаак Ордонес, Луис
+                            Гусман</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">РЕЖИССЕР:</span>
+                        <span class="detail-value"> Тим Бёртон, Пако Кабесас, Джеймс Маршалл</span>
+                    </div>
+                </div>
+
+                <!-- Film xususiyatlari -->
+                <div class="film-specs">
+                    <div class="spec-box">ГОД: 2022</div>
+                    <div class="spec-box">СТРАНА: США</div>
+                    <div class="spec-box">ПРОДОЛЖИТЕЛЬНОСТЬ: 45 МИН</div>
+                </div>
+
+                <!-- Reytinglar -->
+
+            </div>
+        </div>
+    </div>
+
+    <!-- baner reklamniy -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Modal oynalar -->
+    <div class="modal-overlay" id="modalOverlay">
+        <!-- Video modal -->
+        <div class="modal-container" id="videoModal">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <div class="video-container">
+                <div class="loading-spinner"></div>
+                <p>Video yuklanmoqda...</p>
+            </div>
+        </div>
+
+        <!-- Yuklash modal -->
+        <div class="modal-container" id="downloadModal">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <h3><i class="fas fa-download"></i> Yuklab olish uchun sifatni tanlang</h3>
+            <div class="quality-options">
+                <button class="quality-option"> <a
+                        href="https://37.fayllar1.ru/37/Seriallar/S%20chizig'i/S%20chizig'i%201-qism%201080p%20(asilmedia.net).mp4">1-qism
+                        1080p</a></button>
+                <button class="quality-option"> <a
+                        href="https://37.fayllar1.ru/37/Seriallar/S%20chizig'i/S%20chizig'i%202-qism%201080p%20(asilmedia.net).mp4">2-qism
+                        1080p</a></button>
+                <button class="quality-option"> <a
+                        href="https://37.fayllar1.ru/37/Seriallar/S%20chizig'i/S%20chizig'i%203-qism%201080p%20(asilmedia.net).mp4">3-qism
+                        1080p</a></button>
+                <button class="quality-option"> <a
+                        href="https://37.fayllar1.ru/37/Seriallar/S%20chizig'i/S%20chizig'i%204-qism%201080p%20(asilmedia.net).mp4">4-qism
+                        1080p</a></button>
+                <button class="quality-option"> <a
+                        href="https://37.fayllar1.ru/37/Seriallar/S%20chizig'i/S%20chizig'i%205-qism%201080p%20(asilmedia.net).mp4">5-qism
+                        1080p</a></button>
+                <button class="quality-option"> <a
+                        href="https://37.fayllar1.ru/37/Seriallar/S%20chizig'i/S%20chizig'i%206-qism%201080p%20(asilmedia.net).mp4">6-qism
+                        1080p | Serial tugadi.</a></button>
+
+                <button class="quality-option telegram-option">
+                    <i class="fab fa-telegram"></i> <a href="https://t.me/aetherxfilmm">Telegram orqali yuklash </a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Yuklash animatsiyasi -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Yuklanmoqda...</div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- video player -->
+    <div class="uzmov-style-player">
+        <video id="uzmov-player" class="video-js vjs-big-play-centered" controls preload="auto"
+            poster="/kinlar-img/aetherx.film logo.jpg" data-setup='{"fluid": true}'>
+            <source
+                src="https://fayllar1.ru/31/Seriallar/Venzdey/Venzdey%201-1%201080p%20(asilmedia.net).mp4"
+                type="video/mp4" />
+            Brauzeringiz video tegini qo‘llab-quvvatlamaydi.
+        </video>
+
+        <div class="uzmov-episodes">
+            <button
+                data-src="https://fayllar1.ru/31/Seriallar/Venzdey/Venzdey%201-1%201080p%20(asilmedia.net).mp4">1-qism</button>
+            <button
+                data-src="https://fayllar1.ru/31/Seriallar/Venzdey/Venzdey%201-2%201080p%20(asilmedia.net).mp4">2-qism</button>
+            <button
+                data-src="https://fayllar1.ru/31/Seriallar/Venzdey/Venzdey%201-3%201080p%20(asilmedia.net).mp4">3-qism</button>
+            <button
+                data-src="https://fayllar1.ru/31/Seriallar/Venzdey/Venzdey%201-4%201080p%20(asilmedia.net).mp4">4-qism</button>
+            <button
+                data-src="https://fayllar1.ru/31/Seriallar/Venzdey/Venzdey%201-5%201080p%20(asilmedia.net).mp4">5-qism</button>
+            <button
+                data-src="https://fayllar1.ru/31/Seriallar/Venzdey/Venzdey%201-6%201080p%20(asilmedia.net).mp4">6-qism</button>
+            <button
+                data-src="https://fayllar1.ru/31/Seriallar/Venzdey/Venzdey%201-7%201080p%20(asilmedia.net).mp4">7-qism</button>
+            <button
+                data-src="https://fayllar1.ru/31/Seriallar/Venzdey/Venzdey%201-8%201080p%20(asilmedia.net).mp4">8-qism  </button>
+            <button
+                data-src="https://fayllar1.ru/38/Seriallar/Uenzdey%202-fasl/Uenzdey%202-1%201080p%20(asilmedia.net).mp4">9-qism  </button>
+            <button
+                data-src="https://fayllar1.ru/31/Seriallar/Uenzdey%202-fasl/Uenzdey%202-2%201080p%20(asilmedia.net).mp4">10-qism  </button>
+            <button
+                data-src="https://fayllar1.ru/36/Seriallar/Uenzdey%202-fasl/Uenzdey%202-3%201080p%20(asilmedia.net).mp4">11-qism  </button>
+            <button
+                data-src="https://fayllar1.ru/36/Seriallar/Uenzdey%202-fasl/Uenzdey%202-3%20480p%20(asilmedia.net).mp4">12-qism  </button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- gallery -->
+    <div class="gallery-container">
+        <div class="gallery-title">LAVHALAR</div>
+        <div class="gallery-grid" id="galleryGrid">
+            <img src="/kinlar-img/wenesday 1.jpg" alt="1">
+            <img src="/kinlar-img/wenesday 2.jpg" alt="2">
+            <img src="/kinlar-img/wenesday 3.jpg" alt="3">
+            <img src="/kinlar-img/wenesday 4.jpg" alt="4">
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- Bosh sahifaga qaytish tugmasi -->
+    <a href="/BOSH SAHIFA/BOSH SAHIFAA.html" class="home-button">← Bosh sahifaga qaytish</a>
+
+
+    <!-- Modal -->
+    <div class="gallery-modal" id="galleryModal">
+        <div class="counter" id="counter"></div>
+        <button class="close" onclick="closeModal()">×</button>
+        <button class="prev" onclick="changeImage(-1)">←</button>
+        <img id="modalImage" src="" alt="Gallery Image">
+        <button class="next" onclick="changeImage(1)">→</button>
+    </div>
+
+
+
+
+
+
+    <!-- cardlar -->
+
+
+    <div class="container">
+
+        <!-- Card 1 -->
+        <div class="card" onclick="window.location.href='index.html'">
+            <div class="card-border">
+                <div class="card-img">
+                    <img src="https://freekino.net/img/poster/thumb/xshukronalik-kuni-minnatdorchilik-kuni_1748575649.webp.pagespeed.ic.rWv3wQE2qD.webp"
+                        alt="Movie 1">
+                    <div class="labels">
+                        <span class="site">FULLHD</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4>Kino Nomi</h4>
+                    <span>2025 <i class="fas fa-film"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card" onclick="window.location.href='index.html'">
+            <div class="card-border">
+                <div class="card-img">
+                    <img src="/kinlar-img/RASM YOQ.png" alt="Movie 2">
+                    <div class="labels">
+                        <span class="site">FULLHD</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4>Kino 2</h4>
+                    <span>2024 <i class="fas fa-film"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card" onclick="window.location.href='index.html'">
+            <div class="card-border">
+                <div class="card-img">
+                    <img src="/kinlar-img/RASM YOQ.png" alt="Movie 3">
+                    <div class="labels">
+                        <span class="site">FULLHD</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4>Kino 3</h4>
+                    <span>2023 <i class="fas fa-film"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card" onclick="window.location.href='index.html'">
+            <div class="card-border">
+                <div class="card-img">
+                    <img src="/kinlar-img/RASM YOQ.png" alt="Movie 4">
+                    <div class="labels">
+                        <span class="site">FULLHD</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4>Kino 4</h4>
+                    <span>2022 <i class="fas fa-film"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card" onclick="window.location.href='index.html'">
+            <div class="card-border">
+                <div class="card-img">
+                    <img src="/kinlar-img/RASM YOQ.png" alt="Movie 5">
+                    <div class="labels">
+                        <span class="site">FULLHD</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4>Kino 5</h4>
+                    <span>2021 <i class="fas fa-film"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- commint -->
+    <div class="comment-section">
+        <h2>Izoh Qoldiring</h2>
+        <form class="comment-form" action="" method="post">
+            <input type="text" name="name" placeholder="Ismingiz" required>
+            <input type="email" name="email" placeholder="Email manzilingiz" required>
+            <textarea name="comment" placeholder="Izoh yozing..." required></textarea>
+            <input type="text" name="captcha" placeholder="Captcha kiriting: 3 + 2 = ?" required>
+            <button type="submit">Yuborish</button>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="movie-button-container">
+        <form action="http://t.me/aetherxfilmm">
+            <button class="movie-button">
+                <i class="fa-brands fa-telegram"></i>
+            </button>
+        </form>
+        <div class="light-circle"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Video.js JS -->
+
+
+    <!-- Video.js JS -->
+    <script src="https://vjs.zencdn.net/7.21.1/video.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var player = videojs('uzmov-player');
+            document.querySelectorAll('.uzmov-episodes button').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var newSrc = this.getAttribute('data-src');
+                    player.src({ type: 'video/mp4', src: newSrc });
+                    player.play();
+                });
+            });
+        });
+    </script>
+
+
+
+
+    <script src="/seriialr toplami/serialr.js"></script>
+</body>
+
+</html>

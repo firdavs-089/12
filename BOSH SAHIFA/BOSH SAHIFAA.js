@@ -49,179 +49,50 @@ themeToggle.addEventListener("click", () => {
 })
 
 // story
- 
-   document.addEventListener('DOMContentLoaded', function() {
-            const stories = document.querySelectorAll('.story');
-            const modal = document.getElementById('storyModal');
-            const closeBtn = document.querySelector('.close-btn');
-            const video = document.getElementById('storyVideo');
-            const leftArrow = document.querySelector('.arrow-left');
-            const rightArrow = document.querySelector('.arrow-right');
-            const watchBtn = document.querySelector('.watch-btn');
-            const progressBar = document.getElementById('progressBar');
-            
-            let currentStoryIndex = 0;
-            let touchStartX = 0;
-            let touchEndX = 0;
-            let progressInterval;
-            let storiesData = [];
-            
-            // Load stories data
-            stories.forEach((story, index) => {
-                storiesData.push({
-                    video: story.getAttribute('data-video'),
-                    poster: story.getAttribute('data-poster')
-                });
-                
-                // Create progress segments
-                const segment = document.createElement('div');
-                segment.className = 'progress-segment';
-                segment.innerHTML = '<div class="progress-fill"></div>';
-                progressBar.appendChild(segment);
-            });
-            
-            const progressSegments = document.querySelectorAll('.progress-segment');
-            const progressFills = document.querySelectorAll('.progress-fill');
-            
-            // Open modal when story is clicked
-            stories.forEach((story, index) => {
-                story.addEventListener('click', () => {
-                    currentStoryIndex = index;
-                    openStory(index);
-                });
-            });
-            
-            // Close modal
-            closeBtn.addEventListener('click', closeModal);
-            
-            // Navigation arrows
-            leftArrow.addEventListener('click', () => {
-                navigateStory(-1);
-            });
-            
-            rightArrow.addEventListener('click', () => {
-                navigateStory(1);
-            });
-            
-            // Watch online button
-            watchBtn.addEventListener('click', () => {
-                alert('Opening full movie...');
-                // window.location.href = 'watch.html?movie=' + currentStoryIndex;
-            });
-            
-            // Touch events for mobile swipe
-            modal.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
-                clearInterval(progressInterval);
-            }, false);
-            
-            modal.addEventListener('touchmove', (e) => {
-                e.preventDefault();
-            }, { passive: false });
-            
-            modal.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-                startProgressBar();
-            }, false);
-            
-            function openStory(index) {
-                if (index < 0 || index >= storiesData.length) return;
-                
-                currentStoryIndex = index;
-                const story = storiesData[index];
-                
-                // Reset all progress bars
-                progressFills.forEach(fill => {
-                    fill.style.width = '0%';
-                    fill.style.transition = 'none';
-                });
-                
-                // Set video source
-                video.src = story.video;
-                video.poster = story.poster;
-                
-                // Show modal
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                
-                // Play video
-                video.load();
-                video.play().catch(e => console.log('Autoplay prevented:', e));
-                
-                // Start progress bar
-                startProgressBar();
-            }
-            
-            function closeModal() {
-                modal.classList.remove('active');
-                video.pause();
-                document.body.style.overflow = 'auto';
-                clearInterval(progressInterval);
-                
-                // Reset progress bars
-                progressFills.forEach(fill => {
-                    fill.style.width = '0%';
-                });
-            }
-            
-            function navigateStory(direction) {
-                clearInterval(progressInterval);
-                currentStoryIndex += direction;
-                
-                if (currentStoryIndex < 0) {
-                    currentStoryIndex = storiesData.length - 1;
-                } else if (currentStoryIndex >= storiesData.length) {
-                    currentStoryIndex = 0;
-                }
-                
-                openStory(currentStoryIndex);
-            }
-            
-            function handleSwipe() {
-                if (touchEndX < touchStartX - 50) {
-                    // Swipe left - next story
-                    navigateStory(1);
-                }
-                
-                if (touchEndX > touchStartX + 50) {
-                    // Swipe right - previous story
-                    navigateStory(-1);
-                }
-            }
-            
-            function startProgressBar() {
-                clearInterval(progressInterval);
-                
-                // Reset all progress bars
-                progressFills.forEach(fill => {
-                    fill.style.width = '0%';
-                    fill.style.transition = 'none';
-                });
-                
-                // Set transition for current segment
-                progressFills[currentStoryIndex].style.transition = 'width 5s linear';
-                progressFills[currentStoryIndex].style.width = '100%';
-                
-                // After 5 seconds, go to next story
-                progressInterval = setTimeout(() => {
-                    navigateStory(1);
-                }, 5000);
-            }
-            
-            // Close modal when clicking outside content
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    closeModal();
-                }
-            });
-            
-            // Handle video end
-            video.addEventListener('ended', () => {
-                navigateStory(1);
-            });
-        });
+ const storiesEl = document.getElementById("stories");
+window.currentIndex = null;
 
+const storyData = [
+  { img: "/telekanalr-img/nega.jpg", video: "/story mp4/neja.mp4", title: "Neja 2025yil uzbek tilida", link: "#" },
+  { img: "/telekanalr-img/wednesday-img.jpg", video: "/story mp4/wednesday-2-fasl.mp4", title: "Venzdey / Uensday 1-fasl 2-fasl", link: "/seriialr toplami/Venzdey2-fasli.html" },
+  { img: "/telekanalr-img/kalmar o'yini.webp", video: "/story mp4/Kalmar-o'yini.mp4", title: "Kalmar o'yini  3-fasl", link: "/seriialr toplami/kalmar-oyini-3-fasl.html" },
+  { img: "/telekanalr-img/marvel img.jpg", video: "/story mp4/marvel.mp4", title: "Marvel ", link: "#" },
+  { img: "/telekanalr-img/sonic img.jpg", video: "/story mp4/sonik.mp4", title: "Sonic, uzbek tilida", link: "#" },
+  { img: "/telekanalr-img/super oila.webp", video: "/story mp4/super-oila.mp4", title: "Super oila ", link: "#" },
+  { img: "/telekanalr-img/osiris.jpg", video: "/story mp4/osiris.mp4", title: "Osiris", link: "#" },
+  { img: "/kinlar-img/S chizig'i.webp", video: "/story mp4/s-chizigi.mp4", title: "S chizig'i seriali", link: "/seriialr toplami/S chiziqi.html" },
+  { img: "/", video: "video5.mp4", title: "Kino 5", link: "#" },
+  { img: "/", video: "video5.mp4", title: "Kino 5", link: "#" },
+  { img: "/", video: "video5.mp4", title: "Kino 5", link: "#" },
+  { img: "/", video: "video5.mp4", title: "Kino 5", link: "#" },
+  { img: "/", video: "video5.mp4", title: "Kino 5", link: "#" },
+ 
+];
+
+storyData.forEach((s, i) => {
+  const item = document.createElement("div");
+  item.className = "story-item";
+  item.innerHTML = `<img src="${s.img}" alt="Story ${i+1}">`;
+  item.onclick = () => openModal(i);
+  storiesEl.appendChild(item);
+});
+
+function openModal(index) {
+  window.currentIndex = index;
+  document.getElementById("storyVideo").src = storyData[index].video;
+  document.getElementById("storyTitle").textContent = storyData[index].title;
+  document.getElementById("watchBtn").onclick = () => window.location.href = storyData[index].link;
+  document.getElementById("modal").style.display = "flex";
+}
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+  document.getElementById("storyVideo").pause();
+}
+function changeStory(dir) {
+  if (window.currentIndex === null) return;
+  window.currentIndex = (window.currentIndex + dir + storyData.length) % storyData.length;
+  openModal(window.currentIndex);
+}
 
 
 

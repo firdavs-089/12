@@ -139,6 +139,26 @@ themeToggle.addEventListener("click", () => {
                 desc: "2025, tarjima kino.",
                 link: "/filmlar/superman.html"
             },
+            {
+                title: "Osiris / Yirtqich ",
+                img: "/kinlar-img/Osiris  Yirtqich rasmi.webp",
+                desc: "2025, tarjima kino.",
+                link: "/filmlar/osiris.html"
+            },
+            
+            {
+                title: "Qotil kampir / Pichoq tutgan kampir 2025 ",
+                img: "/kinlar-img/qotil kampir img.webp",
+                desc: "2025, tarjima kino.",
+                link: "/filmlar/qotil kampir.html"
+            },
+            
+            {
+                title: "Ajdar oʻrgatuvchilar / Ajdarni qo'lga o'rgatish  ",
+                img: "/kinlar-img/ajdar o'rgatuvchi img.webp",
+                desc: "2025, tarjima kino.",
+                link: "/filmlar/ajdar-orgatuvchi.html"
+            },
             
           
             // ... bu yerga yana kinolar qo'shishingiz mumkin

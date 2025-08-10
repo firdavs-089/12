@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalmar o'yini 3-fasl / Igra Kalmara 3-sezon - AetherX.film </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/seriialr toplami/serial.css">
+
+    <!-- Video.js CSS -->
+    <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+
+    <div class="marquee-container">
+        <div class="marquee-text">AetherX.film — yangi avlod onlayn kino platformasi. Sayt test rejimida ishlamoqda.
+            Fikr-mulohazalaringiz biz uchun muhim!</div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- loading animatsyasi -->
+    <div class="simple-loading" id="simpleLoading"></div>
+
+
+
+
+    <div class="film-container">
+        <!-- Tepa qismi -->
+        <div class="film-header">
+            <h1>Kalmar o'yini 3-fasl / Igra Kalmara 3-sezon / Squid Game 3-season / seriali 2025 Uzbek tilida </h1>
+            <div class="film-meta">
+                <span class="film-date">9 август 2025</span>
+                <div class="film-actions">
+                    <button class="like-btn"><i class="far fa-thumbs-up"></i></button>
+                    <button class="dislike-btn"><i class="far fa-thumbs-down"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Asosiy kontent -->
+        <div class="film-content">
+            <!-- Chap qism (rasm) -->
+            <div class="film-poster-section">
+                <img src="/kinlar-img/kalmar o'yini 3 img.jpg" alt="Sarzamin film posteri" class="film-poster">
+
+
+
+
+
+
+
+
+                <!-- Tugmalar -->
+                <div class="film-buttons">
+                    <button class="watch-btn" id=" video_player  ">
+                        <i class="fas fa-play"></i> ONLAYN KO'RISH
+                    </button>
+                    <button class="watch-btn" id="watchBtn">
+                        <i class="fas fa-play"></i> TRELLER
+                    </button>
+                    <button class="download-btn" id="downloadBtn">
+                        <i class="fas fa-download"></i> YUKLAB OLISH
+                    </button>
+                </div>
+
+                <!-- Telegram havolasi -->
+                <div class="telegram-box">
+                    <i class="fab fa-telegram"></i>
+                    <span>Bizni telegram orqali kuzating. Manzil: @aetherx_film</span>
+                </div>
+            </div>
+
+            <!-- Ong qism (ma'lumotlar) -->
+            <div class="film-info-section">
+                <!-- Film haqida qisqacha -->
+                <div class="film-description">
+                    <h2><i class="fas fa-info-circle"></i> FILM HAQIDA QISQACHA</h2>
+                    <p>Kalmar o'yinining 3-fasli endi o'zbek tilida!
+                        Sevimli serialingizning so'ngi faslida - sizni jiddiy kurashlar kutmoqda.
+                        Barchasi izdan chiqqan. Yana qancha inson qurbon bo'lishi noma'lum.
+                        Qahramonimiz ushbu vaziyatdan chiqib keta oladimi?
+                        Serial so'ngida qaysi tomon g'alaba qozonadi? Qonli o'yinni yaratganlarmi? Yoki tizimga qarshi
+                        chiqqan ishtirokchi?
+                        Bularning barchasiga 3-faslda javob topamiz.</p>
+                </div>
+
+                <!-- Film nomi -->
+                <div class="film-title-alt">Kalmar o'yini 3-fasl</div>
+
+                <!-- Film tafsilotlari -->
+                <div class="film-details">
+                    <div class="detail-row">
+                        <span class="detail-label">ЖАНРЫ:</span>
+                        <span class="detail-value">триллер, драма</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">АКТЕРЫ:</span>
+                        <span class="detail-value"> Ли Джон-джэ, Пак Хэ-су, О Ён-су, Чон Хо-ён, Хо Сон-тхэ, Анупам
+                            Трипати, Ким Джу-рён, Ви Ха-джун, Ю Сон-джу</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">РЕЖИССЕР:</span>
+                        <span class="detail-value">Хван Дон-хёк</span>
+                    </div>
+                </div>
+
+                <!-- Film xususiyatlari -->
+                <div class="film-specs">
+                    <div class="spec-box">ГОД: 2025</div>
+                    <div class="spec-box">СТРАНА: КОРЕЯ ЮЖНАЯ</div>
+                    <div class="spec-box">ПРОДОЛЖИТЕЛЬНОСТЬ: 55 МИН</div>
+                </div>
+
+                <!-- Reytinglar -->
+
+            </div>
+        </div>
+    </div>
+
+    <!-- baner reklamniy -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Modal oynalar -->
+    <div class="modal-overlay" id="modalOverlay">
+        <!-- Video modal -->
+        <div class="modal-container" id="videoModal">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <div class="video-container">
+                <div class="loading-spinner"></div>
+                <p>Video yuklanmoqda...</p>
+            </div>
+        </div>
+
+        <!-- Yuklash modal -->
+        <div class="modal-container" id="downloadModal">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <h3><i class="fas fa-download"></i> Yuklab olish uchun sifatni tanlang</h3>
+            <div class="quality-options">
+                <button class="quality-option"> <a
+                        href="https://37.fayllar1.ru/37/Seriallar/S%20chizig'i/S%20chizig'i%201-qism%201080p%20(asilmedia.net).mp4">1-qism
+                        1080p</a></button>
+                <button class="quality-option"> <a
+                        href="https://37.fayllar1.ru/37/Seriallar/S%20chizig'i/S%20chizig'i%202-qism%201080p%20(asilmedia.net).mp4">2-qism
+                        1080p</a></button>
+                <button class="quality-option"> <a
+                        href="https://37.fayllar1.ru/37/Seriallar/S%20chizig'i/S%20chizig'i%203-qism%201080p%20(asilmedia.net).mp4">3-qism
+                        1080p</a></button>
+                <button class="quality-option"> <a
+                        href="https://37.fayllar1.ru/37/Seriallar/S%20chizig'i/S%20chizig'i%204-qism%201080p%20(asilmedia.net).mp4">4-qism
+                        1080p</a></button>
+                <button class="quality-option"> <a
+                        href="https://37.fayllar1.ru/37/Seriallar/S%20chizig'i/S%20chizig'i%205-qism%201080p%20(asilmedia.net).mp4">5-qism
+                        1080p</a></button>
+                <button class="quality-option"> <a
+                        href="https://37.fayllar1.ru/37/Seriallar/S%20chizig'i/S%20chizig'i%206-qism%201080p%20(asilmedia.net).mp4">6-qism
+                        1080p | Serial tugadi.</a></button>
+
+                <button class="quality-option telegram-option">
+                    <i class="fab fa-telegram"></i> <a href="https://t.me/aetherxfilmm">Telegram orqali yuklash </a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Yuklash animatsiyasi -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Yuklanmoqda...</div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- video player -->
+    <div class="uzmov-style-player">
+        <video id="uzmov-player" class="video-js vjs-big-play-centered" controls preload="auto"
+            poster="/kinlar-img/aetherx.film logo.jpg" data-setup='{"fluid": true}'>
+            <source src="https://fayllar1.ru/32/Seriallar/Kalmar%203-fasl/Kalmar%20o%27yini%203-fasl%201-qism%201080p%20O%27zbek%20tilida%20(asilmedia.net).mp4"
+                type="video/mp4" />
+            Brauzeringiz video tegini qo‘llab-quvvatlamaydi.
+        </video>
+
+        <div class="uzmov-episodes">
+            <button
+                data-src="https://fayllar1.ru/32/Seriallar/Kalmar%203-fasl/Kalmar%20o%27yini%203-fasl%201-qism%201080p%20O%27zbek%20tilida%20(asilmedia.net).mp4">1-qism</button>
+            <button
+                data-src="https://fayllar1.ru/30/Seriallar/Kalmar%203-fasl/Kalmar%20o%27yini%203-fasl%202-qism%201080p%20O%27zbek%20tilida%20(asilmedia.net).mp4">2-qism</button>
+            <button
+                data-src="https://fayllar1.ru/32/Seriallar/Kalmar%203-fasl/Kalmar%20o%27yini%203-fasl%203-qism%201080p%20O%27zbek%20tilida%20(asilmedia.net).mp4">3-qism</button>
+            <button
+                data-src="https://fayllar1.ru/30/Seriallar/Kalmar%203-fasl/Kalmar%20o%27yini%203-fasl%204-qism%201080p%20O%27zbek%20tilida%20(asilmedia.net).mp4">4-qism</button>
+            <button
+                data-src="https://fayllar1.ru/32/Seriallar/Kalmar%203-fasl/Kalmar%20o%27yini%203-fasl%205-qism%201080p%20O%27zbek%20tilida%20(asilmedia.net).mp4">5-qism</button>
+            <button
+                data-src="https://fayllar1.ru/30/Seriallar/Kalmar%203-fasl/Kalmar%20o%27yini%203-fasl%206-qism%201080p%20O%27zbek%20tilida%20(asilmedia.net).mp4">6-qism</button>
+           
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- gallery -->
+    <div class="gallery-container">
+        <div class="gallery-title">LAVHALAR</div>
+        <div class="gallery-grid" id="galleryGrid">
+            <img src="/kinlar-img/Kalmar oyini 1.jpg" alt="1">
+            <img src="/kinlar-img/Kalmar oyini 2.jpg" alt="2">
+            <img src="/kinlar-img/Kalmar oyini 3.jpg" alt="3">
+            <img src="/kinlar-img/Kalmar oyini 4.jpg" alt="4">
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- Bosh sahifaga qaytish tugmasi -->
+    <a href="/BOSH SAHIFA/BOSH SAHIFAA.html" class="home-button">← Bosh sahifaga qaytish</a>
+
+
+    <!-- Modal -->
+    <div class="gallery-modal" id="galleryModal">
+        <div class="counter" id="counter"></div>
+        <button class="close" onclick="closeModal()">×</button>
+        <button class="prev" onclick="changeImage(-1)">←</button>
+        <img id="modalImage" src="" alt="Gallery Image">
+        <button class="next" onclick="changeImage(1)">→</button>
+    </div>
+
+
+
+
+
+
+    <!-- cardlar -->
+
+
+    <div class="container">
+
+        <!-- Card 1 -->
+        <div class="card" onclick="window.location.href='index.html'">
+            <div class="card-border">
+                <div class="card-img">
+                    <img src="https://freekino.net/img/poster/thumb/xshukronalik-kuni-minnatdorchilik-kuni_1748575649.webp.pagespeed.ic.rWv3wQE2qD.webp"
+                        alt="Movie 1">
+                    <div class="labels">
+                        <span class="site">FULLHD</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4>Kino Nomi</h4>
+                    <span>2025 <i class="fas fa-film"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card" onclick="window.location.href='index.html'">
+            <div class="card-border">
+                <div class="card-img">
+                    <img src="/kinlar-img/RASM YOQ.png" alt="Movie 2">
+                    <div class="labels">
+                        <span class="site">FULLHD</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4>Kino 2</h4>
+                    <span>2024 <i class="fas fa-film"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card" onclick="window.location.href='index.html'">
+            <div class="card-border">
+                <div class="card-img">
+                    <img src="/kinlar-img/RASM YOQ.png" alt="Movie 3">
+                    <div class="labels">
+                        <span class="site">FULLHD</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4>Kino 3</h4>
+                    <span>2023 <i class="fas fa-film"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card" onclick="window.location.href='index.html'">
+            <div class="card-border">
+                <div class="card-img">
+                    <img src="/kinlar-img/RASM YOQ.png" alt="Movie 4">
+                    <div class="labels">
+                        <span class="site">FULLHD</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4>Kino 4</h4>
+                    <span>2022 <i class="fas fa-film"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card" onclick="window.location.href='index.html'">
+            <div class="card-border">
+                <div class="card-img">
+                    <img src="/kinlar-img/RASM YOQ.png" alt="Movie 5">
+                    <div class="labels">
+                        <span class="site">FULLHD</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4>Kino 5</h4>
+                    <span>2021 <i class="fas fa-film"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- commint -->
+    <div class="comment-section">
+        <h2>Izoh Qoldiring</h2>
+        <form class="comment-form" action="" method="post">
+            <input type="text" name="name" placeholder="Ismingiz" required>
+            <input type="email" name="email" placeholder="Email manzilingiz" required>
+            <textarea name="comment" placeholder="Izoh yozing..." required></textarea>
+            <input type="text" name="captcha" placeholder="Captcha kiriting: 3 + 2 = ?" required>
+            <button type="submit">Yuborish</button>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="movie-button-container">
+        <form action="http://t.me/aetherxfilmm">
+            <button class="movie-button">
+                <i class="fa-brands fa-telegram"></i>
+            </button>
+        </form>
+        <div class="light-circle"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Video.js JS -->
+
+
+    <!-- Video.js JS -->
+    <script src="https://vjs.zencdn.net/7.21.1/video.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var player = videojs('uzmov-player');
+            document.querySelectorAll('.uzmov-episodes button').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var newSrc = this.getAttribute('data-src');
+                    player.src({ type: 'video/mp4', src: newSrc });
+                    player.play();
+                });
+            });
+        });
+    </script>
+
+
+
+
+    <script src="/seriialr toplami/serialr.js"></script>
+</body>
+
+</html>

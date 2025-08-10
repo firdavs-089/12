@@ -101,24 +101,24 @@ themeToggle.addEventListener("click", () => {
   // Sizning kinolar ma'lumotlaringiz (o'zingiz qo'shasiz)
         const moviesData = [
             {
-                title: "PARI / JODULANGAN QIZ",
-                img: "/kinlar-img/pari - card.jpg",
-                desc: "2025, tarjima kino.",
-                link: "/filmlar/pari.html"
+                title: "S chizig'i / Sevgi g'altak",
+                img: "/kinlar-img/S chizig'i.webp",
+                desc: "2025, seriallar.",
+                link: "/seriialr toplami/S chiziqi.html"
             },
             {
-                title: "Balerina - Jon Uik olamidan",
-                img: "/kinlar-img/balirena.webp",
-                desc: "2025, tarjima kino.",
-                link: "/filmlar/balerina.html"
+                title: "Venzdey / Uensday 1-fasl 2-fasl",
+                img: "/kinlar-img/Wednesday  img.webp",
+                desc: "2025, seriallar.",
+                link: "/seriialr toplami/Venzdey2-fasli.html"
             },
             {
-                title: "Vaqtlar aro sayohatchi",
-                img: "/kinlar-img/vaqtlar aro sayohatchi.jpg",
-                desc: "2025, tarjima kino.",
-                link: "/filmlar/vaqtlar aro sayohatchi.html"
+                title: "Kalmar o'yini 3-fasl",
+                img: "/kinlar-img/kalmar o'yini 3 img.jpg",
+                desc: "2025, seriallar.",
+                link: "/seriialr toplami/kalmar-oyini-3-fasl.html"
             },
-            
+          
             // ... bu yerga yana kinolar qo'shishingiz mumkin
             // Har bir kino uchun title, img, desc, link maydonlari bo'lishi kerak
         ];

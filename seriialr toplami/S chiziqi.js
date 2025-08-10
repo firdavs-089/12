@@ -157,24 +157,7 @@ setTimeout(hideSimpleLoading, 3000);
 
 // video player
 
-  const videoPlayer = document.getElementById('videoPlayer');
-    const buttons = document.querySelectorAll('.episode-btn');
-
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // Barcha tugmalardan 'active' class-ni olib tashlash
-        buttons.forEach(b => b.classList.remove('active'));
-
-        // Joriy bosilgan tugmaga 'active' class qo‘shish
-        btn.classList.add('active');
-
-        // Video manzilini yangilash
-        const newSrc = btn.getAttribute('data-src');
-        videoPlayer.src = newSrc;
-        videoPlayer.play();
-      });
-    });
-  
+ 
 //  galley
  const galleryImages = document.querySelectorAll('#galleryGrid img');
   const modal = document.getElementById('galleryModal');
