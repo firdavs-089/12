@@ -101,22 +101,10 @@ themeToggle.addEventListener("click", () => {
   // Sizning kinolar ma'lumotlaringiz (o'zingiz qo'shasiz)
         const moviesData = [
             {
-                title: "PARI / JODULANGAN QIZ",
-                img: "/kinlar-img/pari - card.jpg",
-                desc: "2025, tarjima kino.",
-                link: "/filmlar/pari.html"
-            },
-            {
-                title: "Balerina - Jon Uik olamidan",
-                img: "/kinlar-img/balirena.webp",
-                desc: "2025, tarjima kino.",
-                link: "/filmlar/balerina.html"
-            },
-            {
-                title: "Vaqtlar aro sayohatchi",
-                img: "/kinlar-img/vaqtlar aro sayohatchi.jpg",
-                desc: "2025, tarjima kino.",
-                link: "/filmlar/vaqtlar aro sayohatchi.html"
+                title: "K-pop jin ovchilari / Key pop iblis ovchilari 2025 ",
+                img: "/multfilmlar img/k-pop img.webp",
+                desc: "2025, tarjima multfilm.",
+                link: "/mutlfilmlar/K-pop.html"
             },
             
             // ... bu yerga yana kinolar qo'shishingiz mumkin

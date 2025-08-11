@@ -638,36 +638,88 @@
             }
         }
         
-        /* About Section */
-        .about {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 0 20px;
-            animation: slideInRight 1s ease;
-        }
-        
-        .about h2 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            font-family: 'Bebas Neue', sans-serif;
-        }
-        
-        .about p {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(100px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
+       
+.faq-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Accordion item */
+.faq-item {
+  border: 1px solid red;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Hide checkbox */
+.faq-item input {
+  display: none;
+}
+
+/* Question style */
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  color: #ff0000;
+  font-size: 18px;
+}
+
+.faq-question:hover {
+  background: #101010;
+
+}
+
+/* Plus/Minus icon */
+.faq-icon {
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+/* Answer style */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background: #121212;
+  color: #ccc;
+  padding: 0 20px;
+  line-height: 1.5;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+/* When checked - show answer */
+.faq-item input:checked ~ .faq-answer {
+  max-height: 800px; /* katta matnlar uchun */
+  padding: 20px;
+}
+
+/* Rotate icon when active */
+.faq-item input:checked ~ .faq-question .faq-icon {
+  transform: rotate(45deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .faq-question {
+    font-size: 16px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
         
         /* Footer */
            footer {
@@ -858,91 +910,7 @@
                margin-right: 10px;
                 margin-left: 10px;
             }
-            .movie-badge{
- position: absolute;
-            top: 245px;
-            right: 5px;
-            background-color: rgba(0, 0, 0, 0.637);
-            color: rgb(255, 255, 255);
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 20px;
-
-            }
-            .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-          .faq h2 {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            font-weight: 700;
-            text-align: center;
-            color: red;
-        }
-        
-        .stat-label {
-            font-size: 1rem;
-        }
-        
-            .movie-info{
-                font-size: 10px;
-            }
-            .movie-card {
-                min-width: calc(33.33% - 7px);
-            }
-            .section-title{
-                font-size: 25px;
-            }
-        }
-        .faq-answer{
-              font-size: 0.7rem;
-        }
-          .faq-item {
-            margin-bottom: 5px;
-            border-bottom: 1px solid rgba(255, 0, 0, 0.1);
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .faq-question {
-            padding: 20px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-        
-        .faq-question:hover {
-            color: var(--primary);
-        }
-        
-        .faq-question i {
-            transition: var(--transition);
-        }
-        
-        .faq-item.active .faq-question i {
-            transform: rotate(45deg);
-        }
-        
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            color: var(--text-gray);
-            line-height: 1.6;
-        }
-        
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-            padding-bottom: 20px;
-        }
+         }
 
         @media (max-width: 576px) {
             .movie-card {
@@ -1264,3 +1232,91 @@
         
 
         }
+
+
+
+/* Scrollbar umumiy */
+::-webkit-scrollbar {
+  width: 12px;       /* Scrollbar kengligi */
+  height: 12px;      /* Gorizontal scroll uchun balandlik */
+}
+
+/* Scrollbar tray (background) */
+::-webkit-scrollbar-track {
+  background: #222;  /* Scrollbar orqa fon rangi */
+  border-radius: 6px;
+}
+
+/* Scrollbar track ichidagi to‘g‘rilanadigan qism (scroll thumb) */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;  /* Scrollbar o‘zi — rangini bu yerda o‘zgartirasiz */
+  border-radius: 6px;
+  border: 3px solid #222;  /* Scroll bar atrofida bo‘sh joy */
+}
+
+/* Scrollbar hover holati */
+::-webkit-scrollbar-thumb:hover {
+  background: #ff0000;
+}
+
+
+
+
+
+
+
+
+
+
+
+ .container {
+    margin-top: 60px;
+    max-width: 3000px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+
+  }
+
+  .card {
+  border: 1px solid red;
+    border-radius: 10px;
+    width: 370px;
+    height: 320px;
+    padding: 30px 20px;
+    text-align: center;
+    color: white;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transform-style: preserve-3d;
+  }
+
+  .card:hover {
+    box-shadow: 0 20px 40px rgb(254, 0, 0);
+    transition: 1s;
+  }
+
+  .icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #000000, #ff0000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .card p {
+    font-size: 0.80rem;
+    color: #cccccc;
+    line-height: 1.5;
+  }
+
+
+        
+   

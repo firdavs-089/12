@@ -1333,21 +1333,23 @@ flex: 1;
     }
 
     .blok {
-      background-color: #0f0f0f;
+      background-color: #1e1e1e;
       padding: 15px;
       border-radius: 8px;
+      box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.784);
     }
 
     .blok h2 {
-      color: #fc0000;
+      color: #ff0000;
       font-size: 18px;
-      border-left: 3px solid #e21515;
+      border-left: 3px solid #ff0000;
       padding-left: 10px;
+      padding-bottom: 10px;
     }
 
     .yangiliklar h2 {
-      color: #f0c04d;
-      border-left-color: #f0c04d;
+      color: #0800ff;
+      border-left-color: #0040ff;
     }
 
     .karusel {
@@ -1367,9 +1369,10 @@ flex: 1;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background-color: rgba(0,0,0,0.4);
-      color: white;
-      border: none;
+      background-color: rgba(0, 0, 0, 0.501);
+      color: rgb(255, 0, 0);
+      border: 1px solid red;
+     
       padding: 10px;
       cursor: pointer;
       font-size: 18px;
@@ -1393,7 +1396,7 @@ flex: 1;
     .malumot {
       padding-top: 10px;
       font-size: 14px;
-      color: #a9b4c2;
+      color: #ffffff;
     }
 
     .yangilik-element {
@@ -1401,6 +1404,7 @@ flex: 1;
       align-items: center;
       gap: 10px;
       background-color: #1c1c1c;
+      border: 1px solid rgb(8, 0, 255);
       padding: 10px;
       border-radius: 6px;
       margin-bottom: 10px;
@@ -1408,7 +1412,7 @@ flex: 1;
     }
 
     .yangilik-element:hover {
-      background-color: #3c3c3c;
+      background-color: #333333;
     }
 
     .yangilik-element img {
@@ -1424,7 +1428,7 @@ flex: 1;
     }
 
     .yangilik-element .icon {
-      color: #a9b4c2;
+      color: #ffffff;
     }
 
     @media(max-width: 768px) {

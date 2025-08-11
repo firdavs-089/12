@@ -159,6 +159,12 @@ themeToggle.addEventListener("click", () => {
                 desc: "2025, tarjima kino.",
                 link: "/filmlar/ajdar-orgatuvchi.html"
             },
+            {
+                title: "Maskan / Qariyalar uyi Premyera 2025 Uzbek tilida   ",
+                img: "/kinlar-img/maskan img.webp",
+                desc: "2025, tarjima kino.",
+                link: "/filmlar/maskan.html"
+            },
             
           
             // ... bu yerga yana kinolar qo'shishingiz mumkin

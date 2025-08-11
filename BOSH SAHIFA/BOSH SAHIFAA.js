@@ -139,9 +139,9 @@ function changeStory(dir) {
 
          const rasm = document.getElementById('rasm');
     const rasmlar = [
-      'https://images.uzmovi.tv/2025-05-30/9493bfb62031040befcf4e8a0c45f97d.jpg',
-      'https://images.uzmovi.tv/2025-04-06/b2c4b80ed03ef95b48949bf1fea039e6.jpg',
-      'https://images.uzmovi.tv/2025-03-15/6374661d4ffc73734e91ce6d73ad481b.jpg'
+      '/multfilmlar img/k-pop iblis.jpg ',
+      '/multfilmlar img/Lilo va stich kinoda premyuera img.jpg',
+      '/multfilmlar img/uch bahodir img.jpg'
     ];
     let index = 0;
 
