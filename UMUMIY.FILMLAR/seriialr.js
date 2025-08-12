@@ -118,6 +118,18 @@ themeToggle.addEventListener("click", () => {
                 desc: "2025, seriallar.",
                 link: "/seriialr toplami/kalmar-oyini-3-fasl.html"
             },
+            {
+                title: "Qum odam / Qumodam O'zbek tilida Serial Premyera 2022 2025",
+                img: "/kinlar-img/qum-odam-img.webp",
+                desc: "2025, seriallar.",
+                link: "/seriialr toplami/Qum-odam.html"
+            },
+            {
+                title: "Titanlar DC va Netflix seriali Barcha qismlar O'zbek tilida 2018",
+                img: "/kinlar-img/titanlar img.jpg",
+                desc: "2025, seriallar.",
+                link: "/seriialr toplami/titanlar-dc.html"
+            },
           
             // ... bu yerga yana kinolar qo'shishingiz mumkin
             // Har bir kino uchun title, img, desc, link maydonlari bo'lishi kerak

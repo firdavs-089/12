@@ -106,6 +106,12 @@ themeToggle.addEventListener("click", () => {
                 desc: "2025, tarjima multfilm.",
                 link: "/mutlfilmlar/K-pop.html"
             },
+            {
+                title: "Neja 2 / Neeja 2 / Ne Zha 2 Xitoy multfilmi",
+                img: "/kinlar-img/nega-2-img.webp",
+                desc: "2025, tarjima multfilm.",
+                link: "/mutlfilmlar/nega-2.html"
+            },
             
             // ... bu yerga yana kinolar qo'shishingiz mumkin
             // Har bir kino uchun title, img, desc, link maydonlari bo'lishi kerak

@@ -605,7 +605,7 @@ body.loading-active::after {
       border-radius: 3px;
       font-size: 14px;
         height: 40px;
-    width: 80px;
+    width: 83px;
       transition: all 0.2s ease;
     }
     .uzmov-episodes button:hover {
@@ -620,14 +620,23 @@ body.loading-active::after {
 
    .uzmov-episodes button{
     height: 30px;
-    width: 70px;
+    width: 60px;
      background-color: transparent;
-      padding: 8px 14px;
+      padding: 8px 8px;
       cursor: pointer;
       border-radius: 3px;
       font-size: 10px;
       transition: all 0.2s ease;
    }
+    .uzmov-episodes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 15px;
+      margin-left: 10px;
+      margin-right: 10px;
+      justify-content: center;
+    }
 }
 
 

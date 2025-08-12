@@ -101,6 +101,30 @@ themeToggle.addEventListener("click", () => {
   // Sizning kinolar ma'lumotlaringiz (o'zingiz qo'shasiz)
         const moviesData = [
             {
+                title: "Yura davri dunyosi : Qayta tug'ilish Premyera 2025 ",
+                img: "/kinlar-img/yura-davri-dunyosi-img.webp",
+                desc: "2025, tarjima kino.",
+                link: "/filmlar/yura-davri-dunyosi.html"
+            },
+            {
+                title: "Maskan / Qariyalar uyi Premyera 2025 Uzbek tilida   ",
+                img: "/kinlar-img/maskan img.webp",
+                desc: "2025, tarjima kino.",
+                link: "/filmlar/maskan.html"
+            },
+            {
+                title: "Ajdar oʻrgatuvchilar / Ajdarni qo'lga o'rgatish  ",
+                img: "/kinlar-img/ajdar o'rgatuvchi img.webp",
+                desc: "2025, tarjima kino.",
+                link: "/filmlar/ajdar-orgatuvchi.html"
+            },
+            {
+                title: ">Kulga aylangan haqiqat / Kul 2025 Uzbek tilida ",
+                img: "/kinlar-img/kulgiga-aylangan-haqiat img.webp",
+                desc: "2025, tarjima kino.",
+                link: "/filmlar/Kulga aylangan haqiqat.html"
+            },
+            {
                 title: "Kosmik koloniya / Boshqaruv xonasi Premyera (2025) ",
                 img: "/kinlar-img/kosmik kalonya img.webp",
                 desc: "2025, tarjima kino.",
@@ -153,18 +177,6 @@ themeToggle.addEventListener("click", () => {
                 link: "/filmlar/qotil kampir.html"
             },
             
-            {
-                title: "Ajdar oʻrgatuvchilar / Ajdarni qo'lga o'rgatish  ",
-                img: "/kinlar-img/ajdar o'rgatuvchi img.webp",
-                desc: "2025, tarjima kino.",
-                link: "/filmlar/ajdar-orgatuvchi.html"
-            },
-            {
-                title: "Maskan / Qariyalar uyi Premyera 2025 Uzbek tilida   ",
-                img: "/kinlar-img/maskan img.webp",
-                desc: "2025, tarjima kino.",
-                link: "/filmlar/maskan.html"
-            },
             
           
             // ... bu yerga yana kinolar qo'shishingiz mumkin

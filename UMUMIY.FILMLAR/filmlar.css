@@ -646,11 +646,12 @@ content: "";
 
 .page-btn {
   padding: 8px 12px;
-  background: #ecf0f1;
+  background: #171717;
+  color: #ff0000;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  border: 2px solid #fff;
+  border: 2px solid #ff0000;
   
 }
 
