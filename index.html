@@ -2,288 +2,281 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AetherX.film - O'zbekistondagi birinchi zamonaviy kino Platforma</title>
-    <meta name="google-site-verification" content="Zx5b5bmqdHqtkTrYgItGw1-SPnFB_6q8CtUJhXEzAvE" />
-<meta name="description" content="AetherX Film – eng so‘nggi filmlar, seriallar va ko‘ngilochar kontentni HD sifatida tomosha qiling. Mutlaqo bepul va tez yuklanadi.">
-<meta name="keywords" content="kino, filmlar, HD, online, Uzbek tilida, AetherX Film">
-<meta name="robots" content="index, follow">
-<meta name="author" content="Firdavs">
-<link rel="canonical" href="https://aetherxcom.vercel.app/">
-<meta property="og:title" content="AetherX Film – Zamonaviy Onlayn Kino Platforma">
-<meta property="og:description" content="Eng so‘nggi filmlar va seriallarni onlayn tomosha qiling.">
-<meta property="og:image" content="https://aetherxcom.vercel.app/logo.png">
-<meta property="og:url" content="https://aetherxcom.vercel.app/">
-<meta name="twitter:card" content="summary_large_image">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AetherX.film - O'zbekistondagi birinchi zamonaviy kino Platforma</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-    <!-- Loading Animation -->
-    <div class="loading">
-        <div class="loading-dots">
-            <span></span>
-            <span></span>
-            <span></span>
+  <!-- Loading Animation -->
+  <div class="loading">
+    <div class="loading-dots">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+
+  <nav class="navbar">
+    <div class="navbar-left">
+      <span class="logo">
+        <span class="aether">Aether</span><span class="xfilm">X.film</span>
+      </span>
+    </div>
+
+    <div class="navbar-right">
+      <div class="language-selector">
+        <button class="language-btn">
+          <i class="fas fa-globe"></i>
+          <span class="current-lang">O'Z</span>
+        </button>
+        <div class="language-dropdown">
+          <button class="lang-option" data-lang="uz">O'zbekcha</button>
+          <button class="lang-option" data-lang="ru">Русский</button>
         </div>
+      </div>
+      <form action="/royhatdan otish.html/kirish.html">
+        <button class="auth-btn login-btn">Kirish</button>
+      </form>
+      <form action="/royhatdan otish.html/royhatdan otish.html">
+        <button class="auth-btn register-btn">Ro'yxatdan o'tish</button>
+      </form>
+
+      <button class="menu-toggle">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu">
+    <div class="mobile-menu-header">
+      <span class="logo">
+        <span class="aether">Aether</span><span class="xfilm">X.film</span>
+      </span>
+    </div>
+    <div class="mobile-menu-content">
+
+      <button class="mobile-auth-btn login-btn"><a href="/royhatdan otish.html/kirish.html">Tizimga
+          kirish</a></button>
+      <button class="mobile-auth-btn register-btn"><a href="/royhatdan otish.html/royhatdan otish.html">Ro'yxatdan
+          o'tish</a></button>
+
+      <div class="mobile-language-selector">
+        <button class="mobile-language-btn">
+          <i class="fas fa-globe"></i>
+          <span>Tilni o'zgartirish</span>
+        </button>
+      </div>
+
+      <div class="social-icons">
+          <a href="https://t.me/aetherxfilmm"><i class="fab fa-telegram"></i></a>
+          <a href="https://www.instagram.com/aetherx.uz/"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.youtube.com/@Aetherx-film"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-loader">
+    <div class="loader-line"></div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1> AETHERX.FILM - O'ZBEKISTONDAGI ENG BIRINCHI ZAMONAVIY KINO PLATFORMA</h1>
+      <p>RO'YHATDAN O'TISH UCHUN EMAIL KIRGIZING </p>
+      <form class="email-form">
+        <input type="email" class="email-input" placeholder="Email manzilingiz" required>
+        <button type="submit" class="get-started">BOSHLASH</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Movies Section -->
+  <section class="movies-container">
+    <h2 class="section-title"> TRENDDAGI TARJIMA FILMLAR</h2>
+    <div class="movies-slider">
+      <div class="movies-row" id="trendingMovies">
+        <!-- Movie cards will be added here by JavaScript -->
+      </div>
+      <div class="slider-nav slider-prev">
+        <i class="fas fa-chevron-left"></i>
+      </div>
+      <div class="slider-nav slider-next">
+        <i class="fas fa-chevron-right"></i>
+      </div>
     </div>
 
-    <!-- Navbar -->
+  </section>
 
-    <nav class="navbar">
-        <div class="navbar-left">
-            <span class="logo">
-                <span class="aether">Aether</span><span class="xfilm">X.film</span>
-            </span>
+
+
+
+  <!-- slayed -->
+  <div class="container">
+
+    <div class="card">
+      <div class="icon"><i class="fas fa-download"></i></div>
+      <h3>Yuklab oling va ko‘ring</h3>
+      <p>Sevimlilaringizni saqlang va internet bo‘lmasa ham tomosha qiling.</p>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="fas fa-video"></i></div>
+      <h3>Istalgan joydan tomosha</h3>
+      <p>Har qanday qurilmada, istalgan vaqtda uzluksiz video tomosha qiling.</p>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="fas fa-users"></i></div>
+      <h3>Bir nechta profil</h3>
+      <p>Oila va do‘stlaringiz uchun alohida profillar yarating.</p>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <section class="movies-container">
+    <h2 class="section-title"> TEZ-TEZ BERILADIGAN SAVOLLAR ?</h2>
+    </div>
+    <div class="faq-container">
+
+      <div class="faq-item">
+        <input type="checkbox" id="q1">
+        <label class="faq-question" for="q1">
+          <span>AetherX.film nima?</span>
+          <span class="faq-icon">+</span>
+        </label>
+        <div class="faq-answer">
+          AetherX.film — bu zamonaviy onlayn kino va serial platformasi bo‘lib, foydalanuvchilarga dunyoning turli
+          burchaklaridan eng so‘nggi filmlar, seriallar, anime va hujjatli filmlarni taqdim etadi.
+          Platforma HD, Full HD va 4K Ultra HD formatlarini qo‘llab-quvvatlaydi, shuning uchun tasvir sifati maksimal
+          darajada tiniq bo‘ladi.
+          Har hafta yangi premyeralar va eksklyuziv kontent qo‘shiladi, foydalanuvchilar istalgan qurilmada reklamasiz
+          tomosha qilishlari mumkin.
         </div>
+      </div>
 
-        <div class="navbar-right">
-            <div class="language-selector">
-                <button class="language-btn">
-                    <i class="fas fa-globe"></i>
-                    <span class="current-lang">O'Z</span>
-                </button>
-                <div class="language-dropdown">
-                    <button class="lang-option" data-lang="uz">O'zbekcha</button>
-                    <button class="lang-option" data-lang="ru">Русский</button>
-                </div>
-            </div>
-            <form action="/royhatdan otish.html/kirish.html">
-                <button class="auth-btn login-btn">Kirish</button>
-            </form>
-            <form action="/royhatdan otish.html/royhatdan otish.html">
-                <button class="auth-btn register-btn">Ro'yxatdan o'tish</button>
-            </form>
-
-            <button class="menu-toggle">
-                <div class="menu-line"></div>
-                <div class="menu-line"></div>
-                <div class="menu-line"></div>
-            </button>
+      <div class="faq-item">
+        <input type="checkbox" id="q2">
+        <label class="faq-question" for="q2">
+          <span>AetherX.film qancha turadi?</span>
+          <span class="faq-icon">+</span>
+        </label>
+        <div class="faq-answer">
+          Narxlar tarif rejasiga qarab o‘zgaradi:
+          <ul>
+            <li><b>Standart</b> — HD sifatida, bitta qurilma uchun.</li>
+            <li><b>Premium</b> — Full HD/4K sifatida, uchta qurilmagacha.</li>
+            <li><b>Family+</b> — 4K sifatida, cheksiz qurilmada va oilaviy profil qo‘llab-quvvatlovi bilan.</li>
+          </ul>
+          Har qanday rejada reklamasiz tomosha qilishingiz mumkin, barcha rejalar bepul sinov muddati bilan taqdim
+          etiladi.
         </div>
-    </nav>
+      </div>
 
-    <div class="mobile-menu">
-        <div class="mobile-menu-header">
-            <span class="logo">
-                <span class="aether">Aether</span><span class="xfilm">X.film</span>
-            </span>
+      <div class="faq-item">
+        <input type="checkbox" id="q3">
+        <label class="faq-question" for="q3">
+          <span>Qayerda va qanday tomosha qilish mumkin?</span>
+          <span class="faq-icon">+</span>
+        </label>
+        <div class="faq-answer">
+          AetherX.film’ni istalgan internetga ulangan qurilmada tomosha qilishingiz mumkin:
+          <ul>
+            <li>Smartfon va planshetlar (Android, iOS ilovalari orqali)</li>
+            <li>Kompyuter va noutbuklar (brauzer orqali)</li>
+            <li>Smart TV va TV box’lar</li>
+          </ul>
+          Siz istalgan joyda, istalgan vaqtda tomosha qilish imkoniyatiga egasiz.
         </div>
-        <div class="mobile-menu-content">
+      </div>
 
-            <button class="mobile-auth-btn login-btn"><a href="/royhatdan otish.html/kirish.html">Tizimga
-                    kirish</a></button>
-            <button class="mobile-auth-btn register-btn"><a href="/royhatdan otish.html/royhatdan otish.html">Ro'yxatdan
-                    o'tish</a></button>
-
-            <div class="mobile-language-selector">
-                <button class="mobile-language-btn">
-                    <i class="fas fa-globe"></i>
-                    <span>Tilni o'zgartirish</span>
-                </button>
-            </div>
-
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-telegram"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
+      <div class="faq-item">
+        <input type="checkbox" id="q4">
+        <label class="faq-question" for="q4">
+          <span>Saytning texnik imkoniyatlari qanday?</span>
+          <span class="faq-icon">+</span>
+        </label>
+        <div class="faq-answer">
+          AetherX.film zamonaviy texnologiyalar asosida qurilgan bo‘lib, foydalanuvchilarga quyidagilarni taqdim etadi:
+          <ul>
+            <li>HD, Full HD, va 4K formatlarda oqim (streaming)</li>
+            <li>Tezkor yuklanish va kechikishlarsiz tomosha qilish</li>
+            <li>Avtomatik subtitrlar va ko‘p tilli audio qo‘llab-quvvatlovi</li>
+            <li>Mobil qurilmalarga moslashgan dizayn</li>
+          </ul>
         </div>
-    </div>
+      </div>
 
-    <div class="page-loader">
-        <div class="loader-line"></div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1> AETHERX.FILM - O'ZBEKISTONDAGI ENG BIRINCHI ZAMONAVIY KINO PLATFORMA</h1>
-            <p>RO'YHATDAN O'TISH UCHUN EMAIL KIRGIZING </p>
-            <form class="email-form">
-                <input type="email" class="email-input" placeholder="Email manzilingiz" required>
-                <button type="submit" class="get-started">BOSHLASH</button>
-            </form>
+      <div class="faq-item">
+        <input type="checkbox" id="q5">
+        <label class="faq-question" for="q5">
+          <span>Bolalar uchun maxsus rejim bormi?</span>
+          <span class="faq-icon">+</span>
+        </label>
+        <div class="faq-answer">
+          Ha, AetherX.film bolalar uchun maxsus “Kids Mode” rejimini taklif etadi.
+          Bu rejimda faqat yoshga mos multfilm va bolalar filmlari mavjud.
+          Ota-onalar kontentni filtrlash va tomosha vaqtini cheklash imkoniyatiga ega bo‘ladilar.
         </div>
-    </section>
+      </div>
 
-    <!-- Movies Section -->
-    <section class="movies-container">
-        <h2 class="section-title"> TRENDDAGI TARJIMA FILMLAR</h2>
-        <div class="movies-slider">
-            <div class="movies-row" id="trendingMovies">
-                <!-- Movie cards will be added here by JavaScript -->
-            </div>
-            <div class="slider-nav slider-prev">
-                <i class="fas fa-chevron-left"></i>
-            </div>
-            <div class="slider-nav slider-next">
-                <i class="fas fa-chevron-right"></i>
-            </div>
+      <div class="faq-item">
+        <input type="checkbox" id="q6">
+        <label class="faq-question" for="q6">
+          <span>Yangi kontent qanchalik tez qo‘shiladi?</span>
+          <span class="faq-icon">+</span>
+        </label>
+        <div class="faq-answer">
+          Platforma har hafta yangilanadi: yangi filmlar, seriallar, treylerlar va eksklyuziv materiallar qo‘shiladi.
+          Shuningdek, dunyo bo‘ylab yangi chiqqan premyeralar eng tezkor tarzda foydalanuvchilarga yetkaziladi.
         </div>
-        
-    </section>
+      </div>
 
+      <div class="faq-item">
+        <input type="checkbox" id="q7">
+        <label class="faq-question" for="q7">
+          <span>Kontentni yuklab olish mumkinmi?</span>
+          <span class="faq-icon">+</span>
+        </label>
+        <div class="faq-answer">
+          Ha, AetherX.film mobil ilovasi orqali sevimli filmlar va seriallarni offline rejimida tomosha qilish uchun
+          yuklab olish imkoniyatini beradi.
+          Bu funksiyadan foydalangan holda siz internet bo‘lmasa ham kontentdan bahramand bo‘lishingiz mumkin.
+        </div>
+      </div>
 
-
-
-<!-- slayed -->
-<div class="container">
-    
-  <div class="card">
-    <div class="icon"><i class="fas fa-download"></i></div>
-    <h3>Yuklab oling va ko‘ring</h3>
-    <p>Sevimlilaringizni saqlang va internet bo‘lmasa ham tomosha qiling.</p>
-  </div>
-  <div class="card">
-    <div class="icon"><i class="fas fa-video"></i></div>
-    <h3>Istalgan joydan tomosha</h3>
-    <p>Har qanday qurilmada, istalgan vaqtda uzluksiz video tomosha qiling.</p>
-  </div>
-  <div class="card">
-    <div class="icon"><i class="fas fa-users"></i></div>
-    <h3>Bir nechta profil</h3>
-    <p>Oila va do‘stlaringiz uchun alohida profillar yarating.</p>
-  </div>
-</div>
-
-
-
-
-
-
-
- <section class="movies-container">
-        <h2 class="section-title"> TEZ-TEZ BERILADIGAN SAVOLLAR ?</h2>
- </div>
-<div class="faq-container">
-  
-  <div class="faq-item">
-    <input type="checkbox" id="q1">
-    <label class="faq-question" for="q1">
-      <span>AetherX.film nima?</span>
-      <span class="faq-icon">+</span>
-    </label>
-    <div class="faq-answer">
-      AetherX.film — bu zamonaviy onlayn kino va serial platformasi bo‘lib, foydalanuvchilarga dunyoning turli burchaklaridan eng so‘nggi filmlar, seriallar, anime va hujjatli filmlarni taqdim etadi. 
-      Platforma HD, Full HD va 4K Ultra HD formatlarini qo‘llab-quvvatlaydi, shuning uchun tasvir sifati maksimal darajada tiniq bo‘ladi. 
-      Har hafta yangi premyeralar va eksklyuziv kontent qo‘shiladi, foydalanuvchilar istalgan qurilmada reklamasiz tomosha qilishlari mumkin.
     </div>
-  </div>
-
-  <div class="faq-item">
-    <input type="checkbox" id="q2">
-    <label class="faq-question" for="q2">
-      <span>AetherX.film qancha turadi?</span>
-      <span class="faq-icon">+</span>
-    </label>
-    <div class="faq-answer">
-      Narxlar tarif rejasiga qarab o‘zgaradi:
-      <ul>
-        <li><b>Standart</b> — HD sifatida, bitta qurilma uchun.</li>
-        <li><b>Premium</b> — Full HD/4K sifatida, uchta qurilmagacha.</li>
-        <li><b>Family+</b> — 4K sifatida, cheksiz qurilmada va oilaviy profil qo‘llab-quvvatlovi bilan.</li>
-      </ul>
-      Har qanday rejada reklamasiz tomosha qilishingiz mumkin, barcha rejalar bepul sinov muddati bilan taqdim etiladi.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <input type="checkbox" id="q3">
-    <label class="faq-question" for="q3">
-      <span>Qayerda va qanday tomosha qilish mumkin?</span>
-      <span class="faq-icon">+</span>
-    </label>
-    <div class="faq-answer">
-      AetherX.film’ni istalgan internetga ulangan qurilmada tomosha qilishingiz mumkin:
-      <ul>
-        <li>Smartfon va planshetlar (Android, iOS ilovalari orqali)</li>
-        <li>Kompyuter va noutbuklar (brauzer orqali)</li>
-        <li>Smart TV va TV box’lar</li>
-      </ul>
-      Siz istalgan joyda, istalgan vaqtda tomosha qilish imkoniyatiga egasiz.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <input type="checkbox" id="q4">
-    <label class="faq-question" for="q4">
-      <span>Saytning texnik imkoniyatlari qanday?</span>
-      <span class="faq-icon">+</span>
-    </label>
-    <div class="faq-answer">
-      AetherX.film zamonaviy texnologiyalar asosida qurilgan bo‘lib, foydalanuvchilarga quyidagilarni taqdim etadi:
-      <ul>
-        <li>HD, Full HD, va 4K formatlarda oqim (streaming)</li>
-        <li>Tezkor yuklanish va kechikishlarsiz tomosha qilish</li>
-        <li>Avtomatik subtitrlar va ko‘p tilli audio qo‘llab-quvvatlovi</li>
-        <li>Mobil qurilmalarga moslashgan dizayn</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <input type="checkbox" id="q5">
-    <label class="faq-question" for="q5">
-      <span>Bolalar uchun maxsus rejim bormi?</span>
-      <span class="faq-icon">+</span>
-    </label>
-    <div class="faq-answer">
-      Ha, AetherX.film bolalar uchun maxsus “Kids Mode” rejimini taklif etadi.
-      Bu rejimda faqat yoshga mos multfilm va bolalar filmlari mavjud.
-      Ota-onalar kontentni filtrlash va tomosha vaqtini cheklash imkoniyatiga ega bo‘ladilar.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <input type="checkbox" id="q6">
-    <label class="faq-question" for="q6">
-      <span>Yangi kontent qanchalik tez qo‘shiladi?</span>
-      <span class="faq-icon">+</span>
-    </label>
-    <div class="faq-answer">
-      Platforma har hafta yangilanadi: yangi filmlar, seriallar, treylerlar va eksklyuziv materiallar qo‘shiladi.
-      Shuningdek, dunyo bo‘ylab yangi chiqqan premyeralar eng tezkor tarzda foydalanuvchilarga yetkaziladi.
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <input type="checkbox" id="q7">
-    <label class="faq-question" for="q7">
-      <span>Kontentni yuklab olish mumkinmi?</span>
-      <span class="faq-icon">+</span>
-    </label>
-    <div class="faq-answer">
-      Ha, AetherX.film mobil ilovasi orqali sevimli filmlar va seriallarni offline rejimida tomosha qilish uchun yuklab olish imkoniyatini beradi.
-      Bu funksiyadan foydalangan holda siz internet bo‘lmasa ham kontentdan bahramand bo‘lishingiz mumkin.
-    </div>
-  </div>
-
-</div>
 
 
 
 
 
-    
 
 
-   
+
+
 
 
 
@@ -303,20 +296,20 @@
 
     <!-- Stats Section -->
     <section class="stats">
-        <div class="stats-container">
-            <div class="stat-item">
-                <div class="stat-number" id="movieCount">10,000+</div>
-                <div class="stat-label">FILMLAR</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" id="userCount">1,000,000+</div>
-                <div class="stat-label">FOYDALANUVCHILAR</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" id="daysRunning">24/7</div>
-                <div class="stat-label">SAYT ISHLASH VAQTI</div>
-            </div>
+      <div class="stats-container">
+        <div class="stat-item">
+          <div class="stat-number" id="movieCount">10,000+</div>
+          <div class="stat-label">FILMLAR</div>
         </div>
+        <div class="stat-item">
+          <div class="stat-number" id="userCount">1,000,000+</div>
+          <div class="stat-label">FOYDALANUVCHILAR</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" id="daysRunning">24/7</div>
+          <div class="stat-label">SAYT ISHLASH VAQTI</div>
+        </div>
+      </div>
     </section>
 
 
@@ -330,76 +323,63 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-logo">
-                <div class="logo">
-                    <span class="logo-main">Aether</span><span class="logo-film">X.film</span>
-                </div>
-                <div class="footer-slogan">O'zbekistondagi birinchi zamonaviy portal</div>
-            </div>
-
-            <div class="footer-links">
-                <div class="footer-link-column">
-                    <h3>Kompaniya</h3>
-                    <ul>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Biz haqimizda</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Karyera</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Yangiliklar</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Biz bilan bog'lanish</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-link-column">
-                    <h3>Foydalanish</h3>
-                    <ul>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Shartlar va sharoitlar</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Maxfiylik siyosati</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Cookie siyosati</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Ichki tartib</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-link-column">
-                    <h3>Yordam</h3>
-                    <ul>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Yordam markazi</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> To'lov usullari</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Qo'llab-quvvat</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-link-column">
-                    <h3>Hamkorlik</h3>
-                    <ul>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Reklama</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Hamkorlik</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Affiliate</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Kontent yaratuvchilar</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-social">
-                <a href="#"><i class="fab fa-telegram"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-
-            <div class="footer-signup">
-                <form action="/royhatdan otish.html/royhatdan otish.html">
-                    <button class="footer-signup-btn">
-                        Ro'yxatdan o'tish <i class="fas fa-arrow-right"></i>
-                    </button>
-                </form>
-            </div>
-
-            <div class="copyright">
-                &copy; 2023 AetherX.film. Barcha huquqlar himoyalangan.
-            </div>
+      <div class="footer-container">
+        <div class="footer-logo">
+          <div class="logo">
+            <span class="logo-main">Aether</span><span class="logo-film">X.film</span>
+          </div>
+          <div class="footer-slogan">O'zbekistondagi birinchi zamonaviy portal</div>
         </div>
+
+        <div class="footer-links">
+          <div class="footer-link-column">
+
+            <ul>
+              <li><a href="/royhatdan otish.html/help.html"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+
+            </ul>
+              <ul>
+              <li><a href="/royhatdan otish.html/foydalanish shartlari.html"><i class="fas fa-chevron-right"></i>
+                  Foydalanish shartlari</a></li>
+
+            </ul>
+          </div>
+
+
+          <div class="footer-link-column">
+            <ul>
+              <li><a href="/royhatdan otish.html/biz bilan aloqa.html"><i class="fas fa-chevron-right"></i> Biz bilan
+                  aloqa</a></li>
+
+            </ul>
+            <ul>
+              <li><a href="/royhatdan otish.html/reklama.html"><i class="fas fa-chevron-right"></i> Reklama</a></li>
+
+            </ul>
+          </div>
+
+        
+        </div>
+
+        <div class="footer-social">
+          <a href="https://t.me/aetherxfilmm"><i class="fab fa-telegram"></i></a>
+          <a href="https://www.instagram.com/aetherx.uz/"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.youtube.com/@Aetherx-film"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        <div class="footer-signup">
+          <form action="/royhatdan otish.html/royhatdan otish.html">
+            <button class="footer-signup-btn">
+              Ro'yxatdan o'tish <i class="fas fa-arrow-right"></i>
+            </button>
+          </form>
+        </div>
+
+        <div class="copyright">
+          &copy; 2025 AetherX.film. Barcha huquqlar himoyalangan.
+        </div>
+      </div>
     </footer>
 
     <script src="/aetherx.js"></script>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yordam - AetherX Film</title>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        background: #0a0a0a;
+        color: #fff;
+        overflow-x: hidden;
+    }
+
+    header {
+        text-align: center;
+        padding: 40px 20px;
+        background: linear-gradient(90deg, #ff1a1a, #000);
+        box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+    }
+    header h1 {
+        font-size: 2.5rem;
+        margin: 0;
+        animation: fadeDown 1s ease forwards;
+        color: white;
+    }
+
+    .section {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        max-width: 1100px;
+        margin: 60px auto;
+        padding: 20px;
+        background: rgba(255,255,255,0.05);
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(255,0,0,0.3);
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease;
+    }
+    .section img {
+        width: 45%;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(255,0,0,0.3);
+    }
+    .section .text {
+        width: 55%;
+    }
+    .section h2 {
+        color: #ff1a1a;
+        font-size: 1.8rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .section p {
+        line-height: 1.6;
+        margin-top: 10px;
+        font-size: 1rem;
+        color: #ddd;
+    }
+
+    /* Navbat bilan chap-o'ng chiqish */
+    .left {
+        transform: translateX(-60px);
+    }
+    .right {
+        transform: translateX(60px);
+    }
+    .show {
+        opacity: 1 !important;
+        transform: translate(0) !important;
+    }
+
+    /* Pastdagi tugmalar */
+    .bottom-btns {
+        text-align: center;
+        margin: 50px 0 80px;
+    }
+    .home-btn {
+        display: inline-block;
+        background: #ff1a1a;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-size: 1.1rem;
+        box-shadow: 0 0 15px rgba(255,0,0,0.5);
+        transition: background 0.3s, transform 0.3s;
+    }
+    .home-btn:hover {
+        background: #e60000;
+        transform: scale(1.05);
+    }
+
+    /* Tepaga qaytish tugmasi */
+    #toTop {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #ff1a1a;
+        color: white;
+        border: none;
+        padding: 12px 15px;
+        border-radius: 50%;
+        font-size: 18px;
+        display: none;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(255,0,0,0.5);
+        transition: transform 0.3s;
+        z-index: 100;
+    }
+    #toTop:hover {
+        transform: translateY(-3px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .section {
+            flex-direction: column;
+            text-align: center;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .section img, .section .text {
+            width: 100%;
+        }
+          .section h2 {
+        color: #ff1a1a;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .section p {
+        line-height: 1.6;
+        margin-top: 10px;
+        font-size: 0.8rem;
+        color: #ddd;
+    }
+        header h1 {
+        font-size: 2rem;
+        margin: 0;
+        animation: fadeDown 1s ease forwards;
+        color: white;
+    }
+    }
+
+    /* Animatsiya */
+    @keyframes fadeDown {
+        from { opacity: 0; transform: translateY(-30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1><i class="fa-solid fa-circle-question"></i> Yordam / Help</h1>
+</header>
+
+<!-- 1 -->
+<div class="section left">
+    <img src="/kinlar-img/aetherx-film-bosh sahifa-img.png" alt="Film tanlash">
+    <div class="text">
+        <h2><i class="fa-solid fa-play"></i> Qanday qilib film tanlash mumkin?</h2>
+        <p>O‘zingizga yoqqan filmni tanlab, rasm ustiga bosing va “Play” tugmasini bosib tomosha qiling.</p>
+    </div>
+</div>
+
+<!-- 2 -->
+<div class="section right">
+    <div class="text">
+        <h2><i class="fa-solid fa-user-plus"></i> Ro‘yxatdan o‘tish foydasi</h2>
+        <p>Ro‘yxatdan o‘tsangiz sevimli filmlaringizni saqlash va so‘nggi tomosha qilinganlarni ko‘rish imkoniyati bo‘ladi.</p>
+    </div>
+    <img src="/kinlar-img/help-royhatdan-otish-img.png" alt="Ro‘yxatdan o‘tish">
+</div>
+
+<!-- 3 -->
+<div class="section left">
+    <img src="/kinlar-img/help-img.png" alt="Yangi filmlar">
+    <div class="text">
+        <h2><i class="fa-solid fa-film"></i> Yangi filmlar qachon qo‘shiladi?</h2>
+        <p>Har hafta yangi filmlar va seriallar qo‘shiladi. Yangiliklardan xabardor bo‘lish uchun bizni kuzatib boring.</p>
+    </div>
+</div>
+
+<!-- 4 -->
+<div class="section right">
+    <div class="text">
+        <h2><i class="fa-solid fa-language"></i> Tarjima variantlari</h2>
+        <p>Ko‘pgina filmlar bir nechta tarjima (O‘zbekcha, Ruscha, Inglizcha) variantida mavjud bo‘ladi.</p>
+    </div>
+    <img src="/kinlar-img/help-translet-img.png" alt="Til tanlash">
+</div>
+
+<!-- 5 -->
+<div class="section left">
+    <img src="/kinlar-img/biz-bilan-aloqa-help-img.png" alt="Texnik yordam">
+    <div class="text">
+        <h2><i class="fa-solid fa-headset"></i> Texnik yordam</h2>
+        <p>Agar sayt ishlashida muammo bo‘lsa, “Kontakt” bo‘limidan biz bilan bog‘lanishingiz mumkin.</p>
+    </div>
+</div>
+
+<!-- Tugmalar -->
+<div class="bottom-btns">
+    <a href="/index.html" class="home-btn"><i class="fa-solid fa-house"></i> Bosh sahifaga qaytish</a>
+</div>
+
+<!-- Tepaga qaytish -->
+<button id="toTop"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+    // Scroll animatsiya
+    const sections = document.querySelectorAll('.section');
+    const showOnScroll = () => {
+        const triggerBottom = window.innerHeight * 0.85;
+        sections.forEach(sec => {
+            const secTop = sec.getBoundingClientRect().top;
+            if (secTop < triggerBottom) {
+                sec.classList.add('show');
+            }
+        });
+    };
+    window.addEventListener('scroll', showOnScroll);
+    showOnScroll();
+
+    // Tepaga qaytish tugmasi
+    const toTopBtn = document.getElementById('toTop');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            toTopBtn.style.display = 'block';
+        } else {
+            toTopBtn.style.display = 'none';
+        }
+    });
+    toTopBtn.addEventListener('click', () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+</script>
+
+</body>
+</html>
