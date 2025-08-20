@@ -61,7 +61,7 @@ const storyData = [
   { img: "/telekanalr-img/super oila.webp", video: "/story mp4/super-oila.mp4", title: "Super oila ", link: "#" },
   { img: "/telekanalr-img/osiris.jpg", video: "/story mp4/osiris.mp4", title: "Osiris", link: "#" },
   { img: "/kinlar-img/S chizig'i.webp", video: "/story mp4/s-chizigi.mp4", title: "S chizig'i seriali", link: "/seriialr toplami/S chiziqi.html" },
-  { img: "/", video: "video5.mp4", title: "Kino 5", link: "#" },
+  { img: "/kinlar-img/garry potir - story.webp", video: "/story mp4/garry potir.mp4", title: "Garri Potter 1 2 3 4 5 6 7 8 barcha qismlari Uzbek tilida", link: "/seriialr toplami/garry-potr.html" },
   { img: "/", video: "video5.mp4", title: "Kino 5", link: "#" },
   { img: "/", video: "video5.mp4", title: "Kino 5", link: "#" },
   { img: "/", video: "video5.mp4", title: "Kino 5", link: "#" },

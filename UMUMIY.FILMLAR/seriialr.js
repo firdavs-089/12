@@ -101,6 +101,12 @@ themeToggle.addEventListener("click", () => {
   // Sizning kinolar ma'lumotlaringiz (o'zingiz qo'shasiz)
         const moviesData = [
             {
+                title: "Garri Potter 1 2 3 4 5 6 7 8 barcha qismlari Uzbek tilida",
+                img: "/kinlar-img/garry potirrrr- img.png",
+                desc: "2025, tarjima film.",
+                link: "/seriialr toplami/garry-potr.html"
+            },
+            {
                 title: "S chizig'i / Sevgi g'altak",
                 img: "/kinlar-img/S chizig'i.webp",
                 desc: "2025, seriallar.",

@@ -6,14 +6,11 @@
     }
 
     body {
-      background: url('/kinlar-img/Movie\ Night.jpg') no-repeat center center/cover;
-      min-height: 100vh;
-      color: white;
-      animation: slideIn 0.5s ease forwards;
-        background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed; /* Bu yerda fonni qotirib qo'yamiz */
+        font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                  url('/kinlar-img/logo.jpg') no-repeat center center fixed;
+      background-size: cover;
+    line-height: 1.6;
     }
 
     @keyframes slideIn {
@@ -25,10 +22,11 @@
       position: absolute;
       top: 20px;
       left: 20px;
-      background: white;
-      color: black;
+      background: rgba(53, 53, 53, 0.378);
+      color: rgb(91, 91, 91);
+      border: 1px solid #6c6c6c;
       padding: 8px 14px;
-      border-radius: 10px;
+      
       font-weight: bold;
       cursor: pointer;
       transition: 0.3s;
@@ -36,13 +34,17 @@
     }
 
     .back-btn:hover {
-      background: #ccc;
+       background: linear-gradient(to right, rgba(255, 255, 255, 0.496) 1%, transparent 40%,transparent 60% , rgba(255, 255, 255, 0.447) 100%);
+  color: rgb(255, 255, 255);
+border: 2px solid #fff;
+   box-shadow: inset 0 0 10px rgba(162, 162, 162, 0.6), 0 0 9px 3px rgba(162, 162, 162, 0.6);
+
       transform: translateX(-5px);
     }
 
     .search-bar {
       width: 100%;
-      max-width: 600px;
+      max-width: 1100px;
       margin: 80px auto 40px;
       display: flex;
       gap: 10px;
@@ -52,34 +54,37 @@
     .search-bar input {
       flex: 1;
       padding: 15px 20px;
-      border-radius: 12px;
       border: none;
       font-size: 16px;
-      background-color: #1c1c1c;
+      background-color: #4949496e;
       color: #fff;
-      box-shadow: inset 0 4px 8px rgba(255, 0, 0, 0.3);
       transition: 0.3s;
     }
 
     .search-bar input:focus {
       outline: none;
-      box-shadow: 0 0 10px red;
+      box-shadow: 0 0 10px rgb(255, 255, 255);
+      border-radius: 1px solid #fff;
     }
 
     .search-bar button {
       padding: 15px 20px;
       border: none;
-      border-radius: 12px;
-      background: linear-gradient(145deg, #ff0000, #cc0000);
-      color: white;
+      background:#1a1a1a66;
+      color: #8a1b1b;
       font-weight: bold;
-      box-shadow: 0 6px 12px rgba(255, 0, 0, 0.6);
+     border: 1px solid #8a1b1b;
       cursor: pointer;
-      transition: 0.3s;
+    
     }
 
     .search-bar button:hover {
-      transform: scale(1.05);
+      
+        background: linear-gradient(to right, rgba(255, 0, 0, 0.496) 1%, transparent 40%,transparent 60% , rgba(255, 0, 0, 0.447) 100%);
+  color: rgb(255, 0, 0);
+border: 2px solid #ff0000;
+   box-shadow: inset 0 0 10px rgba(255, 0, 0, 0.6), 0 0 9px 3px rgba(255, 0, 0, 0.6);
+
     }
 
     .results-container {
@@ -90,44 +95,87 @@
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 25px;
     }
-
-    @media (max-width: 768px) {
-      .results-container {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 10px;
-      }
-
-      .card img {
-        height: 260px;
-      }
-    }
-
+    
     .card {
-      background: linear-gradient(145deg, #1a1a1a, #0e0e0e);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
-      transition: transform 0.3s ease;
-      position: relative;
+          background: rgba(43, 43, 43, 0.719);
+  overflow: hidden;
+  transition: transform 0.3s;
+  position: relative;
+  padding: 3px;
+  overflow: hidden;
+  background: #1d1d1d8e;
+  /* or transparent if needed */
     }
+  .card-border {
+  position: relative;
+  padding: 3px;
+  overflow: hidden;
+  background: #30303077; /* or transparent if needed */
+}
+
+
+.card::before{
+content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  pointer-events: none;
+  animation: moveBorder 4s linear infinite;
+}
+@keyframes moveBorder {
+  0% {
+    border-top-color: rgb(255, 255, 255);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  25% {
+    border-top-color: transparent;
+    border-right-color: rgb(255, 255, 255);
+  }
+  50% {
+    border-right-color: transparent;
+    border-bottom-color: rgb(255, 255, 255);
+  }
+  75% {
+    border-bottom-color: transparent;
+    border-left-color: rgb(255, 255, 255);
+  }
+  100% {
+    border-left-color: transparent;
+    border-top-color: rgb(255, 255, 255);
+  }
+}
+
+
+
+
+
+
 
     .card:hover {
       transform: translateY(-10px);
     }
 
     .card img {
+     position: relative;
       width: 100%;
-      height: 360px;
-      object-fit: cover;
+      height: 350px;
+      overflow: hidden;
     }
 
     .hd-label {
       position: absolute;
       top: 10px;
       left: 10px;
-      background: red;
-      color: white;
-      font-size: 12px;
+      background: rgba(0, 0, 0, 0.688);
+      color: rgb(255, 255, 255);
+      font-weight: 700;
+      font-size: 15px;
       padding: 4px 8px;
       border-radius: 6px;
       z-index: 2;
@@ -151,7 +199,7 @@
     }
 
     .info h3 {
-      margin-bottom: 8px;
+      
       font-size: 18px;
     }
 
@@ -161,20 +209,52 @@
     }
 
     .watch-btn {
-      display: block;
-      text-align: center;
-      margin: 10px 15px 15px;
-      padding: 10px;
-      background: linear-gradient(145deg, #ff0000, #cc0000);
-      color: white;
-      font-weight: bold;
-      border-radius: 12px;
-      text-decoration: none;
-      box-shadow: 0 6px 15px rgba(255, 0, 0, 0.5);
-      transition: 0.3s;
+       display: block;
+  width: 100%;
+  padding: 8px 0;
+
+ border: 1px solid rgb(165, 25, 25);
+  color: rgb(255, 0, 0);
+  
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  margin-top: 10px;
     }
 
     .watch-btn:hover {
-      background: #cc0000;
-      transform: scale(1.05);
+      color: #fff;
+  background: #f80000;
+  border: 1px solid red;
+  box-shadow: 0px 0px 10px 0px red;
     }
+      
+
+
+
+
+
+
+
+
+
+
+          @media (max-width: 768px) {
+            .results-container {
+              grid-template-columns: repeat(2, 1fr);
+              padding: 8px;
+            }
+       .info h3 {
+      
+      font-size: 15px;
+    }
+  
+    .info p {
+      font-size: 10px;
+      color: #ccc;
+    }
+            .card img {
+              height: 260px;
+            }
+          }
