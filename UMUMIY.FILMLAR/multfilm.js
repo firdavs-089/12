@@ -101,6 +101,12 @@ themeToggle.addEventListener("click", () => {
   // Sizning kinolar ma'lumotlaringiz (o'zingiz qo'shasiz)
         const moviesData = [
             {
+                title: "Kuzyaning sarguzashtlari Premyera 2024  ",
+                img: "/kinlar-img/kuzyaning img.png",
+                desc: "2025, tarjima multfilm.",
+                link: "/mutlfilmlar/kuzyaning-sarguzashtlari.html"
+            },
+            {
                 title: "K-pop jin ovchilari / Key pop iblis ovchilari 2025 ",
                 img: "/multfilmlar img/k-pop img.webp",
                 desc: "2025, tarjima multfilm.",

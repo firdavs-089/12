@@ -1,9 +1,27 @@
   const movies = [
       {
+        name: "Apokalipsis Z:Qiyomatning boshlanishi",
+        year: "2025, tajima film",
+        image: "/kinlar-img/apokolipsi-z-img.png",
+        link: "/yangi-filmlar/Apokalipsis-z.html"
+      },
+      {
+        name: "Qurollar (premyera, o'zbek tilida, Uzbek)",
+        year: "2025, tajima film",
+        image: "/kinlar-img/QUROLLAR IMG.png",
+        link: "/yangi-filmlar/Qurollar.html"
+      },
+      {
+        name: "Garri Potter 1 2 3 4 5 6 7 8 barcha qismlari ",
+        year: "2025, tajima film",
+        image: "/kinlar-img/garry potirrrr- img.png",
+        link: "/fyangi-filmlar/orol.html"
+      },
+      {
         name: "Ajdar oʻrgatuvchilar / Ajdarni qo'lga o'rgatish ",
         year: "2025, tajima film",
         image: "/kinlar-img/ajdar o'rgatuvchi img.webp",
-        link: "/filmlar/ajdar-orgatuvchi.html"
+        link: "/seriialr toplami/garry-potr.html"
       },
       {
         name: "Kosmik koloniya / Boshqaruv xonasi Premyera  ",
@@ -12,7 +30,7 @@
         link: "/filmlar/Kosmink kaloniya.html"
       },
       {
-        name: "Kulga aylangan haqiqat  ",
+        name: "Kulga aylangan haqiqat Uzbek tilida ",
         year: "2025, tajima film",
         image: "/kinlar-img/kulgiga-aylangan-haqiat img.webp",
         link: "/filmlar/Kulga aylangan haqiqat.html"
@@ -31,7 +49,7 @@
         link: "/filmlar/Matakumba xazinas.html"
       },
       {
-        name: " O'tgan yozda nima qilganingni bilaman Premyera  ",
+        name: " O'tgan yozda nima qilganingni bilaman  ",
         year: "2025, tajima film",
         image: "/kinlar-img/o'tgan yozda nima qilganimni bilmayman img.webp",
         link: "/filmlar/O'tgan yozda nima qilganingni bilaman Premyera 2025 .html"
@@ -73,7 +91,7 @@
         link: "/filmlar/yura-davri-dunyosi.html"
       },
       {
-        name: "Garri Potter 1 2 3 4 5 6 7 8 barcha qismlari Uzbek tilida  ",
+        name: "Garri Potter 1 2 3 4 5 6 7 8 barcha qismlari  ",
         year: "2025, tajima film",
         image: "/kinlar-img/garry potirrrr- img.png",
         link: "/seriialr toplami/garry-potr.html"
@@ -85,13 +103,13 @@
         link: "/seriialr toplami/kalmar-oyini-3-fasl.html"
       },
       {
-        name: "Qum odam / Qumodam O'zbek tilida Serial Premyera  ",
+        name: "Qum odam / Qumodam O'zbek tilida Serial   ",
         year: "2025, tajima film",
         image: "/kinlar-img/qum-odam-img.webp",
         link: "/seriialr toplami/Qum-odam.html"
       },
       {
-        name: "S chizig'i / Sevgi g'altak  ",
+        name: "S chizig'i / Sevgi g'altak Uzbek tilida ",
         year: "2025, tajima film",
         image: "/kinlar-img/S chizig'i.webp",
         link: "/seriialr toplami/S chiziqi.html"

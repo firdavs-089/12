@@ -101,6 +101,30 @@ themeToggle.addEventListener("click", () => {
   // Sizning kinolar ma'lumotlaringiz (o'zingiz qo'shasiz)
         const moviesData = [
             {
+                title: "Apokalipsis Z:Qiyomatning",
+                img: "/kinlar-img/apokolipsi-z-img.png",
+                desc: "2025, tarjima kino.",
+                link: "/yangi-filmlar/Apokalipsis-z.html"
+            },
+            {
+                title: "Qurollar (premyera, o'zbek tilida, Uzbek)",
+                img: "/kinlar-img/QUROLLAR IMG.png",
+                desc: "2025, tarjima kino.",
+                link: "/yangi-filmlar/Qurollar.html"
+            },
+            {
+                title: "Garri Potter 1 2 3 4 5 6 7 8 barcha qismlari Uzbek tilida ",
+                img: "/kinlar-img/garry potirrrr- img.png",
+                desc: "2025, tarjima kino.",
+                link: "/yangi-filmlar/orol.html"
+            },
+            {
+                title: "Orol. Unutilmas sayohat (qozoq filmi, premyera) ",
+                img: "/kinlar-img/orol img",
+                desc: "2025, tarjima kino.",
+                link: "/seriialr toplami/garry-potr.html"
+            },
+            {
                 title: "Yura davri dunyosi : Qayta tug'ilish Premyera 2025 ",
                 img: "/kinlar-img/yura-davri-dunyosi-img.webp",
                 desc: "2025, tarjima kino.",
