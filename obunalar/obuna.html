@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Obunalar • AetherX</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/obunalar/styl.css">
+</head>
+
+<body>
+    
+    <!-- Bosh sahifaga qaytish tugmasi -->
+    <a href="/BOSH SAHIFA/BOSH SAHIFAA.html" class="home-button">← Bosh sahifaga qaytish</a>
+
+
+    
+    <div class="app">
+        <aside>
+            <div class="aside-title"><span class="bar"></span><span>OBUNALAR</span></div>
+            <div class="nav" id="nav">
+                <button data-page="my" class="active"><i class="fa-solid fa-id-badge"></i> Mening obunam</button>
+                <button data-page="plans"><i class="fa-solid fa-robot"></i> Tariflar</button>
+                <button data-page="pay"><i class="fa-solid fa-credit-card"></i> To'lov</button>
+                <button data-page="history"><i class="fa-solid fa-clock-rotate-left"></i> To'lovlar tarixi</button>
+            </div>
+        </aside>
+
+        <main id="page">
+            <!-- Mening obunam -->
+            <section class="card" data-route="my">
+                <div class="balance">
+                    <div>
+                        <div class="pill"><i class="fa-solid fa-wallet"></i> <span>Balans:</span> <strong id="balance">0
+                                so'm</strong></div>
+                        <h4 style="opacity:.85">ID: <span id="userId"></span></h4>
+                    </div>
+                    <div>
+                        <button class="btn ok" id="topupBtn"><i class="fa-solid fa-plus"></i> To'ldirish</button>
+                    </div>
+                </div>
+                <div class="hr"></div>
+                <div style="padding:18px" id="myStatus">Hozircha obuna yo'q. Tarif tanlang va aktivlashtiring.</div>
+            </section>
+
+            <!-- Tariflar -->
+            <section class="card" data-route="plans" style="display:none">
+                <div class="plans" id="plansGrid"></div>
+            </section>
+
+            <!-- To'lov usullari (balansni to'ldirish) -->
+            <section class="card" data-route="pay" style="display:none">
+                <div style="padding:16px">
+                    <div class="pay-grid" id="topupMethods"></div>
+                    <div class="help">
+                        <strong>Izoh:</strong> to'ldirish tanlangandan so'ng tasdiqlash modali ochiladi. To'lov
+                        muvaffaqiyatli bo'lsa balansga pul tushadi.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tarix -->
+            <section class="card" data-route="history" style="display:none">
+                <div style="padding:16px">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sana</th>
+                                <th>Turi</th>
+                                <th>Tafsilot</th>
+                                <th>Summasi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyTbody">
+                            <tr>
+                                <td colspan="4" style="color:#94a3b8">Hali yozuv yo'q</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="help">
+                        <div style="display:flex; align-items:center; gap:10px; justify-content:space-between">
+                            <div><i class="fa-solid fa-circle-info"></i> Texnik yordam kerakmi?</div>
+                            <button class="btn" id="helpBtn"><i class="fa-solid fa-headset"></i> Texnik yordam</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal: Aktivlashtirish/To'lov -->
+    <div class="modal" id="payModal">
+        <div class="modal-card">
+            <div class="modal-head">
+                <h4><i class="fa-solid fa-bolt"></i> To'lov / Aktivlashtirish</h4>
+                <button class="close" data-close><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div id="modalPlanInfo" style="margin-bottom:10px; opacity:.9"></div>
+                <div class="provider-list" id="providerList">
+                    <div class="provider" data-provider="click">CLICK</div>
+                    <div class="provider" data-provider="payme">Payme</div>
+                    <div class="provider" data-provider="uzum">Uzum Bank</div>
+                    <div class="provider" data-provider="paynet">Paynet</div>
+                    <div class="provider" data-provider="plum">Plum</div>
+                </div>
+                <div class="promo">
+                    <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap">
+                        <button class="btn ghost" id="promoToggle"><i class="fa-solid fa-ticket"></i> Promokod
+                            bormi?</button>
+                        <div id="promoInputWrap" style="display:none; align-items:center; gap:10px">
+                            <input id="promoInput" placeholder="Promokod kiriting (masalan: aetherx)" />
+                            <button class="btn ok" id="promoApply">Qo'llash</button>
+                        </div>
+                    </div>
+                    <div id="promoMsg" style="margin-top:8px; color:#aab7d4"></div>
+                </div>
+                <div class="paybar">
+                    <div id="sumBox"><strong>Summasi:</strong> <span id="amountText">—</span></div>
+                    <div style="display:flex; gap:10px">
+                        <button class="btn" id="showQr"><i class="fa-solid fa-qrcode"></i> QR ko'rsatish</button>
+                        <button class="btn ok" id="doPay"><i class="fa-solid fa-shield-check"></i> To'lov
+                            qilish</button>
+                    </div>
+                </div>
+                <div class="qr" id="qrBox">
+                    <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap">
+                        <canvas id="qrCanvas" width="160" height="160"></canvas>
+                        <div>
+                            <div id="qrText" style="font-family:monospace; opacity:.85"></div>
+                            <div style="margin-top:8px; color:#94a3b8">Diqqat: bu demo QR (test). Haqiqiy integratsiya
+                                uchun to'lov provayderining API'sini ulang.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Top up (balans) -->
+    <div class="modal" id="topupModal">
+        <div class="modal-card">
+            <div class="modal-head">
+                <h4><i class="fa-solid fa-wallet"></i> Balansni to'ldirish</h4>
+                <button class="close" data-close><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:8px">
+                    <div class="provider" data-provider="click">CLICK</div>
+                    <div class="provider" data-provider="payme">Payme</div>
+                    <div class="provider" data-provider="uzum">Uzum Bank</div>
+                    <div class="provider" data-provider="paynet">Paynet</div>
+                    <div class="provider" data-provider="plum">Plum</div>
+                </div>
+                <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap">
+                    <input id="topupAmount" type="number" min="1000" step="1000" placeholder="Summani kiriting (so'm)"
+                        style="width:220px; padding:10px 12px; border-radius:10px; border:1px solid #24344a; background:#0d141c; color:var(--txt)">
+                    <button class="btn ok" id="startTopup">Tasdiqlash</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Texnik yordam -->
+    <div class="modal" id="helpModal">
+        <div class="modal-card">
+            <div class="modal-head">
+                <h4><i class="fa-solid fa-headset"></i> Texnik yordam</h4>
+                <button class="close" data-close><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="supportForm" class="support">
+                    <input name="name" placeholder="Ism" required>
+                    <input name="email" type="email" placeholder="Email" required>
+                    <textarea name="message" placeholder="Izoh" required></textarea>
+                    <div style="display:flex; align-items:center; gap:10px">
+                        <span id="captchaText" class="pill" style="background:#0e1620">0000</span>
+                        <input name="captcha" placeholder="Captcha" required style="max-width:160px">
+                        <button type="button" class="btn" id="refreshCaptcha"><i class="fa-solid fa-rotate"></i>
+                            Yangilash</button>
+                    </div>
+                    <div style="grid-column:1/-1; display:flex; justify-content:flex-end; gap:10px">
+                        <button type="submit" class="btn ok"><i class="fa-solid fa-paper-plane"></i> Yuborish</button>
+                    </div>
+                </form>
+                <div style="margin-top:10px; color:#9fb0cc">Eslatma: bu demo <code>mailto:</code> orqali xabar
+                    tayyorlaydi. Backend ulasangiz avtomatik yuboriladi.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading overlay -->
+    <div class="overlay" id="overlay">
+        <div style="display:flex; flex-direction:column; align-items:center">
+            <div class="spinner"></div>
+            <div class="msg">
+                To'lov qayta ishlanmoqda... <br>
+                Taxminiy vaqt: 15 daqiqa. Ilova yopilmasin.
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+
+
+
+
+   <div class="movie-button-container">
+        <form action="http://t.me/aetherxfilmm">
+            <button class="movie-button">
+                <i class="fa-brands fa-telegram"></i>
+            </button>
+        </form>
+        <div class="light-circle"></div>
+    </div>
+
+
+
+
+
+
+
+
+    
+  <script src="/obunalar/style.js"></script>
+</body>
+
+</html>

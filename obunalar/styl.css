@@ -1,0 +1,656 @@
+        :root {
+            --bg: #12181f;
+            /* umumiy fon */
+            --panel: #272727d1;
+            /* kartalar, panel fon */
+            --panel-2: #272727b7;
+            /* yan panel */
+            --txt: #ffffff;
+            /* matn */
+            --muted: #ffffff;
+            /* ikkilamchi matn */
+            --brand: #ca1b1b;
+            /* tarif tepa paneli (bronze) */
+            --accent: #c41010;
+            /* brand darker */
+            --ok: #23ac28;
+            /* yashil */
+            --ok-2: #1fb527;
+            --line: #ff0000;
+            /* chiziqlar */
+            --focus: #ff0000;
+            /* chap yon chiziq */
+            --warn: #ff0000;
+            --danger: #ff0000;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+          font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                  url('/kinlar-img/logo.jpg') no-repeat center center fixed;
+      background-size: cover;
+    line-height: 1.6;
+        }
+
+        .app {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 24px;
+            max-width: 1200px;
+            margin: 94px auto;
+            padding: 0 16px
+        }
+
+        aside {
+            background: var(--panel-2);
+            padding: 16px;
+            position: sticky;
+            top: 16px;
+            height: fit-content;
+            border: 1px solid #d7c8c8a9;
+            box-shadow: 0 6px 24px rgba(255, 255, 255, 0.35);
+        }
+
+        .aside-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            letter-spacing: .4px;
+            color: #ffffff
+        }
+
+        .aside-title .bar {
+            width: 3px;
+            height: 22px;
+            background: linear-gradient(180deg, var(--focus), transparent);
+            border-radius: 6px
+        }
+
+        .nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 14px
+        }
+
+        .nav button {
+            width: 100%;
+            text-align: left;
+            background: #1c1c1cc6;
+            color: var(--txt);
+            padding: 12px 14px;
+            border: 1px solid #cec7c7b3;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: .2s transform, .2s border-color, .2s background;
+            
+        }
+
+        .nav button i {
+            opacity: .9
+        }
+
+        .nav button.active {
+            border-color: #fff;
+            background: #434343
+        }
+
+        .nav button:hover {
+            transform: translateY(-1px);
+            border-color: #ffffff
+        }
+
+        main {
+            min-height: 70vh
+        }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid #ccbbbb;
+            overflow: hidden;
+            box-shadow: 0 10px 10px rgba(255, 255, 255, 0.35);
+            padding: 10px;
+        }
+
+        .card+.card {
+            margin-top: 16px
+        }
+
+        /* Balans paneli */
+        .balance {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px
+        }
+
+        .balance h4 {
+            margin: 4px 0 2px;
+            font-weight: 700
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            background: #232323;
+            border: 1px solid rgb(189, 174, 174);
+            color: #fff;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            
+            border: 1px solid #ff0000;
+            background: #ff0303;
+            color: var(--txt);
+            cursor: pointer;
+            transition: .2s
+        }
+
+        .btn.ok {
+            background: red;
+            border-color: #ff0000
+        }
+
+        .btn.ok:hover {
+            filter: brightness(1.02)
+        }
+
+        .btn.ghost {
+            background: #212121
+        }
+
+        /* Tarif grid */
+        .plans {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px
+        }
+
+        .plan {
+            background: var(--panel);
+            border: 1px solid #1f1f1f;
+            overflow: hidden;
+            border-radius: 3px;
+        }
+
+        .plan-header {
+            background: linear-gradient(180deg, var(--brand), var(--accent));
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .plan-header h3 {
+            margin: 0;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: .6px;
+            color: #fff;
+            
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: 800
+        }
+
+        .so {
+            font-size: 12px;
+            margin-left: 2px;
+            opacity: .85
+        }
+
+        .plan-body {
+            padding: 16px
+        }
+
+        .hr {
+            height: 1px;
+            background: var(--line);
+            margin: 12px 0
+        }
+
+        .feat {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--muted);
+            font-size: 14px;
+            padding: 8px 0
+        }
+
+        .feat i {
+            color: #ffffff
+        }
+
+        .plan-footer {
+            padding: 16px;
+            display: flex;
+            justify-content: center
+        }
+
+        .plan .btn.ok {
+            width: 100%;
+            justify-content: center
+        }
+
+        /* To'lovlar sahifasi */
+        .pay-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px
+        }
+
+        .method {
+            background: #1d1d1da5;
+            border: 1px solid #f4f4f49e;
+            border-radius: 3px;
+            padding: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            height: 86px;
+            cursor: pointer;
+            transition: .25s;
+            color: #fff;
+            
+        }
+
+        .method:hover {
+            transform: translateY(-2px);
+            border-color: #ff0000;
+            color: red;
+            
+        }
+
+        /* Tarix */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: #fff;
+        }
+
+        th,
+        td {
+            padding: 12px 14px;
+            border-bottom: 1px solid #ffffff;
+            font-size: 14px
+        }
+
+        th {
+            color: #ffffff;
+            text-align: left
+        }
+
+        /* Footer helper */
+        .help {
+            margin-top: 14px;
+            padding: 14px;
+            background: #242424;
+            border: 1px solid #ffffff;
+            color: #fff;
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            inset: 0;
+            display: none;
+            place-items: center;
+            background: rgba(29, 29, 29, 0.6);
+            backdrop-filter: blur(2px);
+            z-index: 50
+        }
+
+        .modal.open {
+            display: grid
+        }
+
+        .modal-card {
+            width: min(720px, 92vw);
+            background: rgba(30, 30, 30, 0.597);
+            border: 1px solid #ffffff;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px 0px #fff
+        }
+
+        .modal-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #fff;
+            padding: 14px 16px;
+            background: #b80e0e;
+            border-bottom: 1px solid #ffffff
+        }
+
+        .modal-head h4 {
+            margin: 0
+        }
+
+        .modal-body {
+            padding: 16px
+        }
+
+        .close {
+            background: #161616e4;
+            border: 1px solid #ffffff;
+            color: #cbd6ff;
+            border-radius: 10px;
+            padding: 8px 12px;
+            cursor: pointer
+        }
+
+        .provider-list {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap
+        }
+
+        .provider {
+            flex: 1 1 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 48px;
+            background: #2727277f;
+            border: 1px solid #fdfeffa3;
+            color: #fff;
+            cursor: pointer;
+            transition: .2s
+        }
+
+        .provider.active {
+            outline: 2px solid var(--focus);
+            border-color: transparent
+        }
+
+        .promo {
+            margin-top: 12px;
+            background: #2e2e2e90;
+            border: 1px dashed #ffffff95;
+            padding: 12px
+        }
+
+        .promo input {
+            width: 220px;
+            padding: 10px 12px;
+            border: 1px solid #ffffff8d;
+            background: #32323290;
+            color: #fff;
+        }
+
+        .paybar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 14px;
+            padding: 12px;
+            background: #38383883;
+            border: 1px solid #ffffff95;
+            color: #fff;
+        
+        }
+
+        .qr {
+            display: none;
+            margin-top: 12px;
+            padding: 16px;
+            border: 1px solid #ffffff96;
+            background: #34343482;
+               color: #fff;
+        }
+
+        .qr canvas {
+            width: 160px;
+            height: 160px;
+            background: #fff;
+         
+        }
+
+        /* Loading overlay */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            display: none;
+            place-items: center;
+            background: rgba(0, 0, 0, .75);
+            z-index: 60
+        }
+
+        .overlay.open {
+            display: grid
+        }
+
+        .spinner {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 6px solid rgba(255, 255, 255, .15);
+            border-top-color: #fff;
+            animation: spin 1s linear infinite
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .overlay .msg {
+            margin-top: 14px;
+            color: #dfe6ff;
+            text-align: center;
+            max-width: 520px
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            right: 16px;
+            top: 16px;
+            z-index: 70;
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .toast .t {
+            background: #0f1720;
+            border: 1px solid #2a3a56;
+            color: #dfe6ff;
+            padding: 10px 12px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .4)
+        }
+
+        /* Tech support form */
+        .support {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: 1fr 1fr
+        }
+
+        .support input,
+        .support textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #24344a;
+            background: #0d141c;
+            color: var(--txt)
+        }
+
+        .support textarea {
+            min-height: 120px;
+            grid-column: 1 / -1
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .plans {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .pay-grid {
+                grid-template-columns: repeat(3, 1fr)
+            }
+
+            .app {
+                grid-template-columns: 1fr
+            }
+
+            aside {
+                position: static
+            }
+        }
+
+        @media (max-width: 680px) {
+            .plans {
+                grid-template-columns: 1fr
+            }
+
+            .pay-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .balance {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px
+            }
+        }
+        /* Scrollbar umumiy */
+::-webkit-scrollbar {
+  width: 12px;       /* Scrollbar kengligi */
+  height: 12px;      /* Gorizontal scroll uchun balandlik */
+}
+
+/* Scrollbar tray (background) */
+::-webkit-scrollbar-track {
+  background: #222;  /* Scrollbar orqa fon rangi */
+  border-radius: 6px;
+}
+
+/* Scrollbar track ichidagi to‘g‘rilanadigan qism (scroll thumb) */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;  /* Scrollbar o‘zi — rangini bu yerda o‘zgartirasiz */
+  border-radius: 6px;
+  border: 3px solid #222;  /* Scroll bar atrofida bo‘sh joy */
+}
+
+/* Scrollbar hover holati */
+::-webkit-scrollbar-thumb:hover {
+  background: #ff0000;
+}
+
+
+
+
+
+
+/* telegram buton */
+
+     /* telegram button */
+     .movie-button-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+}
+
+.movie-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #007bff, #0044ff);
+  border: 2px solid #0400ff;
+  color: #f6f6f6;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 26, 255, 0.4);
+  position: relative;
+  z-index: 2;
+}
+
+.light-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid rgb(8, 0, 255);
+  box-shadow: 0 0 10px rgb(0, 34, 255);
+  z-index: 1;
+  animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    width: 60px;
+    height: 60px;
+    opacity: 0.7;
+  }
+  50% {
+    width: 100px;
+    height: 100px;
+    opacity: 0.3;
+  }
+  100% {
+    width: 60px;
+    height: 60px;
+    opacity: 0.7;
+  }
+}
+/* Bosh sahifaga qaytish tugmasi */
+    .home-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 999;
+      background: linear-gradient(135deg, #ff0000, #000000);
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+    
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .home-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 0px 10px 0px  rgb(255, 0, 0);
+    }
+
+    @media (max-width: 600px) {
+      .home-button {
+        font-size: 13px;
+        padding: 10px 16px;
+      }
+    }
