@@ -1,5 +1,29 @@
   const movies = [
       {
+        name: "Aka 1 uzbek tilida ",
+        year: "2025, tajima film",
+        image: "/kinlar-img/brat 1 img.png",
+        link: "/yangi-filmlar/aka.html"
+      },
+      {
+        name: "Aka 2 uzbek tilida ",
+        year: "2025, tajima film",
+        image: "/kinlar-img/aka 2 img.png",
+        link: "/yangi-filmlar/aka-2.html"
+      },
+      {
+        name: "Bumer uzbek tilida ",
+        year: "2025, tajima film",
+        image: "/kinlar-img/bumer img.png",
+        link: "/yangi-filmlar/bumer.html"
+      },
+      {
+        name: "Bumer -2  uzbek tilida ",
+        year: "2025, tajima film",
+        image: "/kinlar-img/bumer 2 img.png",
+        link: "/yangi-filmlar/bumer-2.html"
+      },
+      {
         name: "Apokalipsis Z:Qiyomatning boshlanishi",
         year: "2025, tajima film",
         image: "/kinlar-img/apokolipsi-z-img.png",

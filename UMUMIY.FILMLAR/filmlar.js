@@ -101,6 +101,30 @@ themeToggle.addEventListener("click", () => {
   // Sizning kinolar ma'lumotlaringiz (o'zingiz qo'shasiz)
         const moviesData = [
             {
+                title: "Aka 1  uzbek tilida",
+                img: "/kinlar-img/brat 1 img.png",
+                desc: "2025, tarjima kino.",
+                link: "/yangi-filmlar/aka.html"
+            },
+            {
+                title: "Aka 2 uzbek tilida",
+                img: "/kinlar-img/aka 2 img.png",
+                desc: "2025, tarjima kino.",
+                link: "/yangi-filmlar/aka-2.html"
+            },
+            {
+                title: "Bumer uzbek tilida",
+                img: "/kinlar-img/bumer img.png",
+                desc: "2025, tarjima kino.",
+                link: "/yangi-filmlar/bumer.html"
+            },
+            {
+                title: "Bumer - 2 uzbek tilida",
+                img: "/kinlar-img/bumer 2 img.png",
+                desc: "2025, tarjima kino.",
+                link: "/yangi-filmlar/bumer-2.html"
+            },
+            {
                 title: "Apokalipsis Z:Qiyomatning",
                 img: "/kinlar-img/apokolipsi-z-img.png",
                 desc: "2025, tarjima kino.",
