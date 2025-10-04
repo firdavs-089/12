@@ -1,5 +1,23 @@
   const movies = [
       {
+        name: "Marvel zombilari Premyera 4-qism ",
+        year: "2025, tajima film",
+        image: "/kinlar-img/marvel-zombi-img.png",
+        link: "/yangi-filmlar/marvel.html"
+      },
+      {
+        name: "Qadimiy urush / Ibtidoiy urush Premyera ",
+        year: "2025, tajima film",
+        image: "/kinlar-img/qadimiy-urush-img.png",
+        link: "/yangi-filmlar/qadimiy-urush.html"
+      },
+      {
+        name: "Salom, Ona! / Onamning ruhi ",
+        year: "2025, tajima film",
+        image: "/kinlar-img/salom-ona-img.png",
+        link: "/yangi-filmlar/salom-ona.html"
+      },
+      {
         name: "Aka 1 uzbek tilida ",
         year: "2025, tajima film",
         image: "/kinlar-img/brat 1 img.png",

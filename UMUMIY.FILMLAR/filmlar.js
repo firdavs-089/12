@@ -101,6 +101,24 @@ themeToggle.addEventListener("click", () => {
   // Sizning kinolar ma'lumotlaringiz (o'zingiz qo'shasiz)
         const moviesData = [
             {
+                title: "Marvel zombilari Premyera 4-qism",
+                img: "/kinlar-img/marvel-zombi-img.png",
+                desc: "2025, tarjima kino.",
+                link: "/yangi-filmlar/marvel.html"
+            },
+            {
+                title: "Qadimiy urush / Ibtidoiy urush Premyera 2025",
+                img: "/kinlar-img/qadimiy-urush-img.png",
+                desc: "2025, tarjima kino.",
+                link: "/yangi-filmlar/qadimiy-urush.html"
+            },
+            {
+                title: "Salom, Ona! / Onamning ruhi",
+                img: "/kinlar-img/salom-ona-img.png",
+                desc: "2025, tarjima kino.",
+                link: "/yangi-filmlar/salom-ona.html"
+            },
+            {
                 title: "Aka 1  uzbek tilida",
                 img: "/kinlar-img/brat 1 img.png",
                 desc: "2025, tarjima kino.",
